@@ -1,0 +1,49 @@
+:root {
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrapper {
+}
+
+.logo {
+  width: 4rem;
+}
+
+.input-wrapper {
+}
+
+.input {
+}
+
+.button {
+}
+
+.nav {
+}
+
+.nav__item {
+  padding: 0.5rem;
+}
