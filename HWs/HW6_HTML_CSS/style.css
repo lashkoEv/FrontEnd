@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(./public/fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  --main-indent: 2rem;
+  --secondary-indent: 1rem;
+  --main-font-size: 1.3rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "Roboto";
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  padding: var(--main-indent);
+}
+
+.header__text {
+  font-size: 4rem;
+  color: #4bcaff;
+}
+
+.header__text > span {
+  color: black;
+}
+
+.header__nav {
+  margin-top: var(--main-indent);
+  background: #35444f;
+  font-size: var(--main-font-size);
+  display: flex;
+  justify-content: center;
+}
+
+.nav__item {
+  color: white;
+  padding: var(--secondary-indent);
+  transition: ease 0.3s;
+}
+
+.nav__item:hover {
+  background: #222f3a;
+}
+
+.line {
+  height: 57px;
+  border: 1px solid white;
+}
+
+.container {
+  display: flex;
+  margin-top: var(--main-indent);
+}
+
+.sidebar {
+  width: 20%;
+  margin-right: var(--main-indent);
+}
+
+.sidebar__list {
+  border: 1px solid #485863;
+}
+
+.sidebar__item {
+  padding: var(--secondary-indent);
+  transition: ease 0.3s;
+}
+
+.sidebar__item:hover {
+  background: #dbdbdb;
+  padding-left: 2rem;
+}
+
+.sidebar__link {
+  font-size: var(--main-font-size);
+  color: #485863;
+}
+
+.main {
+  width: 80%;
+}
+
+.img-wrapper {
+  width: 100%;
+  border: 1px solid #485863;
+  text-align: center;
+}
+
+.main__img {
+  width: 20rem;
+  margin: 4rem auto;
+}
+
+.main__text {
+  margin-top: var(--main-indent);
+}
+
+.footer {
+  margin-top: var(--main-indent);
+  background: #63696e7a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__item {
+  padding: var(--secondary-indent);
+  transition: ease 0.3s;
+  display: inline-block;
+}
+
+.footer__link {
+  padding-bottom: 0.5rem;
+  font-size: var(--main-font-size);
+  color: #35444f;
+}
+
+.footer__link:hover {
+  border-bottom: 1px solid #3181a6;
+  color: #3181a6;
+}
+
+.footer__text {
+  padding: var(--secondary-indent);
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --main-font-size: 1.1rem;
+  }
+
+  #app {
+    padding: var(--secondary-indent);
+  }
+
+  .sidebar {
+    width: 30%;
+  }
+
+  .main {
+    width: 70%;
+  }
+
+  .footer__item {
+    display: block;
+  }
+
+  .footer__text {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --main-font-size: 1rem;
+  }
+
+  .container {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .main {
+    margin-top: var(--main-indent);
+    width: 100%;
+  }
+
+  .footer__text {
+    font-size: 0.8rem;
+  }
+
+  .line {
+    height: 70px;
+  }
+}

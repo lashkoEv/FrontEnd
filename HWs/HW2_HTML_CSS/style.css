@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: rgb(27, 27, 27);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+}
+
+.nav__logo {
+  width: 48px;
+  margin: 0 15px;
+}
+
+.nav__item {
+  float: left;
+  display: block;
+}
+
+.nav__link {
+  padding: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav__link:hover {
+  background-color: rgb(208, 231, 201);
+  color: rgb(46, 107, 29);
+}
+
+.nav__right {
+  float: right;
+}
+
+.head__block {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./img/red-panda9.jpg");
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.head__text {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.block,
+.block__darker {
+  padding: 40px 20%;
+}
+
+.block__darker {
+  background-color: rgb(243, 243, 243);
+}
+
+.title {
+  color: rgb(131, 185, 114);
+  font-size: 37px;
+}
+
+.subtitle {
+  margin-top: 20px;
+}
+
+.img__left {
+  float: left;
+  margin: 0 40px 20px 0;
+}
+
+.img__right {
+  float: right;
+  margin: 0 0 20px 40px;
+}
+
+.img__left,
+.img__right {
+  width: 40%;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list__item {
+  margin-top: 30px;
+}
+
+.list__subitem {
+  border-left: 2px solid rgb(131, 185, 114);
+  margin-left: 14px;
+  padding: 5px 0 0 20px;
+}
+
+.number {
+  color: white;
+  font-weight: bold;
+  background: rgb(131, 185, 114);
+  display: inline-block;
+  text-align: center;
+  margin-right: 20px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.subitem__text {
+  margin: 10px 0;
+  color: rgb(87, 110, 80);
+}
+
+.text__block {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: rgb(248, 248, 248);
+}
+
+hr {
+  margin: 20px 0;
+  border-top: 2px dashed rgb(211, 211, 211);
+  border-bottom: none;
+}
+
+.text__block > .list > li > .list__item {
+  color: rgb(87, 110, 80);
+  font-weight: bold;
+  font-size: large;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img__wrapper {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.img {
+  width: 100%;
+  margin-top: 8px;
+  transition: 0.5s;
+}
+
+.img:hover {
+  transform: scale(1.3);
+}
+
+.text__wrapper {
+  text-align: center;
+}
+
+.footer {
+  background-color: rgb(131, 185, 114);
+  color: black;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer__logo {
+  height: 60px;
+}
+
+.footer__text {
+  margin-top: 15px;
+}
+
+.footer__link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: rgb(46, 107, 29);
+}
+
+.network__background {
+  color: rgb(27, 27, 27);
+}
+
+@media screen and (max-width: 1000px) {
+  .head__text {
+    font-size: 40px;
+  }
+
+  .img__left,
+  .img__right {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+
+  .img__wrapper {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .block,
+  .block__darker {
+    padding: 30px 5%;
+  }
+
+  .head__text {
+    font-size: 30px;
+  }
+
+  .img__wrapper {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .img {
+    transform: none !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .nav__right {
+    float: none;
+  }
+}

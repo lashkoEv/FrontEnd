@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/151b089a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Good Shelter</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="#">
+          <img class="logo" src="./img/logo.png" alt="Logo" />
+        </a>
+
+        <ul>
+          <li class="nav__item">
+            <a class="nav__link" href="#head__block">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#pets__block">Pets</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#about__block">About</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#contact__block">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="head__block" id="head__block">
+        <div class="head__text">
+          <h1 class="title">Good Shelter</h1>
+
+          <h5>Perhaps you will find a new friend here!</h5>
+
+          <button class="button">View more...</button>
+        </div>
+      </div>
+
+      <div class="pets__block" id="pets__block">
+        <h1 class="title">Our pets</h1>
+
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img
+                class="card__img"
+                src="./img/1.jpg"
+                alt="Oops! Something went wrong..."
+              />
+
+              <div class="card__body">
+                <h2>Sharlotte</h2>
+
+                <h5>Female / 2 years</h5>
+
+                <button class="button">View more...</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img
+                class="card__img"
+                src="./img/2.jpg"
+                alt="Oops! Something went wrong..."
+              />
+
+              <div class="card__body">
+                <h2>Andrea</h2>
+
+                <h5>Female / 6 years</h5>
+
+                <button class="button">View more...</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img
+                class="card__img"
+                src="./img/3.jpg"
+                alt="Oops! Something went wrong..."
+              />
+
+              <div class="card__body">
+                <h2>Min-Min</h2>
+
+                <h5>Female / 7 month</h5>
+
+                <button class="button">View more...</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img
+              class="card__img"
+              src="./img/4.jpg"
+              alt="Oops! Something went wrong..."
+            />
+
+            <div class="card__body">
+              <h2>Ben</h2>
+
+              <h5>Male / 5 years</h5>
+
+              <button class="button">View more...</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img
+                class="card__img"
+                src="./img/5.jpg"
+                alt="Oops! Something went wrong..."
+              />
+
+              <div class="card__body">
+                <h2>Alex</h2>
+
+                <h5>Male / 8 years</h5>
+
+                <button class="button">View more...</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img
+                class="card__img"
+                src="./img/6.jpg"
+                alt="Oops! Something went wrong..."
+              />
+
+              <div class="card__body">
+                <h2>Anny</h2>
+
+                <h5>Female / 3 years</h5>
+
+                <button class="button">View more...</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__block" id="about__block">
+        <div class="about__text">
+          <h1 class="title">About Us...</h1>
+
+          <p>
+            Before you buy a dog or cat, just come round to our shelter. It
+            hosts many faithful friends. You will find the one to love and take
+            care of. They are different: big, small, ready to protect you
+            anytime, friendly, lazybones, and restless. Whenever you adopt a
+            pet, you save the three: a pet you give home, another homeless pet
+            that will find a vacant place in the shelter, and a Human in your
+            heart. Adopt, don`t shop, cause the true friendship is priceless!
+          </p>
+        </div>
+      </div>
+
+      <div class="contact__block" id="contact__block">
+        <form class="form" action="#">
+          <h1 class="title">Contact Us</h1>
+
+          <hr />
+
+          <h4 class="form__label">
+            First name<span class="requaired">*</span>
+          </h4>
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Enter your first name..."
+          />
+
+          <h4 class="form__label">Last name<span class="requaired">*</span></h4>
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Enter your last name..."
+          />
+
+          <h4 class="form__label">Email<span class="requaired">*</span></h4>
+          <input
+            class="form__input"
+            type="email"
+            placeholder="Enter your email..."
+          />
+
+          <h4 class="form__label">Message<span class="requaired">*</span></h4>
+          <textarea
+            class="form__input"
+            name="#"
+            id="#"
+            cols="20"
+            rows="5"
+            placeholder="Enter your message..."
+          ></textarea>
+
+          <div class="button__wrapper">
+            <button class="button">Send my message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="networks__block">
+        <div class="networks__text">
+          <ul>
+            <h1 class="title">Our social networks</h1>
+
+            <li class="network__item">
+              <a class="network__link" href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+
+            <li class="network__item">
+              <a class="network__link" href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+
+            <li class="network__item">
+              <a class="network__link" href="#">
+                <i class="fab fa-discord"></i>
+              </a>
+            </li>
+
+            <li class="network__item">
+              <a class="network__link" href="#">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="map__block">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.1975843746313!2d35.02802157524568!3d48.47192358408798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2fa0263091d%3A0xc38083f2d464521a!2z0L_RgC3Rgi4g0JTQvNC40YLRgNC40Y8g0K_QstC-0YDQvdC40YbQutC-0LPQviwgMTAxLCDQlNC90LXQv9GALCDQlNC90LXQv9GA0L7Qv9C10YLRgNC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNDkwMDA!5e0!3m2!1sru!2sua!4v1667089799289!5m2!1sru!2sua"
+          width="100%"
+          height="100%"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <img class="footer__logo" src="./img/logo.png" alt="Logo" />
+
+      <h4 class="footer__text">Copyright &#169; Lashko E.L.</h4>
+
+      <h6>All rights reserved.</h6>
+    </footer>
+  </body>
+</html>
