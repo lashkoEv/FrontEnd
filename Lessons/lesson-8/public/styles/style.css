@@ -75,6 +75,7 @@ a {
 }
 
 .icon {
+  transition: var(--primary-transition);
   padding: var(--padding-s);
   color: var(--secondary-color);
   font-size: var(--main-font-size);
