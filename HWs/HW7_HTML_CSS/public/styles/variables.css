@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Poppins Bold";
-  src: url(../fonts/Poppins-Bold.ttf);
+  src: url(../fonts/Poppins-SemiBold.ttf);
 }
 
 :root {
@@ -20,9 +20,12 @@
   --padding-xl: 2rem;
 
   --primary-background: rgb(28, 29, 34);
+  --secondary-background: rgb(35, 37, 48);
+  --third-background: rgb(38, 42, 61);
+  --fourth-background: rgb(40, 46, 77);
 
   --primary-color: white;
-  --secondary-color: rgba(0, 119, 255, 0.2);
+  --secondary-color: rgb(99, 128, 221);
 
   --primary-gradient: linear-gradient(
     rgba(132, 0, 255, 0.2),
@@ -35,6 +38,12 @@
   --primary-font-size: 1.5rem;
   --secondary-font-size: 2rem;
   --third-font-size: 1rem;
+  --fourth-font-size: 4rem;
 
   --primary-transition: 0.3s ease-in-out;
+
+  --main-border-radius: 1rem;
+
+  
+  --primary-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.15);
 }
