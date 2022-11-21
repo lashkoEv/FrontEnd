@@ -26,24 +26,8 @@ a {
   color: var(--primary-color);
 }
 
-.logo-wrapper {
-}
-
 .logo {
   height: 3rem;
-}
-
-/* .input {
-  font-size: var(--third-font-size);
-  font-family: var(--secondary-font-family);
-  color: inherit;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid var(--primary-color);
-} */
-
-.nav {
 }
 
 .nav-link {

@@ -18,6 +18,7 @@
   --padding-m: 1rem;
   --padding-l: 1.5rem;
   --padding-xl: 2rem;
+  --padding-xxl: 4rem;
 
   --primary-background: rgb(28, 29, 34);
   --secondary-background: rgb(35, 37, 48);
@@ -26,9 +27,11 @@
 
   --primary-color: white;
   --secondary-color: rgb(99, 128, 221);
+  --third-color: rgb(53, 63, 99);
+  --fourth-color: rgb(120, 83, 207);
 
   --primary-gradient: linear-gradient(
-    rgba(132, 0, 255, 0.2),
+    rgba(108, 27, 184, 0.2),
     rgba(0, 119, 255, 0.2)
   );
 

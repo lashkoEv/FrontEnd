@@ -28,10 +28,48 @@
 
 .text {
   margin-top: var(--margin-xl);
+  text-align: justify;
+  background: var(--secondary-background);
+  border-radius: var(--main-border-radius);
+  padding: var(--padding-m) var(--padding-l);
 }
 
 .highlight {
   color: var(--secondary-color);
+}
+
+.partners-block {
+  padding: var(--padding-m) 0 var(--padding-xl) 0;
+  background: var(--secondary-background);
+}
+
+.subtitle {
+  font-family: var(--primary-font-family);
+  font-size: var(--fourth-font-size);
+  margin: var(--margin-m);
+  text-align: center;
+}
+
+.subtitle:hover {
+  color: var(--main-color);
+}
+
+.partners {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.partner {
+  height: 4rem;
+  margin: var(--margin-l);
+}
+
+@media screen and (max-width: 1300px) {
+  .text-block {
+    padding: 0 20% var(--padding-xl) 20%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
