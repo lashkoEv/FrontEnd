@@ -1,0 +1,114 @@
+@import "./variables.css";
+
+@font-face {
+  font-family: "primary";
+  src: url(../public/fonts/Gotham-Thin.ttf);
+}
+
+@font-face {
+  font-family: "primary-light";
+  src: url(../public/fonts/Gotham-Light.ttf);
+}
+
+@font-face {
+  font-family: "title";
+  src: url(../public/fonts/BebasNeue-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+.header {
+  font-family: primary-light;
+  background: var(--primary-bg);
+  border: var(--primary-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.nav {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 5rem;
+}
+
+.button {
+  background: #e9dffc;
+  color: #784dc7;
+  padding: 0.8rem 2rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.main {
+  font-family: primary;
+  background: var(--primary-bg);
+}
+
+.block {
+  padding: var(--padding-xxl) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head__block {
+border-bottom: var(--primary-border);
+}
+
+.head__img {
+  height: 90vh;
+}
+
+.right {
+  transform: scale(-1, 1);
+}
+
+.title {
+  text-align: center;
+  font-family: title;
+  font-size: 7rem;
+  color: var(--secondary-color);
+}
+
+.block__info {
+    margin: 0 var(--margin-xxl);
+}
+
+.block__text {
+width: 40%;
+}
+
+.block__title {
+    font-family: title;
+    font-size: 4rem;
+}
+
+.text {
+    margin-top: var(--margin-xl);
+    font-weight: 800;
+}
+
+.block__photo {
+    width: 40rem;
+}
