@@ -1,0 +1,34 @@
+:root {
+  --margin-s: 0.5rem;
+  --margin-m: 1rem;
+  --margin-l: 1.5rem;
+  --margin-xl: 2rem;
+  --margin-xxl: 5rem;
+
+  --padding-s: 0.5rem;
+  --padding-m: 1rem;
+  --padding-l: 1.5rem;
+  --padding-xl: 2rem;
+  --padding-xxl: 4rem;
+  
+  --primary-color: #292929;
+  --secondary-color: rgb(255, 206, 124);
+  --third-color: rgb(247, 148, 29);
+  --fourth-color: rgb(199, 32, 38);
+  --fifth-color: white;
+  
+  --primary-transparent-color: rgba(224, 224, 224, 0.2);
+  --secondary-transparent-color: rgba(255, 203, 124, 0.2);
+
+  --primary-bg: white;
+
+  --primary-font-family: "Osward";
+  --secondary-font-family: "Lobster";
+  
+  --primary-font-size: 1.3rem;
+  --secondary-font-size: 1.1rem;
+  
+  --primary-border-radius: 1rem;
+
+  --primary-transition: 0.3s ease-in-out;
+}
