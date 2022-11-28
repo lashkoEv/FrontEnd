@@ -1,10 +1,15 @@
 :root {
   --primary-color: #292929;
   --secondary-color: #925ff0;
+  --third-color: white;
+  --fourth-color: #784dc7;
 
   --primary-bg: #f4effe;
+  --secondary-bg: #e9dffc;
+  --third-bg: #6a41b6;
 
   --primary-border: 1px solid rgba(120, 77, 199, 1);
+  --secondary-border: 2px solid #292929;
 
   --margin-s: 0.5rem;
   --margin-m: 1rem;
@@ -16,5 +21,15 @@
   --padding-m: 1rem;
   --padding-l: 1.5rem;
   --padding-xl: 2rem;
-  --padding-xxl: 4rem;
+  --padding-xxl: 5rem;
+
+  --primary-transition: .2s ease;
+  --secondary-transition: .7s ease-out;
+
+  --primary-font-size: 1rem;
+  --secondary-font-size: .9rem;
+  
+  --primary-font-weight: 800;
+
+  --primary-border-radius: 0.3rem;
 }
