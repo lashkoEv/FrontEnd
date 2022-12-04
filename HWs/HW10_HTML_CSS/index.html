@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./public/img/icons/icon.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/151b089a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Book Store</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="logo-wrapper">
+          <a href="#">
+            <img src="./public/img/icons/logo.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+
+        <nav class="nav">
+          <a href="#" class="nav-link">Catalog</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Contacts</a>
+        </nav>
+
+        <div class="icons">
+          <a href="#"><i class="fa-solid fa-user nav-link icon"></i></a>
+          <a href="#"><i class="fas fa-shopping-cart nav-link icon"></i></a>
+        </div>
+      </header>
+
+      <section class="heading">
+        <div class="heading__column">
+          <h1 class="heading__title">Book Store</h1>
+
+          <h3 class="heading__subtitle">
+            Large assortment of books for every taste!
+          </h3>
+
+          <button class="button">Browse...</button>
+        </div>
+
+        <div class="heading__column right">
+          <img
+            class="img"
+            src="./public/img/images/main4.jpg"
+            alt="Oops! Something went wrong..."
+          />
+        </div>
+      </section>
+
+      <section class="search">
+        <input type="text" class="input" placeholder="Search..." />
+
+        <button class="button search__button">
+          <i class="fa fa-search icon"></i>
+        </button>
+      </section>
+
+      <section class="content">
+        <aside class="sidebar">SIDEBAR</aside>
+        <main class="main">MAIN</main>
+      </section>
+
+      <footer class="footer">
+        <div class="logo-wrapper">
+          <a href="#">
+            <img src="./public/img/icons/logo.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+
+        <h6 class="footer__text">
+          Copyright &#169; Lashko E.L. All rights reserved.
+        </h6>
+
+        <div class="links">
+          <a href="#">
+            <span class="fa-stack">
+              <i class="fa fa-instagram fa-stack-2x network"></i>
+            </span>
+          </a>
+
+          <a href="#">
+            <span class="fa-stack">
+              <i class="fa-brands fa-telegram fa-stack-2x network"></i>
+            </span>
+          </a>
+
+          <a href="#">
+            <span class="fa-stack">
+              <i class="fa-brands fa-viber fa-stack-2x network"></i>
+            </span>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
