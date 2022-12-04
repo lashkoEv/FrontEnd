@@ -18,6 +18,7 @@ li {
 #app {
   font-family: var(--primary-font-family);
   background: var(--primary-background);
+  color: var(--primary-color);
 }
 
 .header {
@@ -26,7 +27,6 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--primary-color);
 }
 
 .logo {
@@ -130,20 +130,78 @@ li {
   padding: var(--padding-xxl);
 }
 
+.sidebar {
+  padding: var(--padding-m);
+  background: var(--secondary-background);
+  border-radius: var(--primary-border-radius);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+
+}
+
+.label {
+  display: block;
+  position: relative;
+  padding: 0.2rem 0 0 var(--padding-xl);
+  margin: var(--margin-m);
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: var(--third-background);
+  border-radius: var(--primary-border-radius);
+}
+
+.label:hover .checkbox ~ .mark {
+  background: var(--fourth-background);
+}
+
+.label .checkbox:checked ~ .mark {
+  background: var(--secondary-color);
+}
+
+.mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.label .checkbox:checked ~ .mark:after {
+  display: block;
+}
+
+.label .mark:after {
+  left: 0.5rem;
+  top: 0.25rem;
+  width: 0.3rem;
+  height: 0.6rem;
+  border: solid var(--fifth-color);
+  border-width: 0 0.2rem 0.2rem 0;
+  transform: rotate(45deg);
+}
+
 .footer {
   background: var(--secondary-background);
   padding: var(--padding-l);
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.link:last-child {
-  padding-right: 0;
-}
-
-.network {
-  color: var(--primary-color);
 }
 
 .network:hover {
@@ -208,6 +266,19 @@ li {
 
   .content {
     padding: var(--padding-xxl) var(--padding-l);
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+    visibility: hidden;
+  }
+
+  .hidden {
+    visibility:visible;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .footer {
