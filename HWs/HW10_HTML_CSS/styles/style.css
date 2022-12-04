@@ -14,3 +14,71 @@ a {
 li {
   list-style-type: none;
 }
+
+#app {
+  font-family: var(--primary-font-family);
+  background: var(--primary-background);
+  height: 100vh;
+}
+
+.header {
+  background: var(--secondary-background);
+  padding: var(--padding-l);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+.logo {
+  width: 10rem;
+}
+
+.nav-link {
+  padding: var(--padding-m);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+  background: var(--secondary-color);
+  transition: var(--primary-transition);
+  animation: animation var(--primary-transition);
+  animation-iteration-count: 1;
+}
+
+.icon {
+  font-size: var(--font-size-xl);
+}
+
+@keyframes animation {
+  10% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    padding: var(--padding-m);
+  }
+
+  .logo {
+    width: 8rem;
+  }
+
+  .nav-link {
+    padding: var(--padding-m) var(--padding-s);
+    font-size: var(--font-size-m);
+  }
+
+  .icon {
+    font-size: var(--font-size-l);
+  }
+}
