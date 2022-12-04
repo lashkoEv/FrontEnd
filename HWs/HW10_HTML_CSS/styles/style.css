@@ -18,7 +18,6 @@ li {
 #app {
   font-family: var(--primary-font-family);
   background: var(--primary-background);
-  height: 100vh;
 }
 
 .header {
@@ -53,11 +52,46 @@ li {
   font-size: var(--font-size-xl);
 }
 
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading__column {
+  width: 100%;
+  padding: var(--padding-xxl);
+}
+
+.img {
+  width: 100%;
+  border-radius: var(--primary-border-radius);
+}
+
+.heading__title {
+  font-size: var(--font-size-4xl);
+}
+
+.heading__subtitle {
+  margin: var(--margin-xl) 0;
+  font-size: var(--font-size-3xl);
+}
+
+.button {
+  color: inherit;
+  border: 0;
+  outline: 0;
+  background: var(--third-color);
+  padding: var(--padding-m);
+  border-radius: var(--primary-border-radius);
+  font-size: var(--font-size-l);
+}
+
 .search {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: var(--margin-l) 20%;
+  margin: 0 20%;
   background: var(--secondary-background);
   padding: var(--padding-m) var(--padding-xxl);
   color: var(--primary-color);
@@ -72,20 +106,15 @@ li {
   outline: 0;
   border-bottom: 2px solid var(--fourth-color);
   margin-right: var(--margin-s);
-  padding-bottom: .3rem;
+  padding-bottom: 0.3rem;
 }
 
 .input:focus {
   border-bottom: 2px solid var(--secondary-color);
 }
 
-.button {
-  color: inherit;
-  border: 0;
-  outline: 0;
+.search__button {
   background: transparent;
-  padding: var(--padding-m);
-  border-radius: var(--primary-border-radius);
 }
 
 @keyframes animation {
@@ -104,8 +133,12 @@ li {
   .search {
     margin: var(--margin-l) var(--margin-xxl);
   }
-}
 
+  .right {
+    display: none;
+    visibility: hidden;
+  }
+}
 
 @media screen and (max-width: 800px) {
   .header {
@@ -123,6 +156,10 @@ li {
 
   .icon {
     font-size: var(--font-size-l);
+  }
+
+  .heading__column {
+    padding: var(--padding-xxl) var(--padding-l);
   }
 
   .search {
