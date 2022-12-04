@@ -28,11 +28,14 @@
 
   --primary-background: #e5dad8;
   --secondary-background: white;
+  --third-background: rgb(233, 233, 233);
+  --fourth-background: rgb(209, 209, 209);
 
   --primary-color: #1e3f48;
   --secondary-color: #e0b4aa;
   --third-color: #daa972;
   --fourth-color: #565c5f;
+  --fifth-color: white;
 
   --primary-transition: 0.4s ease-in-out;
 
