@@ -38,9 +38,10 @@ li {
   padding: var(--padding-m);
   font-size: var(--font-size-l);
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: var(--primary-border-radius);
 }
 
+.button:hover,
 .nav-link:hover {
   background: var(--secondary-color);
   transition: var(--primary-transition);
@@ -50,6 +51,41 @@ li {
 
 .icon {
   font-size: var(--font-size-xl);
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--margin-l) 20%;
+  background: var(--secondary-background);
+  padding: var(--padding-m) var(--padding-xxl);
+  color: var(--primary-color);
+  border-radius: var(--primary-border-radius);
+}
+
+.input {
+  width: 100%;
+  font-size: var(--font-size-l);
+  color: inherit;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid var(--fourth-color);
+  margin-right: var(--margin-s);
+  padding-bottom: .3rem;
+}
+
+.input:focus {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.button {
+  color: inherit;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: var(--padding-m);
+  border-radius: var(--primary-border-radius);
 }
 
 @keyframes animation {
@@ -63,6 +99,13 @@ li {
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .search {
+    margin: var(--margin-l) var(--margin-xxl);
+  }
+}
+
 
 @media screen and (max-width: 800px) {
   .header {
@@ -80,5 +123,14 @@ li {
 
   .icon {
     font-size: var(--font-size-l);
+  }
+
+  .search {
+    margin: var(--margin-l);
+    padding: var(--padding-m);
+  }
+
+  .input {
+    font-size: var(--font-size-m);
   }
 }

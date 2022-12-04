@@ -32,6 +32,9 @@
   --primary-color: #1e3f48;
   --secondary-color: #e0b4aa;
   --third-color: #daa972;
+  --fourth-color: #565c5f;
 
   --primary-transition: 0.4s ease-in-out;
+
+  --primary-border-radius: 0.5rem;
 }
