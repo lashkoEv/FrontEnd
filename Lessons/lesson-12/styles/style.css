@@ -14,3 +14,7 @@ a {
 li {
   list-style-type: none;
 }
+
+.logo {
+  width: 2.5rem;
+}
