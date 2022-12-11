@@ -1,0 +1,10 @@
+.icon {
+  height: 1.4rem;
+  margin-right: var(--padding-s);
+}
+
+@media screen and (max-width: 800px) {
+  .buttons-wrapper {
+    flex-direction: column;
+  }
+}
