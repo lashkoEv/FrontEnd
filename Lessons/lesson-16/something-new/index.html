@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product market</title>
+    <link
+      rel="shortcut icon"
+      href="./public/icons/logo.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/151b089a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="logo-wrapper">
+          <img
+            src="./public/icons/logo.svg"
+            alt="Something went wrong"
+            class="logo"
+          />
+        </div>
+
+        <input type="text" class="input-xl input" autocomplete="off" />
+
+        <nav class="nav">
+          <a href="#" class="nav-link">Category</a>
+          <a href="#" class="nav-link">Issues</a>
+          <a href="#" class="nav-link">Login</a>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div class="pointer-left"><</div>
+        <div class="pointer-right">></div>
+      </section>
+
+      <section class="content">
+        <aside class="sidebar">
+          <div class="range-wrapper">
+            <input
+              type="range"
+              name="price"
+              id="rande"
+              min="1000"
+              max="1000000"
+              value="1000"
+            />
+          </div>
+
+          <div class="filter">
+            <div class="filter__property">Samsung</div>
+
+            <div class="filter__value">
+              <input type="checkbox" name="samsung" id="samsung" />
+            </div>
+          </div>
+
+          <div class="filter">
+            <div class="filter__property">Apple</div>
+
+            <div class="filter__value">
+              <input type="checkbox" name="apple" id="apple" />
+            </div>
+          </div>
+
+          <div class="filter">
+            <div class="filter__property">Huawei</div>
+
+            <div class="filter__value">
+              <input type="checkbox" name="huawei" id="huawei" />
+            </div>
+          </div>
+
+          <div class="filter">
+            <div class="filter__property">Xiaomi</div>
+
+            <div class="filter__value">
+              <input type="checkbox" name="xiaomi" id="xiaomi" />
+            </div>
+          </div>
+        </aside>
+
+        <main class="main">
+          <div class="product">
+            <div class="image-wrapper">
+              <img
+                src="./public/images/products/starlink.jpeg"
+                alt="There is nothing here yet"
+                class="image"
+              />
+            </div>
+
+            <div class="product-table">
+              <div class="table-cell">
+                <div class="table-props">Label</div>
+                <div class="table-value">Samsung</div>
+              </div>
+
+              <div class="table-cell">
+                <div class="table-props">Manufakturer</div>
+                <div class="table-value">South Korea</div>
+              </div>
+
+              <div class="table-cell">
+                <div class="table-props">Display</div>
+                <div class="table-value">6'5</div>
+              </div>
+
+              <div class="table-cell">
+                <div class="table-props">Price</div>
+                <div class="table-value">2323$</div>
+              </div>
+            </div>
+
+            <div class="button-wrapper">
+              <button class="button">Read more ...</button>
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <footer class="footer light">
+        <div class="footer__row">
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163720.5843738355!2d8.6365638!3d50.121212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd096f477096c5%3A0x422435029b0c600!2sFrankfurt%2C%20Germany!5e0!3m2!1sen!2sua!4v1670952630049!5m2!1sen!2sua"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div class="logo-wrapper">
+            <img
+              src="./public/icons/logo.svg"
+              alt="Something went wrong"
+              class="logo footer__logo"
+            />
+          </div>
+
+          <div class="nav footer__nav">
+            <a href="#" class="nav-link network">
+              <span class="fa-stack">
+                <i class="fa fa-instagram fa-stack-2x network"></i>
+              </span>
+            </a>
+
+            <a href="#" class="nav-link network">
+              <span class="fa-stack">
+                <i class="fa-brands fa-telegram fa-stack-2x network"></i>
+              </span>
+            </a>
+
+            <a href="#" class="nav-link network">
+              <span class="fa-stack">
+                <i class="fab fa-facebook-square fa-stack-2x network"></i>
+              </span>
+            </a>
+          </div>
+        </div> 
+
+        <div class="footer__row">
+          <h6 class="text">
+            Copyright &#169; FRONTEND-21. All rights reserved.
+          </h6>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
