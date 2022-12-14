@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../public/fonts/Roboto-Regular.ttf);
+}
+
 :root {
   --margin-s: 0.5rem;
   --margin-m: 1rem;
@@ -10,4 +15,27 @@
   --padding-l: 1.5rem;
   --padding-xl: 2rem;
   --padding-xxl: 4rem;
+
+  --font-size-s: 0.8rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.2rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 4rem;
+
+  --primary-bg: #2E4CFF;
+  --secondary-bg: #2eabff;
+
+  --primary-bg-transparent: rgba(51, 51, 51, 0.2);
+
+  --primary-gradient: linear-gradient(45deg,#2E4CFF,#2eabff);
+  
+  --primary-color: white;
+  --secondary-color: #192768;
+  
+  --primary-font-family: "Roboto";
+
+  --primary-border-radius: .7rem;
+  --secondary-border-radius: 1rem;
+
+  --primary-transition: .3s ease-in-out;
 }

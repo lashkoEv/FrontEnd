@@ -6,14 +6,155 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link
       rel="shortcut icon"
-      href="./public/img/icons/icon.png"
+      href="./public/img/icons/logo.svg"
       type="image/x-icon"
     />
     <script
       src="https://kit.fontawesome.com/151b089a62.js"
       crossorigin="anonymous"
     ></script>
-    <title>Landing</title>
+    <script src="./scripts/script.js" defer></script>
+    <title>Yoga</title>
   </head>
-  <body></body>
+
+  <body>
+    <div id="modal">
+      <form action="" class="modal-form">
+        <fieldset id="close" class="close">
+          <div class="x-wrapper">
+            <i class="fa-solid fa-xmark x-mark"></i>
+          </div>
+        </fieldset>
+
+        <fieldset class="input-wrapper">
+          <label class="label" for="email">Email</label>
+
+          <input class="input" id="email" placeholder="E-mail" type="text" />
+        </fieldset>
+
+        <fieldset class="input-wrapper">
+          <label class="label" for="password">Password</label>
+
+          <input class="input" placeholder="Password" type="password" />
+        </fieldset>
+
+        <div class="button-wrapper">
+          <button class="button">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="app">
+      <div class="head">
+        <header class="header">
+          <div class="logo-wrapper">
+            <img
+              class="logo"
+              src="./public/img/icons/logo.svg"
+              alt="There is nothing here yet"
+            />
+          </div>
+
+          <nav class="nav">
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contacts</a>
+            <a href="#" id="nav-link" class="nav-link">Login</a>
+          </nav>
+        </header>
+
+        <div class="block">
+          <div class="column">
+            <h1 class="title">Yoga teaches you how to listen to your body.</h1>
+
+            <h3 class="subtitle">
+              Slow movements and deep breathing increase blood flow and warm up
+              muscles, while holding a pose can build strength.
+            </h3>
+
+            <div class="button-wrapper">
+              <button class="button nav-link">Get Started</button>
+            </div>
+          </div>
+
+          <div class="column hidden">
+            <img
+              src="./public/img/images/main.jpg"
+              alt="Oops! Something went wrong..."
+              class="img"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="column hidden">
+          <img
+            src="./public/img/images/main2.jpg"
+            alt="Oops! Something went wrong..."
+            class="img"
+          />
+        </div>
+
+        <div class="column">
+          <h1 class="title">Our Yoga Classes</h1>
+
+          <div class="yoga-classes">
+            <div class="yoga-class">
+              <h3>Yoga Master</h3>
+            </div>
+
+            <div class="yoga-class">
+              <h3>Relive your life</h3>
+            </div>
+
+            <div class="yoga-class">
+              <h3>Rock and Yoga</h3>
+            </div>
+
+            <div class="yoga-class">
+              <h3>Fit to health</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="block">
+          <div class="logo-wrapper">
+            <img
+              class="logo"
+              src="./public/img/icons/logo.svg"
+              alt="There is nothing here yet"
+            />
+          </div>
+
+          <div class="column">
+            <h6 class="footer__text">
+              Copyright &#169; Lashko E.L. All rights reserved.
+            </h6>
+          </div>
+        </div>
+
+        <div class="links">
+          <a href="#">
+            <span class="fa-stack">
+              <i class="fa fa-instagram fa-stack-2x network"></i>
+            </span>
+          </a>
+
+          <a href="#">
+            <span class="fa-stack">
+              <i class="fa-brands fa-telegram fa-stack-2x network"></i>
+            </span>
+          </a>
+
+          <a href="#">
+            <span class="fa-stack">
+              <i class="fa-brands fa-viber fa-stack-2x network"></i>
+            </span>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
