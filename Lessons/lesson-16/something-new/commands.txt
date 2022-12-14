@@ -1,0 +1,9 @@
+cd - change directory
+cd .. - step back
+cd ../../ - 2 steps back
+
+ls - get all items into current directory 
+ls - get all items into current directory 
+
+mkdir - create directory 
+touch - create file 
