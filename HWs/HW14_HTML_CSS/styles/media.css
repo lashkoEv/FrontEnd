@@ -1,0 +1,6 @@
+@media (max-width: 876px) {
+  .banner__img {
+    display: none;
+    visibility: hidden;
+  }
+}

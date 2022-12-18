@@ -27,10 +27,12 @@
   --primary-bg: rgb(37, 37, 37);
   --secondary-bg: rgb(75, 75, 75);
 
-  --primary-color: rgb(37, 37, 37);
-  --secondary-color: white;
+  --primary-gradient-bg: linear-gradient(90deg, rgb(90, 0, 0), rgb(0, 13, 88));
 
-  --primary-transition: .3s ease-in-out;
+  --primary-color: rgb(27, 27, 27);
+  --secondary-color: rgb(240, 240, 240);
 
-  --primary-border-radius: .5rem; 
+  --primary-transition: 0.3s ease-in-out;
+
+  --primary-border-radius: 0.5rem;
 }

@@ -17,6 +17,7 @@ li {
 
 #app {
   font-family: var(--primary-ff);
+  color: var(--primary-color);
 }
 
 .header {
@@ -60,13 +61,62 @@ li {
   font-size: var(--font-size-xl);
 }
 
-.main {
-  height: 200vw;
+.banner {
+  text-align: center;
+  background: var(--primary-gradient-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-m);
+  margin-top: var(--margin-s);
+  color: var(--secondary-color);
+}
+
+.first {
+  margin-top: calc(101px + var(--margin-s));
+}
+
+.banner__img {
+  height: 4rem;
+  margin-left: var(--margin-l);
 }
 
 .sticky {
   position: sticky;
-  top:10%;
-  left: 0;
-  width: 5rem;
+  top: 101px;
+  justify-content: center;
+}
+
+.main {
+  height: 110vh;
+}
+
+.footer {
+  background: var(--primary-bg);
+  padding: var(--padding-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--secondary-color);
+}
+
+.text {
+  margin-left: var(--margin-m);
+}
+
+.footer-column {
+  display: flex;
+  align-items: center;
+}
+
+.network {
+  padding: var(--padding-s);
+  font-size: 2rem;
+  transition: var(--primary-transition);
+  border-radius: var(--primary-border-radius);
+  margin-left: var(--margin-s);
+}
+
+.network:hover {
+  background: var(--secondary-bg);
 }
