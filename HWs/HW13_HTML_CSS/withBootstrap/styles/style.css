@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-#app {
-  font-family: var(--primary-ff);
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -17,6 +13,10 @@ a {
 
 li {
   list-style-type: none;
+}
+
+#app {
+  font-family: var(--primary-ff);
 }
 
 .logo {
