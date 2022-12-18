@@ -1,0 +1,16 @@
+@media (max-width: 876px) {
+  .main {
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  .first-column {
+    font-weight: 600;
+    width: 35%;
+  }
+
+  .second-column {
+    width: 65%;
+  }
+}

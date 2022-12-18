@@ -1,0 +1,39 @@
+@media screen and (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .banner__img {
+    display: none;
+    visibility: hidden;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+    visibility: hidden;
+    width: 100%;
+  }
+
+  .hidden {
+    visibility: visible;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main {
+    margin: var(--margin-l) 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
