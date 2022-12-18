@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../public/fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  /* margin */
+  --margin-s: 0.5rem;
+  --margin-m: 1rem;
+  --margin-l: 1.5rem;
+  --margin-xl: 2rem;
+  --margin-xxl: 4rem;
+
+  /* padding */
+  --padding-s: 0.5rem;
+  --padding-m: 1rem;
+  --padding-l: 1.5rem;
+  --padding-xl: 2rem;
+  --padding-xxl: 4rem;
+
+  /* font-size */
+  --font-size-s: 0.8rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.2rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --font-size-xxxl: 4rem;
+
+  /* font-family */
+  --primary-ff: "Roboto";
+
+  /* background */
+  --primary-bg: rgb(37, 37, 37);
+  --secondary-bg: rgb(75, 75, 75);
+  --third-bg: rgb(231, 231, 231);
+  --fourth-bg: rgb(196, 196, 196);
+  --fifth-bg: rgb(90, 0, 0);
+
+  --primary-gradient-bg: linear-gradient(90deg, rgb(90, 0, 0), rgb(0, 13, 88));
+
+  /* color */
+  --primary-color: rgb(27, 27, 27);
+  --secondary-color: rgb(240, 240, 240);
+  --third-color: rgb(172, 172, 172);
+  --fourth-color: rgb(180, 0, 0);
+
+  /* transition */
+  --primary-transition: 0.4s ease-in-out;
+  --secondary-transition: 0.3s ease-in-out;
+
+  /* border-radius */
+  --primary-border-radius: 0.5rem;
+
+  /* box-shadow */
+  --primary-box-shadow: 0 4px 8px 0 rgba(78, 78, 78, 0.2);
+}

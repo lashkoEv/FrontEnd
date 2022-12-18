@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
+    <link
+      rel="shortcut icon"
+      href="./public/img/icons/logo.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/151b089a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Shop</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <header class="header">
+        <a href="#">
+          <img src="./public/img/icons/logo.svg" alt="Logo" class="logo" />
+        </a>
+
+        <nav class="nav">
+          <a href="#" class="nav-link">Catalog</a>
+          <a href="#" class="nav-link">Contacts</a>
+
+          <div class="line"></div>
+
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-user icon header-icon"></i>
+          </a>
+
+          <a href="#" class="nav-link">
+            <i class="fas fa-shopping-cart icon header-icon"></i>
+          </a>
+        </nav>
+      </header>
+
+      <section class="banner first">
+        <h2>Save up to 20% on all Nike products!</h2>
+
+        <img
+          src="./public/img/images/banner.png"
+          alt="Oops! Something went wrong..."
+          class="banner__img"
+        />
+      </section>
+
+      <section class="banner">
+        <h2>Discounts on all women's shoes up to 50%!</h2>
+
+        <img
+          src="./public/img/images/banner7.png"
+          alt="Oops! Something went wrong..."
+          class="banner__img"
+        />
+      </section>
+
+      <section class="banner sticky">
+        <h4>15% of every purchase goes to ZSU!</h4>
+      </section>
+
+      <section class="content">
+        <aside class="sidebar">
+          <h3 class="sidebar__title">Category</h3>
+
+          <label class="label">
+            Men's shoes
+            <span class="count">(117564)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Women's shoes
+            <span class="count">(259440)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Children's shoes
+            <span class="count">(134411)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <h3 class="sidebar__title">Brand</h3>
+
+          <label class="label">
+            ASICS
+            <span class="count">(2234)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Adidas
+            <span class="count">(1662)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Bastion
+            <span class="count">(330)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Calvin Klein
+            <span class="count">(1080)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Konors
+            <span class="count">(1332)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            New Balance
+            <span class="count">(1253)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Nike
+            <span class="count">(2327)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Lacoste
+            <span class="count">(4513)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Levi's
+            <span class="count">(1513)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Guess
+            <span class="count">(455)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Michael Kors
+            <span class="count">(1513)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            EA7 Emporio Armani
+            <span class="count">(212)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <h3 class="sidebar__title">Season</h3>
+
+          <label class="label">
+            Spring
+            <span class="count">(3656)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Demi-season
+            <span class="count">(2594)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Winter
+            <span class="count">(1344)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Summer
+            <span class="count">(7851)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <label class="label">
+            Autumn
+            <span class="count">(4625)</span>
+            <input type="checkbox" class="checkbox" />
+            <span class="mark"></span>
+          </label>
+
+          <h3 class="sidebar__title">Size</h3>
+
+          <div class="range-wrapper">
+            <input
+              type="range"
+              id="size"
+              min="20"
+              max="50"
+              value="36"
+              class="slider"
+            />
+
+            <p id="size-value" class="value"></p>
+          </div>
+
+          <h3 class="sidebar__title">Max price</h3>
+
+          <div class="range-wrapper">
+            <input
+              type="range"
+              id="price"
+              min="100"
+              max="1000"
+              value="550"
+              class="slider"
+            />
+
+            <p id="price-value" class="value"></p>
+          </div>
+        </aside>
+
+        <aside class="sidebar hidden">
+          <h3>Categories</h3>
+
+          <a href="#"><i class="fas fa-filter icon"></i></a>
+        </aside>
+
+        <main class="main">
+          <div class="search-wrapper">
+            <input
+              type="text"
+              class="input"
+              placeholder="Enter a query to search..."
+            />
+
+            <button class="icon button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+
+          <div class="products">
+            <div class="product">
+              <img
+                src="./public/img/images/product1.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Lacoste Run Breaker</h3>
+
+              <h3 class="product__text price">220 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product2.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Guess Micola</h3>
+
+              <h3 class="product__text price">120 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product3.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Lacoste Ace Lift</h3>
+
+              <h3 class="product__text price">190 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product4.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Lacoste Straightset Thermo</h3>
+
+              <h3 class="product__text price">250 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product5.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">EA7 Emporio Armani</h3>
+
+              <h3 class="product__text price">260 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product6.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Lacoste Game Advance</h3>
+
+              <h3 class="product__text price">210 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product7.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Levi's Jax Plus</h3>
+
+              <h3 class="product__text price">240 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product8.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Levi's Segal</h3>
+
+              <h3 class="product__text price">120 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product9.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Lacoste Run Breaker</h3>
+
+              <h3 class="product__text price">220 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product10.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Napapijri NP0</h3>
+
+              <h3 class="product__text price">100 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product11.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Tommy Hilfiger low boots</h3>
+
+              <h3 class="product__text price">190 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product12.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Tommy Hilfiger low trainers</h3>
+
+              <h3 class="product__text price">170 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product13.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Levi's Kids Peak Mini</h3>
+
+              <h3 class="product__text price">99 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product14.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Levi's Kids New Union</h3>
+
+              <h3 class="product__text price">99 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product15.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Guess Bria</h3>
+
+              <h3 class="product__text price">230 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product16.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Guess Reggio</h3>
+
+              <h3 class="product__text price">255 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product17.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Levi's Kids Peak Fur</h3>
+
+              <h3 class="product__text price">340 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product">
+              <img
+                src="./public/img/images/product18.jpg"
+                alt="Oops! Something went wrong!"
+                class="product__img"
+              />
+
+              <h3 class="product__text">Levi's Kids New Denver S</h3>
+
+              <h3 class="product__text price">199 $</h3>
+
+              <div class="button-wrapper">
+                <button class="button cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-column">
+          <a href="#">
+            <img src="./public/img/icons/logo.svg" alt="Logo" class="logo" />
+          </a>
+
+          <h6 class="text">
+            Copyright &#169; Lashko E.L. All rights reserved.
+          </h6>
+        </div>
+
+        <div class="footer-column">
+          <a href="#" class="ms-2">
+            <i class="fa fa-instagram network"></i>
+          </a>
+
+          <a href="#" class="ms-2">
+            <i class="fa-brands fa-telegram network"></i>
+          </a>
+
+          <a href="#" class="ms-2">
+            <i class="fab fa-facebook-square network"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<script src="./scripts/size.js" type="text/javascript"></script>
+<script src="./scripts/price.js" type="text/javascript"></script>

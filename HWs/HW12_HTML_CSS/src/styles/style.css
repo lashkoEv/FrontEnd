@@ -90,6 +90,7 @@ fieldset {
   border-bottom: 2px solid var(--primary-color);
   transition: var(--primary-transition);
   width: 87%;
+  padding: .2rem 0;
 }
 
 .input::placeholder {
