@@ -1,0 +1,24 @@
+@import "./variables.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+#app {
+  font-family: var(--primary-ff);
+}
+
+.logo {
+  width: 6rem;
+}

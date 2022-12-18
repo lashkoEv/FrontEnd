@@ -1,0 +1,151 @@
+@import "./variables.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+#app {
+  font-family: var(--primary-ff);
+}
+
+.header {
+  background: var(--primary-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-s) var(--padding-m);
+}
+
+.logo {
+  width: 6rem;
+  padding: var(--padding-s);
+}
+
+.nav-link {
+  background: var(--secondary-bg);
+  font-size: 1.25rem;
+  margin-left: var(--margin-s);
+  color: var(--secondary-color);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--primary-br);
+  transition: var(--primary-transition);
+}
+
+.nav-link:hover {
+  background: var(--third-bg);
+}
+
+.main {
+  padding: var(--margin-xxl);
+  display: grid;
+  grid-template-columns: 25% 34% 41%;
+}
+
+.section {
+  padding: var(--padding-m);
+}
+
+.image {
+  width: 100%;
+  border-radius: var(--primary-br);
+  margin-top: var(--margin-xxl);
+}
+
+.image:first-child {
+  margin-top: 0;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.text {
+  margin-top: var(--margin-l);
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: var(--margin-xl);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.first {
+  margin-top: 0;
+}
+
+.table {
+  margin-top: var(--margin-l);
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.first-column {
+  font-weight: 600;
+  width: 25%;
+}
+
+.second-column {
+  width: 75%;
+}
+
+.first-column,
+.second-column {
+  padding: var(--padding-s);
+  line-height: 1.5;
+}
+
+.footer {
+  background: var(--primary-bg);
+  padding: var(--padding-s);
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+}
+
+.network {
+  color: var(--secondary-bg);
+  padding: var(--padding-s);
+  font-size: 2rem;
+  transition: var(--primary-transition);
+}
+
+.network:hover {
+  color: var(--third-bg);
+}
+
+.centred {
+  justify-content: center;
+  padding: var(--padding-s);
+}
+
+.copyright {
+  font-weight: 500;
+  font-size: 1rem;
+}
