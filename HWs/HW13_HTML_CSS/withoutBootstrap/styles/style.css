@@ -37,7 +37,7 @@ li {
   font-size: 1.25rem;
   margin-left: var(--margin-s);
   color: var(--secondary-color);
-  padding: .6rem .8rem;
+  padding: 0.6rem 0.8rem;
   border-radius: var(--primary-br);
   transition: var(--primary-transition);
 }
@@ -47,7 +47,71 @@ li {
 }
 
 .main {
-  padding: var(--margin-xl);
+  padding: var(--margin-xxl);
+  display: grid;
+  grid-template-columns: 25% 34% 41%;
+}
+
+.section {
+  padding: var(--padding-m);
+}
+
+.image {
+  width: 100%;
+  border-radius: var(--primary-br);
+  margin-top: var(--margin-xxl);
+}
+
+.image:first-child {
+  margin-top: 0;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.text {
+  margin-top: var(--margin-l);
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: var(--margin-xl);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.first {
+  margin-top: 0;
+}
+
+.table {
+  margin-top: var(--margin-l);
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.first-column {
+  font-weight: 600;
+  width: 25%;
+}
+
+.second-column {
+  width: 75%;
+}
+
+.first-column,
+.second-column {
+  padding: var(--padding-s);
+  line-height: 1.5;
 }
 
 .footer {

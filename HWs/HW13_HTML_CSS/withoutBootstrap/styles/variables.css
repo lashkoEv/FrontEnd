@@ -8,13 +8,13 @@
   --margin-m: 1rem;
   --margin-l: 1.5rem;
   --margin-xl: 2rem;
-  --margin-xxl: 4rem;
+  --margin-xxl: 3rem;
 
   --padding-s: 0.5rem;
   --padding-m: 1rem;
   --padding-l: 1.5rem;
   --padding-xl: 2rem;
-  --padding-xxl: 4rem;
+  --padding-xxl: 3rem;
 
   --primary-ff: "Roboto";
 
@@ -25,7 +25,7 @@
   --primary-color: black;
   --secondary-color: white;
 
-  --primary-br: .3rem;
-  
-  --primary-transition: .3s ease-in-out;
+  --primary-br: 0.3rem;
+
+  --primary-transition: 0.3s ease-in-out;
 }
