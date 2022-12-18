@@ -66,10 +66,6 @@ li {
   margin: 0 var(--margin-m);
 }
 
-.icon {
-  font-size: var(--font-size-xl);
-}
-
 .banner {
   text-align: center;
   background: var(--primary-gradient-bg);
@@ -266,6 +262,7 @@ li {
 }
 
 .icon {
+  font-size: var(--font-size-xl);
   padding: 0;
   background: transparent;
   transition: var(--secondary-transition);
@@ -276,6 +273,10 @@ li {
   background: transparent;
   animation: animation var(--primary-transition);
   animation-iteration-count: 1;
+}
+
+.header-icon:hover {
+  color: var(--secondary-color);
 }
 
 .products {
