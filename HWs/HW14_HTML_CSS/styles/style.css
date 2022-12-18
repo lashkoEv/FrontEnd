@@ -14,3 +14,59 @@ a {
 li {
   list-style-type: none;
 }
+
+#app {
+  font-family: var(--primary-ff);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--primary-bg);
+  padding: var(--padding-m);
+  width: 100%;
+  color: var(--secondary-color);
+  font-size: var(--font-size-l);
+}
+
+.logo {
+  width: 4rem;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-link {
+  transition: var(--primary-transition);
+  padding: var(--padding-s) var(--padding-m);
+  border-radius: var(--primary-border-radius);
+}
+
+.nav-link:hover {
+  background: var(--secondary-bg);
+}
+
+.line {
+  border-left: 1px solid var(--secondary-color);
+  margin: 0 var(--margin-m);
+}
+
+.icon {
+  font-size: var(--font-size-xl);
+}
+
+.main {
+  height: 200vw;
+}
+
+.sticky {
+  position: sticky;
+  top:10%;
+  left: 0;
+  width: 5rem;
+}
