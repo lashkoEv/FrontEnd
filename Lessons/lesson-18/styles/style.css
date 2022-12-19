@@ -1,0 +1,128 @@
+@import "./variables.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+#app {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "footer footer footer footer";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  grid-area: header;
+}
+
+header,
+footer {
+  background: rgb(59, 59, 59);
+  padding: var(--padding-m);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link,
+.button {
+  border: 1px solid rgb(158, 158, 158);
+  border-radius: 0.5rem;
+  padding: var(--padding-s) var(--padding-m);
+  margin-left: var(--margin-s);
+  transition: 0.3s ease;
+}
+
+.nav-link:hover,
+.button:hover {
+  background: rgb(99, 99, 99);
+}
+
+.logo {
+  width: 4rem;
+}
+
+aside {
+  grid-area: sidebar;
+  background: rgb(228, 228, 228);
+  padding: var(--padding-l);
+}
+
+.label {
+  padding: var(--padding-s) 0;
+}
+
+main {
+  grid-area: main;
+  padding: var(--padding-l);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+  text-align: center;
+  /* background: rgb(233, 233, 233); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: var(--padding-m);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(207, 207, 207, 0.5);
+}
+
+.text {
+  margin: var(--margin-s);
+}
+
+.button {
+  color: white;
+  background: rgb(83, 83, 83);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: var(--margin-s) var(--margin-s) var(--margin-m) var(--margin-s);
+}
+
+.button:hover {
+  color: rgb(22, 22, 22);
+  background: rgb(184, 184, 184);
+}
+
+.product {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 870px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
