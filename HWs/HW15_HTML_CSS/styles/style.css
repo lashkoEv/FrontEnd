@@ -14,3 +14,55 @@ a {
 li {
   list-style-type: none;
 }
+
+#app {
+  background: var(--primary-bg);
+  color: var(--primary-color);
+  font-family: var(--primary-ff);
+}
+
+.header {
+  padding: var(--padding-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.header__img {
+  width: 100%;
+  padding: var(--padding-xl) 20%;
+}
+
+.scroll-icon {
+  height: 0.5rem;
+  margin: 0 var(--margin-xs);
+}
+
+.header__title {
+  font-family: var(--secondary-ff);
+  margin: var(--margin-xl) var(--margin-xl) 0 var(--margin-xl);
+  font-weight: 400;
+  font-size: 3rem;
+}
+
+.header__subtitle {
+  color: var(--secondary-color);
+  margin: var(--margin-l) var(--margin-xl);
+  font-weight: 400;
+}
+
+.button {
+  background: var(--secondary-bg);
+  border: none;
+  padding: var(--padding-l);
+  transition: var(--primary-transition);
+}
+
+.button:hover {
+  background: var(--third-bg);
+}
+
+.rounded {
+  border-radius: 3rem;
+}
