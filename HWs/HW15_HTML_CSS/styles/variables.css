@@ -8,6 +8,11 @@
   src: url(../public/fonts/JacquesFrancois-Regular.ttf);
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url(../public/fonts/Montserrat-Light.ttf);
+}
+
 :root {
   --margin-xs: 0.3rem;
   --margin-s: 0.5rem;
@@ -24,10 +29,12 @@
 
   --primary-ff: "Roboto";
   --secondary-ff: "JacquesFrancois";
+  --third-ff: "Montserrat";
 
   --primary-bg: #121013;
   --secondary-bg: #232222;
   --third-bg: #646165;
+  --fourth-bg: #1C1C1C;
 
   --primary-color: #ffffff;
   --secondary-color: #aba6ae;

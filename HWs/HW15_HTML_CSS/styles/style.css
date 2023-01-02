@@ -68,17 +68,18 @@ li {
 }
 
 .content {
+  display: flex;
 }
 
 .sidebar {
   max-width: 31rem;
+  padding: var(--padding-m);
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
-  padding: var(--padding-s);
 }
 
 .product {
@@ -125,4 +126,35 @@ li {
 
 .side-rounded:hover {
   background: var(--secondary-color);
+}
+
+.main {
+  padding: var(--padding-m);
+}
+
+
+
+.footer {
+  background: var(--fourth-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.footer > .button {
+  font-family: var(--third-ff);
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.footer > .button:hover {
+  background: var(--secondary-bg);
+}
+
+.footer > .button > i {
+  margin-bottom: var(--margin-s);
 }
