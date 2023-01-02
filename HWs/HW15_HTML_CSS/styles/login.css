@@ -77,14 +77,18 @@ hr {
 }
 
 .button-wrapper {
-    margin-top: var(--margin-xl);
-  }
+  margin-top: var(--margin-xl);
+}
 
-  .register {
-    color: rgb(209, 93, 46);
-    transition: var(--primary-transition);
-  }
+.register {
+  color: rgb(209, 93, 46);
+  transition: var(--primary-transition);
+}
 
-  .register:hover {
-    color: rgb(255, 72, 0);
-  }
+.register:hover {
+  color: rgb(255, 72, 0);
+}
+
+.footer > .button {
+  border-radius: 0;
+}
