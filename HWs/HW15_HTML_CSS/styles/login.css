@@ -1,0 +1,90 @@
+@import "./variables.css";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.logo {
+  width: 4rem;
+  margin-top: var(--margin-xl);
+}
+
+.nav {
+  background: var(--fourth-bg);
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.link {
+  padding: var(--padding-m);
+  margin: 0 var(--margin-l);
+  font-size: 1.2rem;
+}
+
+.link:hover {
+  background: var(--secondary-bg);
+}
+
+.button {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  border-radius: var(--primary-border-radius);
+}
+
+.form {
+  background: var(--fourth-bg);
+  padding: var(--margin-xl);
+  border-radius: var(--primary-border-radius);
+  margin: var(--margin-xl) 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  padding: var(--padding-xl) 0;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button__facebook,
+.button__google {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 1.5rem;
+  margin-right: var(--margin-s);
+}
+
+hr {
+  margin: var(--margin-l) 0;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--secondary-bg);
+  width: 100%;
+}
+
+.button-wrapper {
+    margin-top: var(--margin-xl);
+  }
+
+  .register {
+    color: rgb(209, 93, 46);
+    transition: var(--primary-transition);
+  }
+
+  .register:hover {
+    color: rgb(255, 72, 0);
+  }

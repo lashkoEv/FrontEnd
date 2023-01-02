@@ -2,6 +2,10 @@
   .spice {
     margin: var(--margin-m) 0;
   }
+
+  .form {
+    margin: var(--margin-xl) 20%;
+  }
 }
 
 @media (max-width: 876px) {
@@ -25,10 +29,18 @@
   .nav {
     justify-content: space-between;
   }
+
+  .form {
+    margin: var(--margin-xl) 10%;
+  }
 }
 
 @media (max-width: 676px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form {
+    margin: var(--margin-xl) 0;
   }
 }
