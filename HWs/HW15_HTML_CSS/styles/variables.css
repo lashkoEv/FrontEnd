@@ -34,12 +34,12 @@
   --primary-bg: #121013;
   --secondary-bg: #232222;
   --third-bg: #646165;
-  --fourth-bg: #1C1C1C;
+  --fourth-bg: #1c1c1c;
 
   --primary-color: #ffffff;
   --secondary-color: #aba6ae;
 
   --primary-transition: 0.3s ease-in-out;
 
-  --primary-border-radius: .5rem;
+  --primary-border-radius: 0.5rem;
 }
