@@ -1,3 +1,9 @@
+@media (max-width: 1400px) {
+  .section {
+    padding: var(--padding-xl) 0;
+  }
+}
+
 @media (max-width: 1200px) {
   .spice {
     margin: var(--margin-m) 0;
@@ -32,6 +38,19 @@
 
   .form {
     margin: var(--margin-xl) 10%;
+  }
+
+  .section {
+    flex-direction: column;
+  }
+
+  .second {
+    flex-direction: column-reverse;
+  }
+
+  .img-wrapper,
+  .text-wrapper {
+    padding: var(--padding-m);
   }
 }
 
