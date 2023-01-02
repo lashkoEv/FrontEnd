@@ -180,9 +180,6 @@ li {
   margin-bottom: var(--margin-s);
 }
 
-.main__product {
-}
-
 .images {
   display: flex;
   align-items: center;
