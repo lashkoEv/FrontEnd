@@ -33,4 +33,6 @@
   --secondary-color: #aba6ae;
 
   --primary-transition: 0.3s ease-in-out;
+
+  --primary-border-radius: .5rem;
 }
