@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../public/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "JacquesFrancois";
+  src: url(../public/fonts/JacquesFrancois-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../public/fonts/Montserrat-Light.ttf);
+}
+
+:root {
+  --margin-xs: 0.3rem;
+  --margin-s: 0.5rem;
+  --margin-m: 1rem;
+  --margin-l: 1.5rem;
+  --margin-xl: 2rem;
+  --margin-xxl: 4rem;
+
+  --padding-s: 0.5rem;
+  --padding-m: 1rem;
+  --padding-l: 1.5rem;
+  --padding-xl: 2rem;
+  --padding-xxl: 4rem;
+
+  --primary-ff: "Roboto";
+  --secondary-ff: "JacquesFrancois";
+  --third-ff: "Montserrat";
+
+  --primary-bg: #121013;
+  --secondary-bg: #232222;
+  --third-bg: #646165;
+  --fourth-bg: #1c1c1c;
+
+  --primary-color: #ffffff;
+  --secondary-color: #aba6ae;
+
+  --primary-transition: 0.3s ease-in-out;
+
+  --primary-border-radius: 0.5rem;
+}
