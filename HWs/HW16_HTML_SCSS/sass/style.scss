@@ -24,10 +24,12 @@ li {
 
   .nav {
     @include flexbox(space-evenly, center, row);
+    flex-wrap: wrap;
+    padding: $padding-xs;
 
     &-link {
       padding: $padding-s $padding-m;
-      margin: $margin-m $margin-s;
+      margin: $margin-xs;
       background: $primary-bg-color;
       color: $primary-text-color;
       border-radius: $primary-border-radius;
@@ -97,5 +99,60 @@ li {
 }
 
 .button:hover {
+  color: $third-text-color;
+}
+
+.banner {
+  padding: $padding-3xl;
+  background: $primary-bg-color;
+}
+
+.footer {
+  @include flexbox(center, center, column);
+}
+
+.row {
+  @include flexbox(space-between, center, row);
+  width: 100%;
+  padding: $padding-xs $margin-m;
+
+  .nav {
+    margin-top: $margin-m;
+    @include flexbox(flex-start, center, row);
+    flex-wrap: wrap;
+    width: 100%;
+
+    &-link {
+      color: $primary-text-color;
+      font-size: 1.1rem;
+      padding: $padding-xs;
+    }
+
+    &-link:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .link {
+    border-bottom: 1px solid $secondary-text-color;
+    padding-bottom: $padding-xs - .45rem;
+  }
+
+  .link:hover {
+    border-bottom: 1px solid $primary-text-color;
+  }
+}
+
+.networks {
+  @include flexbox(space-between, center, row);
+}
+
+.network {
+  color: $primary-text-color;
+  transition: $primary-transition;
+  margin-right: $margin-m;
+}
+
+.network:hover {
   color: $third-text-color;
 }
