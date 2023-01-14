@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: url("../public/fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../public/fonts/Manrope-Medium.ttf");
+}
+
+$bebasNeue-ff: "BebasNeue";
+$manrope-ff: "Manrope";
+
+$primary-bg-color: rgb(128, 240, 178);
+$secondary-bg-color: rgb(49, 49, 49);
+$third-bg-color: rgb(230, 230, 230);
+
+$primary-text-color: rgb(44, 40, 40);
+$secondary-text-color: rgb(255, 255, 255);
+$third-text-color: rgb(0, 122, 55);
+
+$padding-xs: 0.5rem;
+$padding-s: 1rem;
+$padding-m: 1.5rem;
+$padding-l: 2rem;
+$padding-xl: 2.5rem;
+$padding-xxl: 3rem;
+$padding-3xl: 4rem;
+
+$margin-xs: 0.5rem;
+$margin-s: 1rem;
+$margin-m: 1.5rem;
+$margin-l: 2rem;
+$margin-xl: 2.5rem;
+$margin-xxl: 3rem;
+$margin-3xl: 4rem;
+
+$primary-border-radius: 0.5rem;
+
+$primary-transition: 0.3s ease-in-out;

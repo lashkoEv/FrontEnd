@@ -1,0 +1,44 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+@media (max-width: 760px) {
+  .subheader {
+    .button {
+      font-size: 1.2rem;
+    }
+  }
+
+  .input-wrapper {
+    width: 40%;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    .nav {
+      &-link {
+        padding: $padding-s - 0.3rem $padding-s;
+      }
+    }
+  }
+
+  .logo-wrapper {
+    margin-top: $margin-s;
+
+    .logo__picture {
+      width: 3rem;
+    }
+
+    .logo__text {
+      font-size: 2rem;
+      margin-top: $margin-m;
+    }
+  }
+
+  .input-wrapper {
+    .input {
+      padding: $padding-xs - 0.3rem;
+      font-size: 1.1rem;
+    }
+  }
+}

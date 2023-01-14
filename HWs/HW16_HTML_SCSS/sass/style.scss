@@ -1,0 +1,101 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#app {
+  font-family: $manrope-ff;
+}
+
+.header {
+  @include flexbox(center, center, column);
+
+  .nav {
+    @include flexbox(space-evenly, center, row);
+
+    &-link {
+      padding: $padding-s $padding-m;
+      margin: $margin-m $margin-s;
+      background: $primary-bg-color;
+      color: $primary-text-color;
+      border-radius: $primary-border-radius;
+      font-weight: 600;
+      transition: $primary-transition;
+    }
+
+    &-link:hover {
+      background: $secondary-bg-color;
+      color: $secondary-text-color;
+    }
+  }
+}
+
+.subheader {
+  @include flexbox(space-evenly, center, row);
+  width: 100%;
+  border-top: 1px solid $third-bg-color;
+
+  .input,
+  .button {
+    margin-top: $margin-xl;
+  }
+}
+
+.logo-wrapper {
+  @include flexbox(center, center, row);
+
+  .logo__picture {
+    width: 4rem;
+  }
+
+  .logo__text {
+    font-family: $bebasNeue-ff;
+    font-size: 3rem;
+    color: $primary-text-color;
+    margin-top: $margin-l;
+  }
+}
+
+.input-wrapper {
+  @include flexbox(center, center, row);
+  width: 60%;
+
+  .input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $third-bg-color;
+    padding: $padding-xs - 0.2rem;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .input:focus {
+    border-bottom: 1px solid $third-text-color;
+  }
+}
+
+.button {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: $margin-xs;
+  color: $primary-text-color;
+  transition: $primary-transition;
+}
+
+.button:hover {
+  color: $third-text-color;
+}

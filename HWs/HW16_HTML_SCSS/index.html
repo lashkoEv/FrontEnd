@@ -2,11 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link
+      rel="shortcut icon"
+      href="./public/img/icons/icon.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/151b089a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="sass/style.scss" />
+    <link rel="stylesheet" href="sass/media.scss" />
+    <title>Plants</title>
   </head>
   <body>
-    <div id="app"></div>npm add -D sass
+    <div id="app">
+      <header class="header">
+        <nav class="nav">
+          <a href="#" class="nav-link">About us</a>
+          <a href="#" class="nav-link">Contacts</a>
+          <a href="#" class="nav-link">Login</a>
+        </nav>
+
+        <div class="subheader">
+          <div class="logo-wrapper">
+            <img
+              src="./public/icons/logo.svg"
+              alt="Logo"
+              class="logo__picture"
+            />
+
+            <span class="logo__text">PLANTS</span>
+          </div>
+
+          <div class="input-wrapper">
+            <input type="text" class="input" placeholder="Search..." />
+
+            <button class="button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <button class="button">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="main"></main>
+
+      <footer class="footer"></footer>
+    </div>
   </body>
 </html>
