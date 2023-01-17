@@ -1,0 +1,134 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+@media (max-width: 1500px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .subheader {
+    @include flexbox(space-between, center, row);
+    padding: $padding-xs $padding-3xl;
+  }
+
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .subheader {
+    padding: $padding-xs $padding-xl;
+
+    .button {
+      font-size: 1.2rem;
+    }
+  }
+
+  .input-wrapper {
+    width: 50%;
+  }
+
+  .banner-wrapper {
+    padding: $padding-xl;
+  }
+
+  .row {
+    padding: $padding-xs - 0.2rem $margin-xl;
+  }
+
+  .content {
+    @include flexbox(space-between, flex-start, column);
+    padding: $padding-xs $padding-xl;
+  }
+
+  .sidebar {
+    display: none;
+    visibility: hidden;
+    width: 100%;
+  }
+
+  .hidden {
+    visibility: visible;
+    @include flexbox(space-between, center, row);
+    width: 100%;
+
+    .button {
+      padding: 0;
+    }
+  }
+
+  .main {
+    margin: $margin-xl 0;
+  }
+
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    .nav {
+      &-link {
+        padding: $padding-s - 0.3rem $padding-s;
+      }
+    }
+  }
+
+  .subheader {
+    padding: $padding-xs $padding-m;
+  }
+
+  .logo-wrapper {
+    margin-top: $margin-s;
+
+    .logo__picture {
+      width: 3rem;
+    }
+
+    .logo__text {
+      font-size: 2rem;
+      margin-top: $margin-m;
+    }
+  }
+
+  .input-wrapper {
+    .input {
+      padding: $padding-xs - 0.3rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  .banner-wrapper {
+    padding: $padding-xl $padding-m;
+
+    .banner {
+      .text {
+        .subtitle {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: $padding-m;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .row {
+    padding: $padding-xs - 0.2rem $margin-m;
+  }
+}
