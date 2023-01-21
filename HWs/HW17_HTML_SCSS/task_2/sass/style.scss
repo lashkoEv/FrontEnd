@@ -1,2 +1,323 @@
-@import "./variables.scss";
-@import "./mixins.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  font-family: $primary-font-family;
+}
+
+.header {
+  @include colorize($primary-text-color, $primary-bg-color);
+  @include flexbox(space-around, center, row);
+  padding: $padding-l;
+
+  .logo-wrapper {
+    @include flexbox(center, center, row);
+
+    .logo__picture {
+      width: 3rem;
+    }
+
+    .logo__text {
+      @include font($font-weight-bold, $font-size-s);
+    }
+  }
+
+  .header-button {
+    @include colorize($primary-text-color, $seventh-bg-color);
+    @include font($font-weight-regular, $font-size-s);
+    padding: $padding-xs $padding-l;
+    border-radius: $primary-border-radius;
+  }
+}
+
+.selection {
+  @include colorize($secondary-text-color, inherit);
+}
+
+.subheader {
+  @include colorize($primary-text-color, $secondary-bg-color);
+  @include flexbox(space-around, center, row);
+  padding: $padding-m;
+
+  &__text {
+    @include font($font-weight-regular, $font-size-s);
+  }
+}
+
+.block {
+  @include flexbox(center, center, column);
+  padding: $padding-5xl;
+
+  .title {
+    @include font($font-weight-bold, $font-size-3xl);
+    @include colorize($secondary-text-color, inherit);
+  }
+}
+
+.heading {
+  @include colorize($primary-text-color, $third-bg-color);
+
+  &__row {
+    @include flexbox(center, center, row);
+
+    .heading__column {
+      @include flexbox(center, center, column);
+      width: 100%;
+
+      .heading__img {
+        width: 100%;
+      }
+
+      .title {
+        @include colorize($secondary-text-color, inherit);
+        @include font($font-weight-bold, $font-size-2xl);
+      }
+
+      .subtitle {
+        @include colorize($primary-text-color, inherit);
+        @include font($font-weight-regular, $font-size-l);
+        margin-top: $margin-3xs;
+      }
+
+      .download {
+        @include colorize($primary-text-color, $secondary-bg-color);
+        @include flexbox(center, center, column);
+        border-radius: $secondary-border-radius;
+        margin-top: $margin-l;
+        padding: $padding-l $padding-3xl;
+
+        &__title {
+          @include font($font-weight-bold, $font-size-l);
+        }
+
+        .arrow {
+          width: 3.5rem;
+        }
+
+        .button {
+          margin-top: $margin-s;
+        }
+
+        &__subtitle {
+          @include font($font-weight-regular, $font-size-s);
+          margin-top: $margin-xs;
+        }
+      }
+    }
+  }
+
+  .dignities {
+    @include flexbox(space-around, center, row);
+    flex-wrap: wrap;
+    margin-top: $margin-5xl;
+
+    .dignity {
+      @include flexbox(center, center, row);
+      padding: $padding-2xs $padding-m;
+
+      &__icon {
+        width: 3.45rem;
+        margin-right: $margin-s;
+      }
+
+      &__text {
+        @include font($font-weight-bold, $font-size-s);
+      }
+    }
+  }
+}
+
+.button {
+  @include colorize($primary-text-color, $sixth-bg-color);
+  @include font($font-weight-bold, $font-size-l);
+  border: none;
+  outline: none;
+  padding: $padding-xs $padding-3xl;
+  border-radius: $secondary-border-radius;
+  transition: $primary-transition;
+}
+
+.button:hover {
+  @include colorize($secondary-text-color, $eighth-bg-color);
+}
+
+.why-use {
+  @include colorize($primary-text-color, $fourth-bg-color);
+
+  .text {
+    @include font($font-weight-regular, $font-size-l);
+    margin: $margin-xl $margin-10xl;
+    text-align: center;
+  }
+}
+
+.features {
+  @include colorize($primary-text-color, $fifth-bg-color);
+
+  .characteristics {
+    @include flexbox(space-evenly, center, row);
+    flex-wrap: wrap;
+    margin-top: $margin-xl;
+    width: 100%;
+
+    .characteristic {
+      @include flexbox(center, center, column);
+      padding: $padding-l;
+
+      &__img {
+        width: 4rem;
+        background: $eighth-bg-color;
+        border-radius: $third-border-radius;
+        padding: $padding-m;
+        box-sizing: content-box;
+      }
+
+      &__text {
+        @include font($font-weight-regular, $font-size-xs);
+        margin-top: $margin-m;
+      }
+    }
+  }
+}
+
+.privacy {
+  @include colorize($primary-text-color, $secondary-bg-color);
+
+  .title {
+    @include colorize($primary-text-color, inherit);
+  }
+
+  .steps {
+    @include flexbox(space-evenly, center, row);
+    flex-wrap: wrap;
+    margin-top: $margin-xl;
+    width: 100%;
+
+    .step {
+      @include flexbox(center, center, column);
+      padding: $padding-l;
+
+      &__img {
+        width: 6rem;
+        border-radius: $third-border-radius;
+        border: 3px solid $sixth-bg-color;
+        padding: $padding-m;
+        box-sizing: content-box;
+      }
+
+      &__text {
+        @include font($font-weight-bold, $font-size-m);
+        margin-top: $margin-m;
+      }
+    }
+  }
+}
+
+.protect {
+  @include colorize($primary-text-color, $fifth-bg-color);
+  position: relative;
+
+  .title {
+    @include colorize($primary-text-color, inherit);
+  }
+
+  .causes {
+    margin: $margin-5xl 50% 0 10%;
+    @include flexbox(flex-start, flex-start, column);
+
+    .title {
+      @include font($font-weight-bold, $font-size-xl);
+      margin: $margin-xl 0;
+    }
+
+    .cause {
+      @include flexbox(center, center, row);
+      margin-top: $margin-2xs;
+
+      &__icon {
+        width: 3.45rem;
+        margin-right: $margin-s;
+      }
+
+      &__text {
+        @include font($font-weight-bold, $font-size-l);
+        text-align: start;
+      }
+    }
+
+    .button {
+      margin-top: $margin-m;
+    }
+  }
+
+  &__img {
+    width: 30%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.subfooter {
+  @include colorize($primary-text-color, $secondary-bg-color);
+
+  .columns {
+    @include flexbox(space-evenly, center, row);
+
+    .column {
+      padding: $padding-m;
+
+      &__title {
+        @include font($font-weight-bold, $font-size-s);
+      }
+
+      &__text {
+        @include font($font-weight-regular, $font-size-xs);
+        margin-top: $margin-m;
+      }
+    }
+  }
+
+  .nav {
+    @include flexbox(space-evenly, center, row);
+    width: 100%;
+    margin-top: $margin-5xl;
+
+    &__link {
+      @include colorize($primary-text-color, inherit);
+      @include font($font-weight-regular, $font-size-xs);
+      transition: $primary-transition;
+      padding: $padding-xs;
+    }
+
+    &__link:hover {
+      @include colorize($primary-text-color, $seventh-bg-color);
+      border-radius: $primary-border-radius;
+    }
+  }
+}
+
+.footer {
+  @include colorize($primary-text-color, $primary-bg-color);
+  @include flexbox(center, center, column);
+  padding: $padding-xl;
+
+  &__text {
+    @include font($font-weight-bold, $font-size-m);
+    text-align: center;
+  }
+}

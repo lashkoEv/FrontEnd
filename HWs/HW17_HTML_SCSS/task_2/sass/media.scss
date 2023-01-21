@@ -1,2 +1,86 @@
 @import "./variables.scss";
 @import "./mixins.scss";
+
+@media (max-width: 1200px) {
+  .heading__row {
+    @include flexbox(center, center, column);
+  }
+
+  .block {
+    padding: $padding-4xl $padding-m;
+    text-align: center;
+  }
+
+  .heading {
+    &__row {
+      .heading__column {
+        .heading__img {
+          visibility: hidden;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .protect {
+    .causes {
+      margin: $margin-5xl 0 0 0;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .why-use {
+    .text {
+      margin: $margin-xl;
+    }
+  }
+
+  .subfooter {
+    .columns {
+      @include flexbox(space-evenly, center, row);
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .header,
+  .subheader {
+    @include flexbox(center, center, column);
+  }
+
+  .header {
+    .header-button {
+      margin-top: $margin-m;
+    }
+  }
+
+  .heading {
+    &__row {
+      .heading__column {
+        .heading__img {
+          visibility: visible;
+          display: block;
+        }
+
+        .title {
+          margin-top: $margin-4xl;
+        }
+      }
+    }
+  }
+
+  .why-use {
+    .text {
+      margin: $margin-xl 0;
+    }
+  }
+
+  .subfooter {
+    .nav {
+      @include flexbox(space-evenly, center, column);
+    }
+  }
+  
+}

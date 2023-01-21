@@ -7,8 +7,19 @@
   flex-direction: $flexDirection;
 }
 
+@mixin gridbox($templateColumns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($templateColumns, 1fr);
+  gap: $gap;
+}
+
 @mixin font($fontWeight, $fontSize) {
   font-family: $primary-font-family;
   font-weight: $fontWeight;
   font-size: $fontSize;
+}
+
+@mixin colorize($textColor, $bgColor) {
+  color: $textColor;
+  background: $bgColor;
 }
