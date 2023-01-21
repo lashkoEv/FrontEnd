@@ -1,0 +1,14 @@
+@import "./variables.scss";
+
+@mixin flexbox($justifyContent, $alignItems, $flexDirection) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}
+
+@mixin font($fontWeight, $fontSize) {
+  font-family: $primary-font-family;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}
