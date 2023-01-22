@@ -124,9 +124,10 @@ a {
     @include flexbox(space-around, center, row);
     flex-wrap: wrap;
     margin-top: $margin-5xl;
+    width: 100%;
 
     .dignity {
-      @include flexbox(center, center, row);
+      @include flexbox(space-evenly, center, row);
       padding: $padding-2xs $padding-m;
 
       &__icon {
