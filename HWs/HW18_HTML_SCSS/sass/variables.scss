@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "inter";
+  src: url("../public/fonts/Inter/Inter-VariableFont_slntwght.ttf");
+}
+
+@font-face {
+  font-family: "kaiseiOpti";
+  src: url("../public/fonts/Kaisei_Opti/KaiseiOpti-Regular.ttf");
+}
+
+@font-face {
+  font-family: "assistant";
+  src: url("../public/fonts/Assistant/Assistant-VariableFont_wght.ttf");
+}
+
+$inter-ff: "inter";
+$kaiseiOpti-ff: "kaiseiOpti";
+$assistant-ff: "assistant";
+
+$primary-bg-color: rgb(16, 16, 16);
+$secondary-bg-color: rgb(43, 43, 43);
+
+$primary-text-color: rgba(255, 255, 255);
+$secondary-text-color: rgb(217, 217, 217);
