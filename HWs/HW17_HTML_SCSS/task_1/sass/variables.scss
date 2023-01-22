@@ -1,0 +1,48 @@
+// variables
+
+// * WORK
+@font-face {
+  font-family: "inter";
+  src: url("../public/fonts/Inter/Inter-VariableFont_slntwght.ttf");
+}
+
+@font-face {
+  font-family: "kaiseiOpti";
+  src: url("../public/fonts/Kaisei_Opti/KaiseiOpti-Regular.ttf");
+}
+
+@font-face {
+  font-family: "assistant";
+  src: url("../public/fonts/Assistant/Assistant-VariableFont_wght.ttf");
+}
+
+$inter-ff: "inter";
+$kaiseiOpti-ff: "kaiseiOpti";
+$assistant-ff: "assistant";
+
+$bg-color: #101010;
+
+$font-color: rgba(255, 255, 255, 1);
+$font-color-gray: rgb(217, 217, 217);
+
+// padding
+$padding-main: 128px;
+$padding-nav: 30px;
+$padding-xxl: 120px;
+$padding-xl: 60px;
+$padding-l: 40px;
+$padding-m: 20px;
+
+$margin-xxl: 120px;
+$margin-xl: 60px;
+$margin-m: 20px;
+
+// font-size
+$fs-xxl: 80px;
+$fs-xxl-v2: 60px;
+$fs-xl: 24px;
+$fs-l: 22px;
+$fs-m: 20px;
+$fs-s: 18px;
+$fs-xs: 14px;
+
