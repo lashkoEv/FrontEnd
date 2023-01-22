@@ -169,7 +169,7 @@ a {
   @include colorize($primary-text-color, $fifth-bg-color);
 
   .characteristics {
-    @include flexbox(space-evenly, center, row);
+    @include flexbox(center, center, row);
     flex-wrap: wrap;
     margin-top: $margin-xl;
     width: 100%;
