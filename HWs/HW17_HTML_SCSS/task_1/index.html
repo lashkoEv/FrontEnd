@@ -1,9 +1,3 @@
-<!-- * 1 ) BEM for classes -->
-<!-- * 2 ) Nested rules into style.scss -->
-<!-- * 3) Create github repo + add branch : dev , <ur_name> , qa , hotfix -->
-<!-- * 3.1 ) Create Vite project  -->
-<!-- * 3.2 ) Add scss into your own project  -->
-<!-- * 4) Get figma project  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +7,7 @@
     <title>Vite App</title>
     <link rel="stylesheet" href="./sass/style.scss" />
   </head>
+
   <body>
     <div id="app">
       <section class="header-wrapper">
@@ -22,22 +17,18 @@
           </div>
 
           <nav class="nav">
-            <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">Directions</a>
-            <a href="#" class="nav-link">Trainers</a>
-            <a href="#" class="nav-link">Groups</a>
-            <a href="#" class="nav-link">Contacts</a>
+            <a href="#" class="nav__link">About</a>
+            <a href="#" class="nav__link">Directions</a>
+            <a href="#" class="nav__link">Trainers</a>
+            <a href="#" class="nav__link">Groups</a>
+            <a href="#" class="nav__link">Contacts</a>
           </nav>
         </header>
 
         <div class="banner">
-          <div class="banner-title-wrapper">
-            <span class="banner-title"> Ballet school </span>
-          </div>
+          <span class="banner__title"> Ballet school </span>
 
-          <div class="banner-description-wrapper">
-            <p class="banner-description">Best place to learn ballet</p>
-          </div>
+          <p class="banner__description">Best place to learn ballet</p>
         </div>
       </section>
 
@@ -70,8 +61,8 @@
           performances on the big stage.
         </p>
 
-        <div class="main-img-wrapper">
-          <img src="./public/images/abour-us.png" alt="" class="main-img" />
+        <div class="main__img-wrapper">
+          <img src="./public/images/abour-us.png" alt="" class="main__img" />
         </div>
       </main>
 
@@ -79,30 +70,31 @@
         <span class="title">Directions</span>
 
         <div class="direction">
-          <div class="direction-title">Classical ballet</div>
+          <div class="direction__title">Classical ballet</div>
 
-          <div class="direction-description">
-            <p class="direction-paragraph">
+          <div class="direction__description">
+            <p class="direction__paragraph">
               Classical ballet, also called romantic ballet, system of dance
               based on formalized movements and positions of the arms, feet, and
               body designed to enable the dancer to move with the greatest
               possible agility, control, speed, lightness, and grace.
             </p>
 
-            <div class="direction-img-wrapper">
+            <div class="direction__img-wrapper">
               <img
                 src="./public/images/directions/video-1.png"
                 alt="Something went wrong"
-                class="direction-img"
+                class="direction__img"
               />
             </div>
           </div>
         </div>
-        <div class="direction">
-          <div class="direction-title">Ballet duet</div>
 
-          <div class="direction-description">
-            <p class="direction-paragraph">
+        <div class="direction">
+          <div class="direction__title">Ballet duet</div>
+
+          <div class="direction__description">
+            <p class="direction__paragraph">
               In ballet, a pas de deux [pɑ d(ə) dø] (French, literally "step of
               two") is a dance duet in which two dancers, typically a male and a
               female, perform ballet steps together.The pas de deux is
@@ -112,31 +104,32 @@
               danseur and a ballerina)
             </p>
 
-            <div class="direction-img-wrapper">
+            <div class="direction__img-wrapper">
               <img
                 src="./public/images/directions/video-2.png"
                 alt="Something went wrong"
-                class="direction-img"
+                class="direction__img"
               />
             </div>
           </div>
         </div>
-        <div class="direction">
-          <div class="direction-title">Performance</div>
 
-          <div class="direction-description">
-            <p class="direction-paragraph">
+        <div class="direction">
+          <div class="direction__title">Performance</div>
+
+          <div class="direction__description">
+            <p class="direction__paragraph">
               It is theatrical – performed on a stage to an audience utilizing
               costumes, scenic design and lighting. It can tell a story or
               express a thought, concept or emotion. Ballet dance can be
               magical, exciting, provoking or disturbing.
             </p>
 
-            <div class="direction-img-wrapper">
+            <div class="direction__img-wrapper">
               <img
                 src="./public/images/directions/video-3.png"
                 alt="Something went wrong"
-                class="direction-img"
+                class="direction__img"
               />
             </div>
           </div>
@@ -146,48 +139,49 @@
       <section class="tainers">
         <div class="title special-title">Our trainers</div>
 
-        <div class="tainers-info">
+        <div class="tainers__info">
           <div class="tainer">
-            <div class="trainer-photo-wrapper">
+            <div class="trainer__photo-wrapper">
               <img
                 src="./public/images/teachers/coach-1.png"
                 alt="There is nothing here yet"
-                class="trainer-photo"
+                class="trainer__photo"
               />
             </div>
 
-            <div class="trainer-name">Lilia Dunaev</div>
+            <div class="trainer__name">Lilia Dunaev</div>
           </div>
 
           <div class="tainer">
-            <div class="trainer-photo-wrapper">
+            <div class="trainer__photo-wrapper">
               <img
                 src="./public/images/teachers/coach-2.png"
                 alt="There is nothing here yet"
-                class="trainer-photo"
+                class="trainer__photo"
               />
             </div>
 
-            <div class="trainer-name">Elizaveta Ivanova</div>
+            <div class="trainer__name">Elizaveta Ivanova</div>
           </div>
 
           <div class="tainer">
-            <div class="trainer-photo-wrapper">
+            <div class="trainer__photo-wrapper">
               <img
                 src="./public/images/teachers/coach-1.png"
                 alt="There is nothing here yet"
-                class="trainer-photo"
+                class="trainer__photo"
               />
             </div>
 
-            <div class="trainer-name">Margo Petrova</div>
+            <div class="trainer__name">Margo Petrova</div>
           </div>
         </div>
       </section>
 
       <div class="arrow-wrapper">
-        <span class="arrow-text">Read more</span>
-        <img src="./public/icons/arrow.png" alt="" class="arrow-img" />
+        <span class="arrow__text">Read more</span>
+
+        <img src="./public/icons/arrow.png" alt="" class="arrow__img" />
       </div>
 
       <section class="groups-wrapper">
@@ -198,13 +192,13 @@
             <img
               src="./public/images/groups/group-1.png"
               alt=""
-              class="group-img first-group"
+              class="group__img first"
             />
 
-            <div class="group-info">
-              <div class="group-info-title">Upper ballet</div>
+            <div class="group__info">
+              <div class="group__info__title">Upper ballet</div>
 
-              <div class="group-info-description">
+              <div class="group__info__description">
                 Classes with students from 15 years old
               </div>
             </div>
@@ -214,13 +208,13 @@
             <img
               src="./public/images/groups/group-2.png"
               alt=""
-              class="group-img second-group"
+              class="group__img second"
             />
 
-            <div class="group-info">
-              <div class="group-info-title">Junior ballet</div>
+            <div class="group__info">
+              <div class="group__info__title">Junior ballet</div>
 
-              <div class="group-info-description">
+              <div class="group__info__description">
                 Classes with students from 5 years old
               </div>
             </div>
@@ -229,8 +223,9 @@
       </section>
 
       <div class="arrow-wrapper">
-        <span class="arrow-text">Read more</span>
-        <img src="./public/icons/arrow.png" alt="" class="arrow-img" />
+        <span class="arrow__text">Read more</span>
+
+        <img src="./public/icons/arrow.png" alt="" class="arrow__img" />
       </div>
 
       <section class="get-in-touch">
@@ -255,15 +250,15 @@
                 <div class="input checkbox-input" type="checkbox"></div>
               </div>
 
-              <div class="input-agreement">
+              <div class="agreement__text">
                 I aggre to the processing of my personal data
               </div>
             </fieldset>
 
             <div class="button-wrapper">
-              <span class="arrow-text">Send form</span>
+              <span class="arrow__text">Send form</span>
 
-              <img src="./public/icons/arrow.png" alt="" class="arrow-img" />
+              <img src="./public/icons/arrow.png" alt="" class="arrow__img" />
             </div>
           </div>
         </div>
@@ -272,15 +267,15 @@
       <footer class="footer">
         <hr />
 
-        <div class="footer-nav-wrapper">
-          <div class="title footer-title">SAVANA</div>
+        <div class="footer__nav-wrapper">
+          <div class="title footer__title">SAVANA</div>
 
-          <nav class="footer-nav">
-            <a href="" class="footer-link">About</a>
-            <a href="" class="footer-link">Directions</a>
-            <a href="" class="footer-link">Trainers</a>
-            <a href="" class="footer-link">Groups</a>
-            <a href="" class="footer-link">Contacts</a>
+          <nav class="footer__nav">
+            <a href="" class="footer__link">About</a>
+            <a href="" class="footer__link">Directions</a>
+            <a href="" class="footer__link">Trainers</a>
+            <a href="" class="footer__link">Groups</a>
+            <a href="" class="footer__link">Contacts</a>
           </nav>
         </div>
 

@@ -4,3 +4,19 @@
   align-items: $alignItems;
   flex-direction: $flexDirection;
 }
+
+@mixin colorize($fontColor, $bgColor) {
+  color: $fontColor;
+  background: $bgColor;
+}
+
+@mixin fontOptions($fontFamily, $fontSize) {
+  font-size: $fontSize;
+  font-family: $fontFamily;
+}
+
+@mixin bgImage($image, $bgSize, $height) {
+  background: url($image);
+  background-size: $bgSize;
+  height: $height;
+}
