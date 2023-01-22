@@ -1,0 +1,335 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main,
+.directions,
+.special-title,
+.groups-wrapper,
+.form-wrapper,
+.footer {
+  padding: $padding-main;
+  padding-top: $padding-xxl;
+}
+
+.main,
+.directions,
+.special-title,
+.form-wrapper {
+  padding-bottom: 0;
+}
+
+// container
+#app {
+  @include colorize($font-color, $bg-color);
+  width: 1512px;
+}
+
+.header-wrapper {
+  @include bgImage("../public/images/background-1.png", cover, 840px);
+}
+
+.header {
+  @include flexbox(space-between, center, row);
+  padding: $padding-l;
+  margin: 0px 128px - $padding-l;
+
+  .logo-wrapper {
+    margin: 0;
+
+    .logo {
+      @include fontOptions($inter-ff, $fs-m);
+    }
+  }
+
+  .nav {
+    @include fontOptions($kaiseiOpti-ff, $fs-s);
+
+    &__link:not(.nav__link:last-child) {
+      padding: 0px $padding-nav;
+    }
+  }
+}
+
+.banner {
+  @include flexbox(center, flex-start, column);
+  padding: 0px $padding-main;
+  height: 65%;
+
+  &__title {
+    @include fontOptions($kaiseiOpti-ff, $fs-xxl);
+  }
+
+  &__description {
+    @include fontOptions($assistant-ff, $fs-s);
+    margin-top: $margin-m;
+  }
+}
+
+.video {
+  @include bgImage("../public/images/background-2.png", cover, 612px);
+}
+
+.play-icon {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  @include fontOptions($kaiseiOpti-ff, $fs-xxl-v2);
+}
+
+.paragraph {
+  @include fontOptions($assistant-ff, $fs-s);
+  @include colorize($font-color-gray, inherit);
+  max-width: 692px;
+  margin-top: $margin-m;
+  line-height: 23px;
+}
+
+.paragraph:first-of-type {
+  margin-top: $margin-xl;
+}
+
+.main__img-wrapper {
+  @include flexbox(center, center, row);
+}
+
+.main__img {
+  width: 1256px;
+  margin-top: $margin-xl;
+}
+
+.direction {
+  @include fontOptions($assistant-ff, $fs-s);
+  @include colorize($font-color-gray, inherit);
+
+  &__description {
+    @include flexbox(space-between, center, row);
+  }
+
+  &__title {
+    @include fontOptions($assistant-ff, $fs-xl);
+    margin-top: $padding-xl;
+  }
+
+  &__paragraph {
+    margin-top: $padding-nav;
+    width: 736px;
+  }
+
+  &__img-wrapper {
+    .direction__img {
+      width: 259px;
+    }
+  }
+}
+.tainers {
+  &__info {
+    @include flexbox(space-evenly, center, row);
+    padding-bottom: 0;
+    margin-top: $margin-xl;
+  }
+
+  .trainer {
+    &__photo-wrapper {
+      .trainer__photo {
+        width: 363px;
+      }
+    }
+
+    &__info {
+      padding: $padding-m;
+    }
+
+    &__name {
+      @include fontOptions($assistant-ff, $fs-xl);
+      @include flexbox(center, center, row);
+      margin-top: $margin-m;
+    }
+  }
+}
+
+.special-title {
+  @include flexbox(center, center, row);
+}
+
+.arrow-wrapper {
+  @include flexbox(end, center, row);
+  padding: $padding-xl;
+  padding-bottom: 0;
+  margin-right: 50px;
+
+  .arrow__text {
+    @include fontOptions($assistant-ff, $fs-m);
+    margin-right: 10px;
+  }
+
+  .arrow__img {
+    width: 30px;
+  }
+}
+
+.groups {
+  @include flexbox(space-between, center, row);
+
+  .group {
+    &__img {
+      position: relative;
+      top: 120px;
+    }
+
+    &__info {
+      position: relative;
+      top: 5%;
+      left: 13px;
+
+      &__title {
+        @include fontOptions($assistant-ff, $fs-xl);
+      }
+
+      &__description {
+        @include fontOptions($assistant-ff, $fs-s);
+        @include colorize($font-color-gray, transparent);
+        margin-top: $padding-m;
+      }
+    }
+
+    .first {
+      width: 730px;
+    }
+
+    .second {
+      width: 506px;
+    }
+  }
+}
+
+.form-wrapper {
+  @include flexbox(center, center, column);
+}
+
+.form {
+  width: 562px;
+
+  .input {
+    @include colorize($font-color, transparent);
+    @include fontOptions($assistant-ff, $fs-s);
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $font-color-gray;
+    padding: 10px 0px;
+    margin-top: $padding-l;
+  }
+
+  .agreement {
+    @include flexbox(start, center, row);
+    margin-top: $padding-l;
+
+    &__text {
+      @include fontOptions($assistant-ff, $fs-s - 2px);
+    }
+  }
+
+  .checkbox-input {
+    border: 1px solid $font-color;
+    width: 23px;
+    height: 23px;
+    margin-top: 0;
+    margin-right: 11px;
+  }
+}
+
+.button-wrapper {
+  @include flexbox(center, center, row);
+  padding: 80px;
+  padding-bottom: 0px;
+
+  .arrow__text {
+    @include fontOptions($assistant-ff, $fs-xl);
+    margin-right: $margin-m - 10px;
+  }
+
+  .arrow__img {
+    width: 30px;
+  }
+}
+
+hr {
+  @include colorize($font-color-gray, $font-color-gray);
+}
+
+.footer__nav-wrapper,
+.license-wrapper {
+  @include flexbox(start, center, row);
+  margin-top: $padding-l;
+}
+
+.footer-nav,
+.issues {
+  @include flexbox(space-evenly, center, row);
+}
+
+.footer__nav-wrapper {
+  .footer__title {
+    @include fontOptions($inter-ff, $fs-m * 2);
+    margin-right: 168px;
+  }
+
+  .footer__nav {
+    .footer__link {
+      @include fontOptions($kaiseiOpti-ff, $fs-s);
+      @include colorize($font-color-gray, inherit);
+      margin: 0px 30px;
+    }
+  }
+}
+
+.logo-wrapper {
+  margin-top: 43px;
+
+  .logo {
+    width: 18px;
+  }
+
+  .logo:first-child {
+    margin-right: 25px;
+  }
+}
+
+.license-wrapper {
+  padding-top: $padding-xl;
+  @include fontOptions($assistant-ff, $fs-s - 2px);
+
+  .license {
+    margin-right: 285px;
+  }
+
+  .issues {
+    .issue {
+      margin: 0px 15px;
+      @include colorize($font-color, inherit);
+    }
+  }
+}
+

@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../public/fonts/Inter-Regular.ttf);
+}
+
+// font-family
+$primary-font-family: "Inter";
+
+// font-weight
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+// text-color
+$primary-text-color: #ffffff;
+$secondary-text-color: #0fa2db;
+
+// bg-color
+$primary-bg-color: #111111;
+$secondary-bg-color: #232323;
+$third-bg-color: #03070f;
+$fourth-bg-color: #0c0c15;
+$fifth-bg-color: #060606;
+$sixth-bg-color: #0fa2db;
+$seventh-bg-color: #2F2F2F;
+$eighth-bg-color: #D9D9D9;
+
+// font-size
+$font-size-xs: 0.875rem; // 14px
+$font-size-s: 1rem; // 16px
+$font-size-m: 1.25rem; // 20px
+$font-size-l: 1.5rem; // 24px
+$font-size-xl: 2rem; // 32px
+$font-size-2xl: 2.25rem; // 36px
+$font-size-3xl: 3rem; // 48px
+
+// padding
+$padding-3xs: 0.25rem;
+$padding-2xs: 0.5rem;
+$padding-xs: 0.875rem;
+$padding-s: 1rem;
+$padding-m: 1.5rem;
+$padding-l: 2rem;
+$padding-xl: 2.5rem;
+$padding-2xl: 3rem;
+$padding-3xl: 4rem;
+$padding-4xl: 5rem;
+$padding-5xl: 6rem;
+$padding-6xl: 7rem;
+$padding-7xl: 8rem;
+$padding-8xl: 9rem;
+
+// margin
+$margin-3xs: 0.25rem;
+$margin-2xs: 0.5rem;
+$margin-xs: 0.875rem;
+$margin-s: 1rem;
+$margin-m: 1.5rem;
+$margin-l: 2rem;
+$margin-xl: 2.5rem;
+$margin-2xl: 3rem;
+$margin-3xl: 4rem;
+$margin-4xl: 5rem;
+$margin-5xl: 6rem;
+$margin-6xl: 7rem;
+$margin-7xl: 8rem;
+$margin-8xl: 9rem;
+$margin-9xl: 10rem;
+$margin-10xl: 13rem;
+
+// border-radius
+$primary-border-radius: 0.5rem;
+$secondary-border-radius: 1rem;
+$third-border-radius: 100%;
+
+// transition
+$primary-transition: 0.3s ease-in-out;
