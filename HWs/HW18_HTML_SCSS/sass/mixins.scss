@@ -5,18 +5,25 @@
   flex-direction: $flexDirection;
 }
 
-@mixin colorize($fontColor, $bgColor) {
-  color: $fontColor;
-  background: $bgColor;
-}
-
-@mixin fontOptions($fontFamily, $fontSize) {
+@mixin fontOptions($fontFamily, $fontSize, $fontColor) {
   font-size: $fontSize;
   font-family: $fontFamily;
+  color: $fontColor;
 }
 
-@mixin bgImage($image, $bgSize, $height) {
+@mixin bgImage($image, $bgSize) {
   background: url($image);
   background-size: $bgSize;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin sizing($height, $width) {
   height: $height;
+  width: $width;
+}
+
+@mixin visibility($visibility, $display) {
+  visibility: $visibility;
+  display: $display;
 }

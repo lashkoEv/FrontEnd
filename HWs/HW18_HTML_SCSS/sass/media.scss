@@ -1,0 +1,52 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@media (max-width: 1000px) {
+  .heading {
+    .header {
+      padding: $padding-xl $padding-xl 0 $padding-xl;
+
+      .nav {
+        @include visibility(hidden, none);
+      }
+
+      .hidden {
+        @include visibility(visible, flex);
+      }
+    }
+
+    &__text {
+      padding: 0 $padding-xl;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .heading {
+    &__title {
+      @include fontOptions($kaiseiOpti-ff, $font-size-3xl, $primary-text-color);
+    }
+
+    &__subtitle {
+      @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    .header {
+      .logo {
+        @include fontOptions($inter-ff, $font-size-s, $primary-text-color);
+      }
+    }
+
+    &__title {
+      @include fontOptions($kaiseiOpti-ff, $font-size-2xl, $primary-text-color);
+    }
+
+    &__subtitle {
+      @include fontOptions($assistant-ff, $font-size-2xs, $primary-text-color);
+    }
+  }
+}

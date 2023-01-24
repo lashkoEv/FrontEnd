@@ -19,3 +19,57 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.heading {
+  @include sizing(890px, 100%);
+  @include bgImage("../public/images/background-1.png", cover);
+
+  .header {
+    @include flexbox(space-between, center, row);
+    padding: $padding-xl $padding-5xl 0 $padding-5xl;
+
+    .logo {
+      @include fontOptions($inter-ff, $font-size-l, $primary-text-color);
+    }
+
+    .nav {
+      &__link {
+        @include fontOptions($kaiseiOpti-ff, $font-size-s, $primary-text-color);
+        padding: 0 $padding-l;
+      }
+
+      &__link:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .hidden {
+      @include flexbox(center, center, column);
+      @include visibility(hidden, none);
+
+      &__line {
+        @include sizing(2px, 18px);
+        margin-top: 3px;
+      }
+
+      &__line:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__text {
+    @include flexbox(center, start, column);
+    @include sizing(75%, 100%);
+    padding: 0 $padding-5xl;
+  }
+
+  &__title {
+    @include fontOptions($kaiseiOpti-ff, $font-size-4xl, $primary-text-color);
+  }
+
+  &__subtitle {
+    @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+    margin-top: $margin-m;
+  }
+}
