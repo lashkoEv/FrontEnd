@@ -27,6 +27,10 @@
       @include sizing(50px, 50px);
     }
   }
+
+  .section {
+    padding: $padding-xl $padding-xl 0 $padding-xl;
+  }
 }
 
 @media (max-width: 800px) {
@@ -45,6 +49,14 @@
 
     &__icon {
       @include sizing(30px, 30px);
+    }
+  }
+
+  .about {
+    .content {
+      .text {
+        @include sizing(100%, 100%);
+      }
     }
   }
 }
@@ -74,6 +86,33 @@
 
     &__icon {
       @include sizing(20px, 20px);
+    }
+  }
+
+  .section {
+    .title {
+      @include fontOptions($kaiseiOpti-ff, $font-size-m, $primary-text-color);
+    }
+
+    .content {
+      padding-top: $padding-m;
+    }
+  }
+
+  .about {
+    .content {
+      .text {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $secondary-text-color
+        );
+        line-height: 18px;
+      }
+
+      .img {
+        margin-top: $margin-l;
+      }
     }
   }
 }

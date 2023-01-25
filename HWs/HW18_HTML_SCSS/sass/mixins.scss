@@ -9,6 +9,7 @@
   font-size: $fontSize;
   font-family: $fontFamily;
   color: $fontColor;
+  font-weight: 400;
 }
 
 @mixin bgImage($image, $bgSize) {

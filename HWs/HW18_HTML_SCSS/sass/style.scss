@@ -20,6 +20,10 @@ a {
   color: inherit;
 }
 
+#app {
+  background: $primary-bg-color;
+}
+
 .heading {
   @include sizing(890px, 100%);
   @include bgImage("../public/images/background-1.png", cover);
@@ -84,5 +88,37 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.section {
+  padding: $padding-4xl $padding-5xl 0 $padding-5xl;
+
+  .title {
+    @include fontOptions($kaiseiOpti-ff, $font-size-3xl, $primary-text-color);
+  }
+
+  .content {
+    padding-top: $padding-2xl;
+  }
+}
+
+.about {
+  .content {
+    .text {
+      @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+      @include sizing(100%, 55%);
+      line-height: 23.54px;
+      margin-top: $margin-m;
+    }
+
+    .text:first-child {
+      margin-top: 0;
+    }
+
+    .img {
+      @include sizing(auto, 100%);
+      margin-top: $margin-2xl;
+    }
   }
 }
