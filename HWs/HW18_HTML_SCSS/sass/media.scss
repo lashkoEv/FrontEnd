@@ -1,0 +1,302 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@media (max-width: 1300px) {
+  .groups {
+    @include flexbox(center, center, column);
+
+    .group {
+      &__img {
+        @include sizing(100%, 100%);
+        padding: 0;
+      }
+    }
+  }
+
+  .footer {
+    @include visibility(hidden, none);
+  }
+
+  .hidden__footer {
+    @include visibility(visible, block);
+  }
+}
+
+@media (max-width: 1000px) {
+  .heading {
+    .header {
+      padding: $padding-xl $padding-xl 0 $padding-xl;
+
+      .nav {
+        @include visibility(hidden, none);
+      }
+
+      .hidden {
+        @include visibility(visible, flex);
+      }
+    }
+
+    &__text {
+      padding: 0 $padding-xl;
+    }
+  }
+
+  .video {
+    @include sizing(465px, 100%);
+
+    &__icon {
+      @include sizing(50px, 50px);
+    }
+  }
+
+  .section {
+    padding: $padding-xl $padding-xl 0 $padding-xl;
+  }
+
+  .arrow {
+    padding: $padding-2xl $padding-xl 0 $padding-xl;
+  }
+
+  .special {
+    padding-top: 0;
+  }
+
+  .hidden__footer {
+    margin-top: $margin-2xl;
+  }
+}
+
+@media (max-width: 800px) {
+  .heading {
+    &__title {
+      @include fontOptions($kaiseiOpti-ff, $font-size-3xl, $primary-text-color);
+    }
+
+    &__subtitle {
+      @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+    }
+  }
+
+  .video {
+    @include sizing(265px, 100%);
+
+    &__icon {
+      @include sizing(30px, 30px);
+    }
+  }
+
+  .about {
+    .text {
+      @include sizing(100%, 100%);
+    }
+  }
+
+  .directions {
+    .direction {
+      &__content {
+        @include flexbox(start, start, column);
+      }
+
+      &__description {
+        @include sizing(auto, 100%);
+      }
+
+      &__img {
+        @include sizing(auto, 100%);
+        margin-top: $margin-m;
+      }
+    }
+  }
+
+  .trainers {
+    @include gridbox(60px, 1);
+  }
+
+  .form {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    @include sizing(690px, 100%);
+
+    .header {
+      .logo {
+        @include fontOptions($inter-ff, $font-size-s, $primary-text-color);
+      }
+    }
+
+    &__title {
+      @include fontOptions($kaiseiOpti-ff, $font-size-2xl, $primary-text-color);
+    }
+
+    &__subtitle {
+      @include fontOptions($assistant-ff, $font-size-2xs, $primary-text-color);
+      margin-top: $margin-xs;
+    }
+  }
+
+  .video {
+    @include sizing(165px, 100%);
+
+    &__icon {
+      @include sizing(20px, 20px);
+    }
+  }
+
+  .section {
+    .title {
+      @include fontOptions($kaiseiOpti-ff, $font-size-m, $primary-text-color);
+    }
+
+    .content {
+      padding-top: $padding-m;
+    }
+  }
+
+  .about {
+    .text {
+      @include fontOptions(
+        $assistant-ff,
+        $font-size-2xs,
+        $secondary-text-color
+      );
+      line-height: 18px;
+    }
+
+    .img {
+      margin-top: $margin-l;
+    }
+  }
+
+  .directions {
+    .direction {
+      &__title {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      }
+
+      &__description {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-3xs,
+          $secondary-text-color
+        );
+      }
+    }
+  }
+
+  .trainers {
+    .trainer {
+      &__name {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      }
+    }
+  }
+
+  .arrow {
+    &__text {
+      @include fontOptions($assistant-ff, $font-size-3xs, $primary-text-color);
+    }
+  }
+
+  .groups {
+    .group {
+      &__description {
+        padding: $padding-m;
+        transform: translateY(-100px);
+
+        &__title {
+          @include fontOptions(
+            $assistant-ff,
+            $font-size-xs,
+            $primary-text-color
+          );
+        }
+
+        &__subtitle {
+          @include fontOptions(
+            $assistant-ff,
+            $font-size-2xs,
+            $secondary-text-color
+          );
+        }
+      }
+    }
+  }
+
+  .form {
+    .input {
+      margin-top: $margin-m;
+      @include fontOptions($assistant-ff, $font-size-2xs, $primary-text-color);
+
+      &::placeholder {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $secondary-text-color
+        );
+      }
+    }
+
+    .checkbox {
+      &-wrapper {
+        margin-top: $margin-m;
+      }
+
+      &__label {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $primary-text-color
+        );
+      }
+    }
+
+    .button {
+      &-wrapper {
+        margin-top: $margin-2xl;
+      }
+
+      &__text {
+        @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+      }
+    }
+  }
+
+  .hidden__footer {
+    .content {
+      .logo {
+        @include fontOptions($inter-ff, $font-size-s, $primary-text-color);
+      }
+
+      .nav {
+        margin-top: 0;
+
+        &__link {
+          @include fontOptions(
+            $kaiseiOpti-ff,
+            $font-size-2xs,
+            $secondary-text-color
+          );
+        }
+
+        .issue {
+          @include fontOptions(
+            $assistant-ff,
+            $font-size-2xs,
+            $primary-text-color
+          );
+        }
+      }
+
+      .license {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $primary-text-color
+        );
+      }
+    }
+  }
+}
