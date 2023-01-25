@@ -48,11 +48,10 @@
   .arrow {
     padding: $padding-2xl $padding-xl 0 $padding-xl;
   }
-  
+
   .special {
     padding-top: 0;
   }
-  
 }
 
 @media (max-width: 800px) {
@@ -101,6 +100,10 @@
 
   .trainers {
     @include gridbox(60px, 1);
+  }
+
+  .form {
+    padding: 0;
   }
 }
 
@@ -210,6 +213,45 @@
             $secondary-text-color
           );
         }
+      }
+    }
+  }
+
+  .form {
+    .input {
+      margin-top: $margin-m;
+      @include fontOptions($assistant-ff, $font-size-2xs, $primary-text-color);
+
+      &::placeholder {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $secondary-text-color
+        );
+      }
+    }
+
+    .checkbox {
+      &-wrapper {
+        margin-top: $margin-m;
+      }
+
+      &__label {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $primary-text-color
+        );
+      }
+    }
+
+    .button {
+      &-wrapper {
+        margin-top: $margin-2xl;
+      }
+
+      &__text {
+        @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
       }
     }
   }

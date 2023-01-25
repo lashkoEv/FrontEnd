@@ -218,22 +218,50 @@ a {
 }
 
 .form {
+  padding: 0 25%;
+
   .input {
+    @include sizing(100%, 100%);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $primary-text-color;
+    padding: $padding-xs 0;
+    margin-top: $margin-l;
+    @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+
+    &::placeholder {
+      @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+    }
   }
 
   .checkbox {
+    @include sizing(20px, 20px);
+    border: 1px solid $primary-text-color;
+
     &-wrapper {
+      margin-top: $margin-l;
+      @include flexbox(start, center, row);
     }
 
     &__label {
+      @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      margin-left: $margin-xs;
     }
   }
 
   .button {
+    background: transparent;
+    border: none;
+    outline: none;
+
     &-wrapper {
+      @include flexbox(center, center, row);
+      margin-top: $margin-3xl;
     }
 
     &__text {
+      @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+      margin-right: $margin-xs;
     }
   }
 }
