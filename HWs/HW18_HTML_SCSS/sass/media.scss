@@ -76,6 +76,10 @@
       }
     }
   }
+
+  .trainers {
+    @include gridbox(60px, 1);
+  }
 }
 
 @media (max-width: 600px) {
@@ -145,6 +149,14 @@
           $font-size-3xs,
           $secondary-text-color
         );
+      }
+    }
+  }
+
+  .trainers {
+    .trainer {
+      &__name {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
       }
     }
   }

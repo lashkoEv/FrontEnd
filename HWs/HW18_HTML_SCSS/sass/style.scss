@@ -150,3 +150,24 @@ a {
     margin-top: 0;
   }
 }
+
+.centred {
+  text-align: center;
+}
+
+.trainers {
+  @include gridbox(80px, 3);
+
+  .trainer {
+    @include flexbox(center, center, column);
+
+    &__img {
+      @include sizing(100%, 100%);
+    }
+
+    &__name {
+      @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+      margin-top: $margin-m;
+    }
+  }
+}
