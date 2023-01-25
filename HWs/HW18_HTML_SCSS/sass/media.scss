@@ -19,6 +19,14 @@
       padding: 0 $padding-xl;
     }
   }
+
+  .video {
+    @include sizing(465px, 100%);
+
+    &__icon {
+      @include sizing(50px, 50px);
+    }
+  }
 }
 
 @media (max-width: 800px) {
@@ -31,10 +39,20 @@
       @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
     }
   }
+
+  .video {
+    @include sizing(265px, 100%);
+
+    &__icon {
+      @include sizing(30px, 30px);
+    }
+  }
 }
 
 @media (max-width: 600px) {
   .heading {
+    @include sizing(690px, 100%);
+
     .header {
       .logo {
         @include fontOptions($inter-ff, $font-size-s, $primary-text-color);
@@ -47,6 +65,15 @@
 
     &__subtitle {
       @include fontOptions($assistant-ff, $font-size-2xs, $primary-text-color);
+      margin-top: $margin-xs;
+    }
+  }
+
+  .video {
+    @include sizing(165px, 100%);
+
+    &__icon {
+      @include sizing(20px, 20px);
     }
   }
 }

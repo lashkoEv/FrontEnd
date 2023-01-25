@@ -73,3 +73,16 @@ a {
     margin-top: $margin-m;
   }
 }
+
+.video {
+  @include bgImage("../public/images/background-2.png", cover);
+  @include sizing(600px, 100%);
+
+  &__icon {
+    @include sizing(60px, 60px);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
