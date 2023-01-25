@@ -31,6 +31,10 @@
   .section {
     padding: $padding-xl $padding-xl 0 $padding-xl;
   }
+
+  .arrow {
+    padding: $padding-2xl $padding-xl 0 $padding-xl;
+  }
 }
 
 @media (max-width: 800px) {
@@ -158,6 +162,12 @@
       &__name {
         @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
       }
+    }
+  }
+
+  .arrow {
+    &__text {
+      @include fontOptions($assistant-ff, $font-size-3xs, $primary-text-color);
     }
   }
 }

@@ -104,22 +104,20 @@ a {
 }
 
 .about {
-  .content {
-    .text {
-      @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
-      @include sizing(100%, 55%);
-      line-height: 23.54px;
-      margin-top: $margin-m;
-    }
+  .text {
+    @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+    @include sizing(100%, 55%);
+    line-height: 23.54px;
+    margin-top: $margin-m;
+  }
 
-    .text:first-child {
-      margin-top: 0;
-    }
+  .text:first-child {
+    margin-top: 0;
+  }
 
-    .img {
-      @include sizing(auto, 100%);
-      margin-top: $margin-2xl;
-    }
+  .img {
+    @include sizing(auto, 100%);
+    margin-top: $margin-2xl;
   }
 }
 
@@ -169,5 +167,19 @@ a {
       @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
       margin-top: $margin-m;
     }
+  }
+}
+
+.arrow {
+  @include flexbox(end, center, row);
+  padding: $padding-2xl $padding-5xl 0 $padding-5xl;
+
+  &__text {
+    @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+    margin-right: $margin-xs;
+  }
+
+  &__img {
+    @include sizing(auto, 30px);
   }
 }
