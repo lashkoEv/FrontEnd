@@ -1,6 +1,19 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
+@media (max-width: 1200px) {
+  .groups {
+    @include flexbox(center, center, column);
+
+    .group {
+      &__img {
+        @include sizing(100%, 100%);
+        padding: 0;
+      }
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .heading {
     .header {
@@ -168,6 +181,31 @@
   .arrow {
     &__text {
       @include fontOptions($assistant-ff, $font-size-3xs, $primary-text-color);
+    }
+  }
+
+  .groups {
+    .group {
+      &__description {
+        padding: $padding-m;
+        transform: translateY(-100px);
+
+        &__title {
+          @include fontOptions(
+            $assistant-ff,
+            $font-size-xs,
+            $primary-text-color
+          );
+        }
+
+        &__subtitle {
+          @include fontOptions(
+            $assistant-ff,
+            $font-size-2xs,
+            $secondary-text-color
+          );
+        }
+      }
     }
   }
 }

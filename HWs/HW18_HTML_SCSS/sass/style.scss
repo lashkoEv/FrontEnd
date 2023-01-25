@@ -183,3 +183,32 @@ a {
     @include sizing(auto, 30px);
   }
 }
+
+.groups {
+  @include flexbox(center, center, row);
+
+  .group {
+    &__img {
+      @include sizing(100%, 100%);
+      padding: $padding-xs;
+    }
+
+    &__description {
+      padding: $padding-xl;
+      transform: translateY(-150px);
+
+      &__title {
+        @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+      }
+
+      &__subtitle {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-s,
+          $secondary-text-color
+        );
+        margin-top: $margin-m;
+      }
+    }
+  }
+}
