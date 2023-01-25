@@ -1,0 +1,379 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: $primary-bg-color;
+}
+
+fieldset {
+  border: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading {
+  @include sizing(890px, 100%);
+  @include bgImage("/images/background-1.png", cover);
+
+  .header {
+    background: transparent;
+    @include flexbox(space-between, center, row);
+    padding: $padding-xl $padding-5xl 0 $padding-5xl;
+
+    .logo {
+      @include fontOptions($inter-ff, $font-size-l, $primary-text-color);
+
+      &-wrapper {
+        background: transparent;
+      }
+    }
+
+    .nav {
+      background: transparent;
+      &__link {
+        @include fontOptions($kaiseiOpti-ff, $font-size-s, $primary-text-color);
+        padding: 0 $padding-l;
+      }
+
+      &__link:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .hidden {
+      @include flexbox(center, center, column);
+      @include visibility(hidden, none);
+
+      &__line {
+        @include sizing(2px, 18px);
+        margin-top: 3px;
+      }
+
+      &__line:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__text {
+    background: transparent;
+    @include flexbox(center, start, column);
+    @include sizing(75%, 100%);
+    padding: 0 $padding-5xl;
+  }
+
+  &__title {
+    @include fontOptions($kaiseiOpti-ff, $font-size-4xl, $primary-text-color);
+  }
+
+  &__subtitle {
+    background: transparent;
+    @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+    margin-top: $margin-m;
+  }
+}
+
+.video {
+  @include bgImage("/images/background-2.png", cover);
+  @include sizing(600px, 100%);
+
+  &__icon {
+    @include sizing(60px, 60px);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+  }
+}
+
+.section {
+  padding: $padding-4xl $padding-5xl 0 $padding-5xl;
+
+  .title {
+    @include fontOptions($kaiseiOpti-ff, $font-size-3xl, $primary-text-color);
+  }
+
+  .content {
+    padding-top: $padding-2xl;
+  }
+}
+
+.about {
+  .text {
+    @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+    @include sizing(100%, 55%);
+    line-height: 23.54px;
+    margin-top: $margin-m;
+  }
+
+  .text:first-child {
+    margin-top: 0;
+  }
+
+  .img {
+    @include sizing(auto, 100%);
+    margin-top: $margin-2xl;
+  }
+}
+
+.directions {
+  .direction {
+    margin-top: $margin-2xl;
+
+    &__title {
+      @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+    }
+
+    &__content {
+      @include flexbox(space-between, center, row);
+      margin-top: $margin-m;
+    }
+
+    &__description {
+      @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+      @include sizing(auto, 60%);
+    }
+
+    &__img {
+      @include sizing(auto, 260px);
+    }
+  }
+
+  .direction:first-child {
+    margin-top: 0;
+  }
+}
+
+.centred {
+  text-align: center;
+}
+
+.trainers {
+  @include gridbox(80px, 3);
+
+  .trainer {
+    @include flexbox(center, center, column);
+
+    &__img {
+      @include sizing(100%, 100%);
+    }
+
+    &__name {
+      @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+      margin-top: $margin-m;
+    }
+  }
+}
+
+.arrow {
+  @include flexbox(end, center, row);
+  padding: $padding-2xl $padding-5xl 0 $padding-5xl;
+
+  &__text {
+    @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+    margin-right: $margin-xs;
+  }
+
+  &__img {
+    @include sizing(auto, 30px);
+  }
+}
+
+.groups {
+  @include flexbox(center, center, row);
+
+  .group {
+    &__img {
+      @include sizing(100%, 100%);
+      padding: $padding-xs;
+    }
+
+    &__description {
+      background: transparent;
+      padding: $padding-xl;
+      transform: translateY(-150px);
+
+      &__title {
+        @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+      }
+
+      &__subtitle {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-s,
+          $secondary-text-color
+        );
+        margin-top: $margin-m;
+      }
+    }
+  }
+}
+
+.special {
+  padding-top: 0;
+}
+
+.form {
+  padding: 0 25%;
+
+  .input {
+    @include sizing(100%, 100%);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $primary-text-color;
+    padding: $padding-xs 0;
+    margin-top: $margin-l;
+    @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+
+    &::placeholder {
+      @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+    }
+  }
+
+  .checkbox {
+    @include sizing(20px, 20px);
+    border: 1px solid $primary-text-color;
+
+    &-wrapper {
+      margin-top: $margin-l;
+      @include flexbox(start, center, row);
+    }
+
+    &__label {
+      @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      margin-left: $margin-xs;
+    }
+  }
+
+  .button {
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &-wrapper {
+      @include flexbox(center, center, row);
+      margin-top: $margin-3xl;
+    }
+
+    &__text {
+      @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+      margin-right: $margin-xs;
+    }
+  }
+}
+
+.footer {
+  .content {
+    border-top: 1px solid $primary-text-color;
+
+    .row {
+      @include flexbox(start, center, row);
+      position: relative;
+
+      .logo {
+        @include fontOptions($inter-ff, $font-size-2xl, $primary-text-color);
+      }
+
+      .nav,
+      .issues {
+        @include flexbox(center, center, row);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &__link {
+          @include fontOptions(
+            $kaiseiOpti-ff,
+            $font-size-s,
+            $secondary-text-color
+          );
+          margin: $margin-xs $margin-l;
+        }
+      }
+
+      .icons {
+        margin-top: $margin-xl;
+
+        .icon {
+          @include sizing(23px, 23px);
+          margin-right: $margin-xs + $margin-xs;
+        }
+      }
+
+      .license,
+      .issue {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+        margin: $margin-2xl 0 $margin-3xl 0;
+      }
+
+      .issues {
+        .issue {
+          margin-right: $margin-l;
+        }
+      }
+    }
+  }
+}
+
+.hidden__footer {
+  @include visibility(hidden, none);
+
+  .content {
+    border-top: 1px solid $primary-text-color;
+    position: relative;
+
+    .logo {
+      @include fontOptions($inter-ff, $font-size-2xl, $primary-text-color);
+    }
+
+    .nav {
+      @include flexbox(center, center, column);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: $margin-xl;
+
+      &__link {
+        @include fontOptions(
+          $kaiseiOpti-ff,
+          $font-size-s,
+          $secondary-text-color
+        );
+        margin-top: $margin-m;
+      }
+
+      .icons {
+        @include flexbox(center, center, row);
+        margin: $margin-xl 0 $margin-m 0;
+
+        .icon {
+          @include sizing(23px, 23px);
+          margin: 0 $margin-xs + 2.5px;
+        }
+      }
+
+      .issue {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+        margin-top: $margin-m;
+      }
+    }
+
+    .license {
+      @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      margin: $margin-2xl 0;
+    }
+  }
+}
