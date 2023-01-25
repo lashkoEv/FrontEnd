@@ -122,3 +122,31 @@ a {
     }
   }
 }
+
+.directions {
+  .direction {
+    margin-top: $margin-2xl;
+
+    &__title {
+      @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
+    }
+
+    &__content {
+      @include flexbox(space-between, center, row);
+      margin-top: $margin-m;
+    }
+
+    &__description {
+      @include fontOptions($assistant-ff, $font-size-s, $secondary-text-color);
+      @include sizing(auto, 60%);
+    }
+
+    &__img {
+      @include sizing(auto, 260px);
+    }
+  }
+
+  .direction:first-child {
+    margin-top: 0;
+  }
+}

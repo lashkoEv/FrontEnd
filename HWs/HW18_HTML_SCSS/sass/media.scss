@@ -59,6 +59,23 @@
       }
     }
   }
+
+  .directions {
+    .direction {
+      &__content {
+        @include flexbox(start, start, column);
+      }
+
+      &__description {
+        @include sizing(auto, 100%);
+      }
+
+      &__img {
+        @include sizing(auto, 100%);
+        margin-top: $margin-m;
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -112,6 +129,22 @@
 
       .img {
         margin-top: $margin-l;
+      }
+    }
+  }
+
+  .directions {
+    .direction {
+      &__title {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      }
+
+      &__description {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-3xs,
+          $secondary-text-color
+        );
       }
     }
   }
