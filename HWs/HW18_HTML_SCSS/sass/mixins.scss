@@ -16,6 +16,7 @@
   font-family: $fontFamily;
   color: $fontColor;
   font-weight: 400;
+  background: transparent;
 }
 
 @mixin bgImage($image, $bgSize) {

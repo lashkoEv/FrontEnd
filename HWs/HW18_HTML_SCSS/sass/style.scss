@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background: $primary-bg-color;
 }
 
 fieldset {
@@ -20,23 +21,25 @@ a {
   color: inherit;
 }
 
-#app {
-  background: $primary-bg-color;
-}
-
 .heading {
   @include sizing(890px, 100%);
   @include bgImage("/images/background-1.png", cover);
 
   .header {
+    background: transparent;
     @include flexbox(space-between, center, row);
     padding: $padding-xl $padding-5xl 0 $padding-5xl;
 
     .logo {
       @include fontOptions($inter-ff, $font-size-l, $primary-text-color);
+
+      &-wrapper {
+        background: transparent;
+      }
     }
 
     .nav {
+      background: transparent;
       &__link {
         @include fontOptions($kaiseiOpti-ff, $font-size-s, $primary-text-color);
         padding: 0 $padding-l;
@@ -63,6 +66,7 @@ a {
   }
 
   &__text {
+    background: transparent;
     @include flexbox(center, start, column);
     @include sizing(75%, 100%);
     padding: 0 $padding-5xl;
@@ -73,6 +77,7 @@ a {
   }
 
   &__subtitle {
+    background: transparent;
     @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
     margin-top: $margin-m;
   }
@@ -88,6 +93,7 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background: transparent;
   }
 }
 
@@ -194,6 +200,7 @@ a {
     }
 
     &__description {
+      background: transparent;
       padding: $padding-xl;
       transform: translateY(-150px);
 
@@ -262,6 +269,111 @@ a {
     &__text {
       @include fontOptions($assistant-ff, $font-size-xl, $primary-text-color);
       margin-right: $margin-xs;
+    }
+  }
+}
+
+.footer {
+  .content {
+    border-top: 1px solid $primary-text-color;
+
+    .row {
+      @include flexbox(start, center, row);
+      position: relative;
+
+      .logo {
+        @include fontOptions($inter-ff, $font-size-2xl, $primary-text-color);
+      }
+
+      .nav,
+      .issues {
+        @include flexbox(center, center, row);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &__link {
+          @include fontOptions(
+            $kaiseiOpti-ff,
+            $font-size-s,
+            $secondary-text-color
+          );
+          margin: $margin-xs $margin-l;
+        }
+      }
+
+      .icons {
+        margin-top: $margin-xl;
+
+        .icon {
+          @include sizing(23px, 23px);
+          margin-right: $margin-xs + $margin-xs;
+        }
+      }
+
+      .license,
+      .issue {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+        margin: $margin-2xl 0 $margin-3xl 0;
+      }
+
+      .issues {
+        .issue {
+          margin-right: $margin-l;
+        }
+      }
+    }
+  }
+}
+
+.hidden__footer {
+  @include visibility(hidden, none);
+
+  .content {
+    border-top: 1px solid $primary-text-color;
+    position: relative;
+
+    .logo {
+      @include fontOptions($inter-ff, $font-size-2xl, $primary-text-color);
+    }
+
+    .nav {
+      @include flexbox(center, center, column);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: $margin-xl;
+
+      &__link {
+        @include fontOptions(
+          $kaiseiOpti-ff,
+          $font-size-s,
+          $secondary-text-color
+        );
+        margin-top: $margin-m;
+      }
+
+      .icons {
+        @include flexbox(center, center, row);
+        margin: $margin-xl 0 $margin-m 0;
+
+        .icon {
+          @include sizing(23px, 23px);
+          margin: 0 $margin-xs + 2.5px;
+        }
+      }
+
+      .issue {
+        @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+        margin-top: $margin-m;
+      }
+    }
+
+    .license {
+      @include fontOptions($assistant-ff, $font-size-xs, $primary-text-color);
+      margin: $margin-2xl 0;
     }
   }
 }

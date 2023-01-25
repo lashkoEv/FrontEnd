@@ -1,7 +1,7 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .groups {
     @include flexbox(center, center, column);
 
@@ -11,6 +11,14 @@
         padding: 0;
       }
     }
+  }
+
+  .footer {
+    @include visibility(hidden, none);
+  }
+
+  .hidden__footer {
+    @include visibility(visible, block);
   }
 }
 
@@ -52,6 +60,10 @@
   .special {
     padding-top: 0;
   }
+
+  .hidden__footer {
+    margin-top: $margin-2xl;
+  }
 }
 
 @media (max-width: 800px) {
@@ -74,10 +86,8 @@
   }
 
   .about {
-    .content {
-      .text {
-        @include sizing(100%, 100%);
-      }
+    .text {
+      @include sizing(100%, 100%);
     }
   }
 
@@ -146,19 +156,17 @@
   }
 
   .about {
-    .content {
-      .text {
-        @include fontOptions(
-          $assistant-ff,
-          $font-size-2xs,
-          $secondary-text-color
-        );
-        line-height: 18px;
-      }
+    .text {
+      @include fontOptions(
+        $assistant-ff,
+        $font-size-2xs,
+        $secondary-text-color
+      );
+      line-height: 18px;
+    }
 
-      .img {
-        margin-top: $margin-l;
-      }
+    .img {
+      margin-top: $margin-l;
     }
   }
 
@@ -252,6 +260,42 @@
 
       &__text {
         @include fontOptions($assistant-ff, $font-size-s, $primary-text-color);
+      }
+    }
+  }
+
+  .hidden__footer {
+    .content {
+      .logo {
+        @include fontOptions($inter-ff, $font-size-s, $primary-text-color);
+      }
+
+      .nav {
+        margin-top: 0;
+
+        &__link {
+          @include fontOptions(
+            $kaiseiOpti-ff,
+            $font-size-2xs,
+            $secondary-text-color
+          );
+        }
+
+        .issue {
+          @include fontOptions(
+            $assistant-ff,
+            $font-size-2xs,
+            $primary-text-color
+          );
+        }
+      }
+
+      .license {
+        @include fontOptions(
+          $assistant-ff,
+          $font-size-2xs,
+          $primary-text-color
+        );
       }
     }
   }
