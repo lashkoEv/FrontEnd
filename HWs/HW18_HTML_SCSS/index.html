@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./sass/media.scss" />
     <title>Ballet School</title>
   </head>
+
   <body>
     <div id="app">
       <section class="heading">
@@ -233,7 +234,7 @@
         </div>
       </section>
 
-      <section class="arrow">
+      <section class="arrow special">
         <p class="arrow__text">Read more</p>
 
         <img
@@ -241,6 +242,40 @@
           alt="Something went wrong..."
           class="arrow__img"
         />
+      </section>
+
+      <section class="section">
+        <h1 class="title centred">Get in touch</h1>
+
+        <div class="content">
+          <form class="form">
+            <input type="text" class="input" placeholder="Name" />
+
+            <input type="text" class="input" placeholder="Phone" />
+
+            <input type="text" class="input" placeholder="Your message" />
+
+            <fieldset class="checkbox-wrapper">
+              <div class="checkbox"></div>
+
+              <label class="checkbox__label">
+                I aggre to the processing of my personal data
+              </label>
+            </fieldset>
+
+            <div class="button-wrapper">
+              <button class="button">
+                <span class="button__text">Send form</span>
+
+                <img
+                  src="./icons/arrow.png"
+                  alt="Something went wrong..."
+                  class="arrow__img"
+                />
+              </button>
+            </div>
+          </form>
+        </div>
       </section>
     </div>
   </body>

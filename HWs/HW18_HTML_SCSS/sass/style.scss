@@ -26,7 +26,7 @@ a {
 
 .heading {
   @include sizing(890px, 100%);
-  @include bgImage("../public/images/background-1.png", cover);
+  @include bgImage("/images/background-1.png", cover);
 
   .header {
     @include flexbox(space-between, center, row);
@@ -79,7 +79,7 @@ a {
 }
 
 .video {
-  @include bgImage("../public/images/background-2.png", cover);
+  @include bgImage("/images/background-2.png", cover);
   @include sizing(600px, 100%);
 
   &__icon {
@@ -209,6 +209,31 @@ a {
         );
         margin-top: $margin-m;
       }
+    }
+  }
+}
+
+.special {
+  padding-top: 0;
+}
+
+.form {
+  .input {
+  }
+
+  .checkbox {
+    &-wrapper {
+    }
+
+    &__label {
+    }
+  }
+
+  .button {
+    &-wrapper {
+    }
+
+    &__text {
     }
   }
 }

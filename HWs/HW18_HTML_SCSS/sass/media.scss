@@ -48,6 +48,11 @@
   .arrow {
     padding: $padding-2xl $padding-xl 0 $padding-xl;
   }
+  
+  .special {
+    padding-top: 0;
+  }
+  
 }
 
 @media (max-width: 800px) {
