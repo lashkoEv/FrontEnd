@@ -5,18 +5,18 @@
   flex-direction: $flexDirection;
 }
 
-@mixin gridbox($gap, $columns) {
+@mixin grid($gap, $columns) {
   display: grid;
   gap: $gap;
   grid-template-columns: repeat($columns, 1fr);
 }
 
-@mixin fontOptions($fontFamily, $fontSize, $fontColor) {
+@mixin fontOptions($fontFamily, $fontSize, $fontColor, $fontWeight, $textTransform) {
   font-size: $fontSize;
   font-family: $fontFamily;
   color: $fontColor;
-  font-weight: 400;
-  background: transparent;
+  font-weight: $fontWeight;
+  text-transform: $textTransform;
 }
 
 @mixin bgImage($image, $bgSize, $position) {

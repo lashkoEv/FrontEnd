@@ -20,7 +20,102 @@ a {
   color: inherit;
 }
 
+.button {
+  @include fontOptions(
+    $montserrat-ff,
+    $font-size-m,
+    $secondary-text-color,
+    $font-weight-regular,
+    $primary-text-transform
+  );
+  background: $primary-bg-color;
+  padding: $padding-m $padding-3xl;
+  border: none;
+  outline: none;
+}
+
 .heading {
   @include sizing(100vh, 100%);
   @include bgImage("/images/heading.jpg", cover, right);
+
+  .header {
+    @include flexbox(space-between, center, row);
+    padding: $padding-xl;
+    background: $primary-bg-color;
+
+    &-wrapper {
+      padding: $padding-xl $padding-5xl;
+    }
+
+    .logo {
+      @include fontOptions(
+        $montserrat-ff,
+        $font-size-l,
+        $secondary-text-color,
+        $font-weight-bold,
+        $primary-text-transform
+      );
+    }
+
+    .nav {
+      @include flexbox(space-between, center, row);
+      @include sizing(auto, 40%);
+
+      &__link {
+        @include fontOptions(
+          $montserrat-ff,
+          $font-size-s,
+          $secondary-text-color,
+          $font-weight-regular,
+          $primary-text-transform
+        );
+      }
+    }
+
+    .icons {
+      .icon {
+        @include sizing(23px, 23px);
+        margin-left: $margin-xl;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .hidden {
+      @include flexbox(center, center, column);
+      @include visibility(hidden, none);
+
+      &__line {
+        @include sizing(2px, 18px);
+        margin-top: $margin-xs;
+        background-color: $secondary-bg-color;
+      }
+
+      &__line:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .content {
+    @include flexbox(center, start, column);
+    @include sizing(70%, 100%);
+    padding: 0 $padding-5xl;
+
+    .title {
+      @include fontOptions(
+        $montserrat-ff,
+        $font-size-2xl,
+        $secondary-text-color,
+        $font-weight-bold,
+        $primary-text-transform
+      );
+    }
+
+    .button-wrapper {
+      margin-top: $margin-5xl;
+    }
+  }
 }

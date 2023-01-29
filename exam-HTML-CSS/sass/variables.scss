@@ -12,9 +12,17 @@
 $open-sans-ff: "Open Sans";
 $montserrat-ff: "Montserrat";
 
+// font-weight
+$font-weight-regular: 400;
+$font-weight-bold: 500;
+
+//text-transform
+$primary-text-transform: uppercase;
+
 // background
 $primary-bg-color: #222222;
-$secondary-bg-color: #B4B4B4;
+$secondary-bg-color: #FFFFFF;
+$third-bg-color: #B4B4B4;
 
 // color
 $primary-text-color: #222222;
@@ -22,6 +30,7 @@ $secondary-text-color: #FFFFFF;
 $third-text-color: #B4B4B4;
 
 // font-size
+$font-size-2xl: 60px; 
 $font-size-xl: 50px; 
 $font-size-l: 30px;
 $font-size-m: 18px; 
@@ -36,6 +45,7 @@ $padding-xl: 40px;
 $padding-l: 30px;
 $padding-m: 20px;
 $padding-s: 10px;
+$padding-xs: 5px;
 
 // margin
 $margin-5xl: 170px;
@@ -46,3 +56,4 @@ $margin-xl: 40px;
 $margin-l: 30px;
 $margin-m: 20px;
 $margin-s: 10px;
+$margin-xs: 5px;

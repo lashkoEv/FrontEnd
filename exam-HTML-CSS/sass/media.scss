@@ -1,0 +1,50 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@media (max-width: 1200px) {
+  .heading {
+    .header {
+      &-wrapper {
+        padding: $padding-xl $padding-4xl;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .heading {
+    .header {
+      &-wrapper {
+        padding: $padding-xl;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .heading {
+    .header {
+      .nav {
+        @include visibility(hidden, none);
+      }
+
+      .icons {
+        @include visibility(hidden, none);
+      }
+
+      .hidden {
+        @include visibility(visible, flex);
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .heading {
+    .header {
+      &-wrapper {
+        padding: $padding-xl $padding-m;
+      }
+    }
+  }
+}
