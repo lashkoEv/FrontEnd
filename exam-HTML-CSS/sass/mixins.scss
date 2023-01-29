@@ -1,0 +1,37 @@
+@mixin flexbox($justifyContent, $alignItems, $flexDirection) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}
+
+@mixin gridbox($gap, $columns) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin fontOptions($fontFamily, $fontSize, $fontColor) {
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  color: $fontColor;
+  font-weight: 400;
+  background: transparent;
+}
+
+@mixin bgImage($image, $bgSize, $position) {
+  background: url($image);
+  background-size: $bgSize;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+
+@mixin sizing($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin visibility($visibility, $display) {
+  visibility: $visibility;
+  display: $display;
+}

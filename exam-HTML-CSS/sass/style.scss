@@ -20,3 +20,7 @@ a {
   color: inherit;
 }
 
+.heading {
+  @include sizing(100vh, 100%);
+  @include bgImage("/images/heading.jpg", cover, right);
+}
