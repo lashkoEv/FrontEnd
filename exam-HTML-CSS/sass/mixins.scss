@@ -11,11 +11,10 @@
   grid-template-columns: repeat($columns, 1fr);
 }
 
-@mixin fontOptions($fontFamily, $fontSize, $fontColor, $fontWeight, $textTransform) {
+@mixin fontOptions($fontFamily, $fontSize, $fontColor, $textTransform) {
   font-size: $fontSize;
   font-family: $fontFamily;
   color: $fontColor;
-  font-weight: $fontWeight;
   text-transform: $textTransform;
 }
 

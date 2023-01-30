@@ -4,17 +4,19 @@
 }
 
 @font-face {
-    font-family: "Montserrat";
+    font-family: "Montserrat regular";
     src: url("/fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat medium";
+    src: url("/fonts/Montserrat/static/Montserrat-Medium.ttf");
 }
 
 // font-family
 $open-sans-ff: "Open Sans";
-$montserrat-ff: "Montserrat";
-
-// font-weight
-$font-weight-regular: 400;
-$font-weight-bold: 500;
+$montserrat-regular-ff: "Montserrat regular";
+$montserrat-medium-ff: "Montserrat medium";
 
 //text-transform
 $primary-text-transform: uppercase;

@@ -22,10 +22,9 @@ a {
 
 .button {
   @include fontOptions(
-    $montserrat-ff,
+    $montserrat-regular-ff,
     $font-size-m,
     $secondary-text-color,
-    $font-weight-regular,
     $primary-text-transform
   );
   background: $primary-bg-color;
@@ -49,10 +48,9 @@ a {
 
     .logo {
       @include fontOptions(
-        $montserrat-ff,
+        $montserrat-medium-ff,
         $font-size-l,
         $secondary-text-color,
-        $font-weight-bold,
         $primary-text-transform
       );
     }
@@ -63,10 +61,9 @@ a {
 
       &__link {
         @include fontOptions(
-          $montserrat-ff,
+          $montserrat-regular-ff,
           $font-size-s,
           $secondary-text-color,
-          $font-weight-regular,
           $primary-text-transform
         );
       }
@@ -106,12 +103,12 @@ a {
 
     .title {
       @include fontOptions(
-        $montserrat-ff,
+        $montserrat-regular-ff,
         $font-size-2xl,
         $secondary-text-color,
-        $font-weight-bold,
         $primary-text-transform
       );
+      font-weight: 400;
     }
 
     .button-wrapper {
@@ -126,12 +123,12 @@ a {
 
   .title {
     @include fontOptions(
-      $montserrat-ff,
+      $montserrat-regular-ff,
       $font-size-l,
       $primary-text-color,
-      $font-weight-regular,
       $primary-text-transform
     );
+    font-weight: 400;
   }
 
   .content {
@@ -148,7 +145,6 @@ a {
         $open-sans-ff,
         $font-size-s,
         $primary-text-color,
-        $font-weight-regular,
         none
       );
       margin-top: $margin-m;
@@ -176,23 +172,23 @@ a {
 
     .title {
       @include fontOptions(
-        $montserrat-ff,
+        $montserrat-regular-ff,
         $font-size-l,
         $secondary-text-color,
-        $font-weight-regular,
         $primary-text-transform
       );
+      font-weight: 400;
     }
 
     .decor {
       &__item {
         @include fontOptions(
-          $montserrat-ff,
+          $montserrat-regular-ff,
           $font-size-s,
           $third-text-color,
-          $font-weight-regular,
           $primary-text-transform
         );
+        font-weight: 400;
         margin-top: $margin-xl;
       }
     }
@@ -213,12 +209,12 @@ a {
 
     &__name {
       @include fontOptions(
-        $montserrat-ff,
+        $montserrat-regular-ff,
         $font-size-s,
         $primary-text-color,
-        $font-weight-regular,
         $primary-text-transform
       );
+      font-weight: 400;
       margin-top: $margin-s;
     }
 
@@ -228,12 +224,12 @@ a {
 
       .price {
         @include fontOptions(
-          $montserrat-ff,
+          $montserrat-regular-ff,
           $font-size-s,
           $primary-text-color,
-          $font-weight-regular,
           $primary-text-transform
         );
+        font-weight: 400;
       }
     }
 
@@ -271,12 +267,12 @@ a {
 
     .title {
       @include fontOptions(
-        $montserrat-ff,
+        $montserrat-regular-ff,
         $font-size-xl,
         $secondary-text-color,
-        $font-weight-regular,
         $primary-text-transform
       );
+      font-weight: 400;
     }
 
     .subtitle {
@@ -284,7 +280,6 @@ a {
         $open-sans-ff,
         $font-size-s,
         $secondary-text-color,
-        $font-weight-regular,
         none
       );
       margin-top: $margin-xl;
@@ -295,7 +290,6 @@ a {
         $open-sans-ff,
         $font-size-s,
         $secondary-text-color,
-        $font-weight-regular,
         none
       );
       @include sizing(100%, 100%);
@@ -310,7 +304,6 @@ a {
           $open-sans-ff,
           $font-size-s,
           $fourth-text-color,
-          $font-weight-regular,
           none
         );
       }
@@ -322,10 +315,9 @@ a {
 
       &__button {
         @include fontOptions(
-          $montserrat-ff,
+          $montserrat-regular-ff,
           $font-size-s,
           $secondary-text-color,
-          $font-weight-regular,
           $primary-text-transform
         );
         padding: $padding-m $padding-3xl;
@@ -351,7 +343,6 @@ a {
           $open-sans-ff,
           $font-size-s,
           $secondary-text-color,
-          $font-weight-regular,
           none
         );
       }
@@ -364,12 +355,12 @@ a {
 
   .title {
     @include fontOptions(
-      $montserrat-ff,
+      $montserrat-regular-ff,
       $font-size-l,
       $primary-text-color,
-      $font-weight-regular,
       $primary-text-transform
     );
+    font-weight: 400;
   }
 
   .photos {
@@ -420,10 +411,9 @@ a {
 
     .logo {
       @include fontOptions(
-        $montserrat-ff,
+        $montserrat-medium-ff,
         $font-size-l,
         $primary-text-color,
-        $font-weight-bold,
         $primary-text-transform
       );
     }
@@ -431,10 +421,9 @@ a {
     .column {
       .title {
         @include fontOptions(
-          $montserrat-ff,
+          $montserrat-medium-ff,
           $font-size-m,
           $primary-text-color,
-          $font-weight-bold,
           $primary-text-transform
         );
       }
@@ -447,7 +436,6 @@ a {
             $open-sans-ff,
             $font-size-s,
             $primary-text-color,
-            $font-weight-regular,
             none
           );
           margin-top: $margin-m;
@@ -472,7 +460,6 @@ a {
           $open-sans-ff,
           $font-size-s,
           $primary-text-color,
-          $font-weight-regular,
           none
         );
         margin-top: $margin-m;
@@ -500,10 +487,9 @@ a {
     .languages {
       .language {
         @include fontOptions(
-          $montserrat-ff,
+          $montserrat-medium-ff,
           $font-size-m,
           $primary-text-color,
-          $font-weight-bold,
           $primary-text-transform
         );
         margin-right: $margin-s;
@@ -518,7 +504,6 @@ a {
           $open-sans-ff,
           $font-size-s,
           $primary-text-color,
-          $font-weight-regular,
           none
         );
         margin-right: $margin-m;
@@ -530,7 +515,6 @@ a {
         $open-sans-ff,
         $font-size-s,
         $primary-text-color,
-        $font-weight-regular,
         none
       );
       margin-top: $margin-m;
