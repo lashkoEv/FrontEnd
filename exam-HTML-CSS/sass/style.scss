@@ -404,3 +404,130 @@ a {
     }
   }
 }
+
+.footer {
+  padding: $padding-4xl $padding-5xl $padding-2xl $padding-5xl;
+
+  .content {
+    @include flexbox(space-between, start, row);
+    padding: $padding-xl 0 $padding-2xl 0;
+    border-top: 1px solid $third-bg-color;
+
+    .logo {
+      @include fontOptions(
+        $montserrat-ff,
+        $font-size-l,
+        $primary-text-color,
+        $font-weight-bold,
+        $primary-text-transform
+      );
+    }
+
+    .column {
+      .title {
+        @include fontOptions(
+          $montserrat-ff,
+          $font-size-m,
+          $primary-text-color,
+          $font-weight-bold,
+          $primary-text-transform
+        );
+      }
+
+      .nav {
+        @include flexbox(start, start, column);
+
+        &__link {
+          @include fontOptions(
+            $open-sans-ff,
+            $font-size-s,
+            $primary-text-color,
+            $font-weight-regular,
+            none
+          );
+          margin-top: $margin-m;
+        }
+      }
+
+      .payment {
+        @include flexbox(start, start, row);
+        margin-top: $margin-m;
+
+        &__item {
+          @include sizing(36px, 86px);
+          @include flexbox(center, center, row);
+          border: 1px solid $third-bg-color;
+          margin-right: $margin-s;
+        }
+      }
+
+      .address {
+        @include fontOptions(
+          $open-sans-ff,
+          $font-size-s,
+          $primary-text-color,
+          $font-weight-regular,
+          none
+        );
+        margin-top: $margin-m;
+      }
+
+      .follow {
+        margin-top: $margin-2xl;
+      }
+
+      .networks {
+        margin-top: $margin-m;
+
+        .network {
+          @include sizing(20px, 20px);
+          margin-right: $margin-m - 5px;
+        }
+      }
+    }
+  }
+
+  .subfooter {
+    border-top: 1px solid $third-bg-color;
+    padding-top: $padding-2xl;
+
+    .languages {
+      .language {
+        @include fontOptions(
+          $montserrat-ff,
+          $font-size-m,
+          $primary-text-color,
+          $font-weight-bold,
+          $primary-text-transform
+        );
+        margin-right: $margin-s;
+      }
+    }
+
+    .nav {
+      margin-top: $margin-2xl;
+
+      &__link {
+        @include fontOptions(
+          $open-sans-ff,
+          $font-size-s,
+          $primary-text-color,
+          $font-weight-regular,
+          none
+        );
+        margin-right: $margin-m;
+      }
+    }
+
+    .license {
+      @include fontOptions(
+        $open-sans-ff,
+        $font-size-s,
+        $primary-text-color,
+        $font-weight-regular,
+        none
+      );
+      margin-top: $margin-m;
+    }
+  }
+}
