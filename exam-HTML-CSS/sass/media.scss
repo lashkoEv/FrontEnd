@@ -45,6 +45,10 @@
   .gallery {
     padding-left: $padding-4xl;
   }
+
+  .footer {
+    padding: $padding-4xl $padding-4xl $padding-2xl $padding-4xl;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -102,6 +106,10 @@
   .gallery {
     padding-left: $padding-xl;
   }
+
+  .footer {
+    padding: $padding-4xl $padding-xl $padding-2xl $padding-xl;
+  }
 }
 
 @media (max-width: 800px) {
@@ -130,6 +138,16 @@
   .tables {
     .content {
       padding: $padding-4xl $padding-xl;
+    }
+  }
+
+  .footer {
+    .content {
+      @include flexbox(start, start, column);
+
+      .column {
+        margin-top: $margin-2xl;
+      }
     }
   }
 }
@@ -163,5 +181,9 @@
 
   .gallery {
     padding-left: $padding-m;
+  }
+
+  .footer {
+    padding: $padding-4xl $padding-m $padding-2xl $padding-m;
   }
 }

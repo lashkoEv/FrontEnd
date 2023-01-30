@@ -413,6 +413,11 @@ a {
     padding: $padding-xl 0 $padding-2xl 0;
     border-top: 1px solid $third-bg-color;
 
+    .logo,
+    .column:not(.column:last-child) {
+      margin-right: $margin-s;
+    }
+
     .logo {
       @include fontOptions(
         $montserrat-ff,
@@ -451,13 +456,14 @@ a {
 
       .payment {
         @include flexbox(start, start, row);
-        margin-top: $margin-m;
+        flex-wrap: wrap;
 
         &__item {
           @include sizing(36px, 86px);
           @include flexbox(center, center, row);
           border: 1px solid $third-bg-color;
           margin-right: $margin-s;
+          margin-top: $margin-m;
         }
       }
 
