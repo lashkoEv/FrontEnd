@@ -25,12 +25,17 @@ $primary-text-transform: uppercase;
 $primary-bg-color: #222222;
 $secondary-bg-color: #FFFFFF;
 $third-bg-color: #B4B4B4;
+$fourth-bg-color: #363636;
 
 // color
 $primary-text-color: #222222;
 $secondary-text-color: #FFFFFF;
 $third-text-color: #B4B4B4;
 $fourth-text-color: #b4b4b480;
+
+// transition
+$primary-transition: .3s ease-in-out;
+$secondary-transition: .5s ease-in-out;
 
 // font-size
 $font-size-2xl: 60px; 
@@ -49,6 +54,7 @@ $padding-l: 30px;
 $padding-m: 20px;
 $padding-s: 10px;
 $padding-xs: 5px;
+$padding-2xs: 3px;
 
 // margin
 $margin-5xl: 170px;
@@ -60,3 +66,4 @@ $margin-l: 30px;
 $margin-m: 20px;
 $margin-s: 10px;
 $margin-xs: 5px;
+$margin-2xs: 3px;

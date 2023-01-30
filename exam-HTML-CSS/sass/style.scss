@@ -1,5 +1,6 @@
 @import "./variables.scss";
 @import "./mixins.scss";
+@import "./keyframes.scss";
 
 * {
   padding: 0;
@@ -20,6 +21,15 @@ a {
   color: inherit;
 }
 
+a:hover,
+button:hover,
+.logo:hover,
+.icon:hover,
+.network:hover {
+  animation: animation $secondary-transition;
+  animation-iteration-count: 1;
+}
+
 .button {
   @include fontOptions(
     $montserrat-regular-ff,
@@ -31,6 +41,12 @@ a {
   padding: $padding-m $padding-3xl;
   border: none;
   outline: none;
+  transition: $primary-transition;
+  cursor: pointer;
+
+  &:hover {
+    background: $fourth-bg-color;
+  }
 }
 
 .heading {
@@ -83,6 +99,7 @@ a {
     .hidden {
       @include flexbox(center, center, column);
       @include visibility(hidden, none);
+      cursor: pointer;
 
       &__line {
         @include sizing(2px, 18px);
@@ -203,6 +220,12 @@ a {
   @include grid($margin-l, 4);
 
   .product {
+    transition: $primary-transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
     &__img {
       @include sizing(auto, 100%);
     }
@@ -238,10 +261,17 @@ a {
       background: $primary-bg-color;
       border: none;
       outline: none;
+      transition: $primary-transition;
+      cursor: pointer;
 
       .icon {
         font-size: 17px;
         color: $secondary-text-color;
+        animation: none;
+      }
+
+      &:hover {
+        background: $fourth-bg-color;
       }
     }
   }
@@ -324,6 +354,12 @@ a {
         border: 2px solid $secondary-text-color;
         outline: none;
         background: transparent;
+        transition: $primary-transition;
+        cursor: pointer;
+
+        &:hover {
+          background: $fourth-bg-color;
+        }
       }
     }
 
@@ -332,6 +368,7 @@ a {
       padding: 4.5px 2.5px;
       border: 1px solid $secondary-bg-color;
       margin-right: $margin-s;
+      cursor: pointer;
 
       &-wrapper {
         @include flexbox(start, center, row);
@@ -345,6 +382,7 @@ a {
           $secondary-text-color,
           none
         );
+        cursor: pointer;
       }
     }
   }
@@ -416,6 +454,7 @@ a {
         $primary-text-color,
         $primary-text-transform
       );
+      margin-right: $margin-m;
     }
 
     .column {
@@ -483,6 +522,17 @@ a {
   .subfooter {
     border-top: 1px solid $third-bg-color;
     padding-top: $padding-2xl;
+
+    .language,
+    .nav__link {
+      padding-bottom: $padding-2xs;
+      border-bottom: 1px solid transparent;
+      transition: $primary-transition;
+
+      &:hover {
+        border-bottom: 1px solid $primary-bg-color;
+      }
+    }
 
     .languages {
       .language {
