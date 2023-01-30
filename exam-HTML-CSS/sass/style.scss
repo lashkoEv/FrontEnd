@@ -364,15 +364,33 @@ button:hover,
     }
 
     .checkbox {
-      @include sizing(25px, 23px);
-      padding: 4.5px 2.5px;
-      border: 1px solid $secondary-bg-color;
-      margin-right: $margin-s;
-      cursor: pointer;
+      position: absolute;
+      opacity: 0;
 
       &-wrapper {
         @include flexbox(start, center, row);
+        position: relative;
         margin-top: $margin-m;
+        cursor: pointer;
+      }
+
+      &__checkmark {
+        @include sizing(20px, 20px);
+        border: 1px solid $secondary-bg-color;
+        position: relative;
+
+        &::before {
+          @include sizing(10px, 6px);
+          content: "";
+          position: absolute;
+          top: 6%;
+          left: 30%;
+          opacity: 0;
+          border-bottom: 1px solid $secondary-bg-color;
+          border-right: 1px solid $secondary-bg-color;
+          transform: rotate(35deg);
+          transition: $primary-transition;
+        }
       }
 
       &__label {
@@ -382,8 +400,12 @@ button:hover,
           $secondary-text-color,
           none
         );
-        cursor: pointer;
+        margin-left: $margin-s;
       }
+    }
+
+    .checkbox:checked + .checkbox__checkmark::before {
+      opacity: 1;
     }
   }
 }
