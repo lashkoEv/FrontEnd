@@ -90,7 +90,7 @@ a {
       &__line {
         @include sizing(2px, 18px);
         margin-top: $margin-xs;
-        background-color: $secondary-bg-color;
+        background: $secondary-text-color;
       }
 
       &__line:first-child {
@@ -116,6 +116,138 @@ a {
 
     .button-wrapper {
       margin-top: $margin-5xl;
+    }
+  }
+}
+
+.section {
+  padding: $padding-4xl $padding-5xl;
+  background: $secondary-bg-color;
+
+  .title {
+    @include fontOptions(
+      $montserrat-ff,
+      $font-size-l,
+      $primary-text-color,
+      $font-weight-regular,
+      $primary-text-transform
+    );
+  }
+
+  .content {
+    margin-top: $margin-xl;
+  }
+}
+
+.about {
+  .content {
+    @include sizing(100%, 70%);
+
+    .text {
+      @include fontOptions(
+        $open-sans-ff,
+        $font-size-s,
+        $primary-text-color,
+        $font-weight-regular,
+        none
+      );
+      margin-top: $margin-m;
+      line-height: 22px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .button-wrapper {
+      margin-top: $margin-2xl;
+    }
+  }
+}
+
+.tables {
+  @include flexbox(space-between, center, row);
+  background: $primary-bg-color;
+  padding: 0;
+  padding-left: $padding-5xl;
+
+  .content {
+    margin-top: 0;
+    
+    .title {
+      @include fontOptions(
+      $montserrat-ff,
+      $font-size-l,
+      $secondary-text-color,
+      $font-weight-regular,
+      $primary-text-transform
+    );
+    }
+
+    .decor {
+      &__item {
+        @include fontOptions(
+        $montserrat-ff,
+        $font-size-s,
+        $third-text-color,
+        $font-weight-regular,
+        $primary-text-transform
+      );
+        margin-top: $margin-xl;
+      }
+    }
+  }
+
+  &__img {
+    @include sizing(100%, 60%);
+  }
+}
+
+.products {
+  @include grid($margin-l, 4);
+
+  .product {
+    &__img {
+      @include sizing(auto, 100%);
+    }
+
+    &__name {
+      @include fontOptions(
+        $montserrat-ff,
+        $font-size-s,
+        $primary-text-color,
+        $font-weight-regular,
+        $primary-text-transform
+      );
+      margin-top: $margin-s;
+    }
+
+    &__footer {
+      @include flexbox(space-between, center, row);
+      margin-top: $margin-s;
+
+      .price {
+        
+      @include fontOptions(
+        $montserrat-ff,
+        $font-size-s,
+        $primary-text-color,
+        $font-weight-regular,
+        $primary-text-transform
+      );
+      }
+    }
+
+    .add {
+      padding: $padding-s - 3px;
+      background: $primary-bg-color;
+      border: none;
+      outline: none;
+
+      .icon {
+        font-size: 17px;
+        color: $secondary-text-color;
+      }
     }
   }
 }
