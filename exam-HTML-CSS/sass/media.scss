@@ -41,6 +41,10 @@
   .sale {
     padding: 0 $padding-4xl;
   }
+
+  .gallery {
+    padding-left: $padding-4xl;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -93,6 +97,10 @@
     &__img {
       @include visibility(hidden, none);
     }
+  }
+
+  .gallery {
+    padding-left: $padding-xl;
   }
 }
 
@@ -151,5 +159,9 @@
 
   .sale {
     padding: $padding-4xl $padding-m;
+  }
+
+  .gallery {
+    padding-left: $padding-m;
   }
 }
