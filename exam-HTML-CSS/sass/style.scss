@@ -173,33 +173,33 @@ a {
 
   .content {
     margin-top: 0;
-    
+
     .title {
       @include fontOptions(
-      $montserrat-ff,
-      $font-size-l,
-      $secondary-text-color,
-      $font-weight-regular,
-      $primary-text-transform
-    );
+        $montserrat-ff,
+        $font-size-l,
+        $secondary-text-color,
+        $font-weight-regular,
+        $primary-text-transform
+      );
     }
 
     .decor {
       &__item {
         @include fontOptions(
-        $montserrat-ff,
-        $font-size-s,
-        $third-text-color,
-        $font-weight-regular,
-        $primary-text-transform
-      );
+          $montserrat-ff,
+          $font-size-s,
+          $third-text-color,
+          $font-weight-regular,
+          $primary-text-transform
+        );
         margin-top: $margin-xl;
       }
     }
   }
 
   &__img {
-    @include sizing(100%, 60%);
+    @include sizing(100%, 65%);
   }
 }
 
@@ -227,14 +227,13 @@ a {
       margin-top: $margin-s;
 
       .price {
-        
-      @include fontOptions(
-        $montserrat-ff,
-        $font-size-s,
-        $primary-text-color,
-        $font-weight-regular,
-        $primary-text-transform
-      );
+        @include fontOptions(
+          $montserrat-ff,
+          $font-size-s,
+          $primary-text-color,
+          $font-weight-regular,
+          $primary-text-transform
+        );
       }
     }
 
@@ -247,6 +246,114 @@ a {
       .icon {
         font-size: 17px;
         color: $secondary-text-color;
+      }
+    }
+  }
+}
+
+.sale {
+  @include flexbox(space-between, start, row);
+  background: $primary-bg-color;
+  padding: 0 $padding-5xl;
+
+  .content,
+  &__img {
+    position: relative;
+    top: $margin-2xl;
+  }
+  
+  &__img {
+    @include sizing(515px, auto);
+  }
+
+  .content {
+    margin-right: $margin-2xl;
+
+    .title {
+      @include fontOptions(
+        $montserrat-ff,
+        $font-size-xl,
+        $secondary-text-color,
+        $font-weight-regular,
+        $primary-text-transform
+      );
+    }
+
+    .subtitle {
+      @include fontOptions(
+        $open-sans-ff,
+        $font-size-s,
+        $secondary-text-color,
+        $font-weight-regular,
+        none
+      );
+      margin-top: $margin-xl;
+    }
+
+    .subscribe {
+      @include fontOptions(
+        $open-sans-ff,
+        $font-size-s,
+        $secondary-text-color,
+        $font-weight-regular,
+        none
+      );
+      @include sizing(100%, 100%);
+      background: transparent;
+      border: 2px solid $fourth-text-color;
+      outline: none;
+      padding: $padding-m;
+      margin-right: $margin-l;
+
+      &::placeholder {
+        @include fontOptions(
+          $open-sans-ff,
+          $font-size-s,
+          $fourth-text-color,
+          $font-weight-regular,
+          none
+        );
+      }
+
+      &-wrapper {
+        margin-top: $margin-xl;
+        @include flexbox(space-between, center, row);
+      }
+
+      &__button {
+        @include fontOptions(
+          $montserrat-ff,
+          $font-size-s,
+          $secondary-text-color,
+          $font-weight-regular,
+          $primary-text-transform
+        );
+        padding: $padding-m $padding-3xl;
+        border: 2px solid $secondary-text-color;
+        outline: none;
+        background: transparent;
+      }
+    }
+
+    .checkbox {
+      @include sizing(25px, 23px);
+      padding: 4.5px 2.5px;
+      border: 1px solid $secondary-bg-color;
+      margin-right: $margin-s;
+
+      &-wrapper {
+        @include flexbox(start, center, row);
+        margin-top: $margin-m;
+      }
+
+      &__label {
+        @include fontOptions(
+          $open-sans-ff,
+          $font-size-s,
+          $secondary-text-color,
+          $font-weight-regular,
+          none
+        );
       }
     }
   }

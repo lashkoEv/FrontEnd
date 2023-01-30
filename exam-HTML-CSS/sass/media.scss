@@ -1,6 +1,22 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
+@media (max-width: 1400px) {
+  .sale {
+    &__img {
+      @include sizing(450px, auto);
+    }
+
+    .content {
+      .subscribe {
+        &__button {
+          padding: $padding-m $padding-xl;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .heading {
     .header {
@@ -19,8 +35,11 @@
   }
 
   .tables {
-    padding: 0;
     padding-left: $padding-4xl;
+  }
+
+  .sale {
+    padding: 0 $padding-4xl;
   }
 }
 
@@ -57,6 +76,24 @@
   .products {
     @include grid($margin-l, 2);
   }
+
+  .sale {
+    @include flexbox(start, start, column);
+    padding: $padding-4xl $padding-xl;
+
+    .content,
+    &__img {
+      position: static;
+    }
+
+    .content {
+      margin-right: 0;
+    }
+
+    &__img {
+      @include visibility(hidden, none);
+    }
+  }
 }
 
 @media (max-width: 800px) {
@@ -83,7 +120,9 @@
   }
 
   .tables {
-    padding: 0;
+    .content {
+      padding: $padding-4xl $padding-xl;
+    }
   }
 }
 
@@ -105,6 +144,12 @@
   }
 
   .tables {
-    padding: 0;
+    .content {
+      padding: $padding-4xl $padding-m;
+    }
+  }
+
+  .sale {
+    padding: $padding-4xl $padding-m;
   }
 }
