@@ -18,7 +18,6 @@ while (switcher) {
         console.log("[UPPERCASE USERNAME]", userName);
         const lastThree = userName.slice(-3).split("").reverse().join("");
         console.log("[LAST THREE REVERSED]", lastThree);
-        switcher = false;
     }
     else {
         alert("Must be more than 2!");
@@ -33,7 +32,6 @@ while (switcher) {
     const age = +prompt("Enter age:");
     if (!isNaN(age) || age > 0) {
         console.log("[AGE]", age);
-        switcher = false;
     }
     switcher = !confirm("Do you wanna exit?");
     if (!switcher) {

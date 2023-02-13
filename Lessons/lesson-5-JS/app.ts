@@ -38,7 +38,6 @@ while (switcher) {
 
     const lastThree: string = userName.slice(-3).split("").reverse().join("");
     console.log("[LAST THREE REVERSED]", lastThree);
-    switcher = false;
   } else {
     alert("Must be more than 2!");
   }
@@ -56,7 +55,6 @@ while (switcher) {
 
   if (!isNaN(age) || age > 0) {
     console.log("[AGE]", age);
-    switcher = false;
   }
 
   switcher = !confirm("Do you wanna exit?");
