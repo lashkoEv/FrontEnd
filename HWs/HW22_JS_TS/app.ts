@@ -42,7 +42,7 @@ function getSymbol() {
   let keyNumber: number;
 
   do {
-    keyNumber = getCorrectNumber("Enter a number from 0 to 9");
+    keyNumber = getCorrectNumber("Enter a number from 0 to 9:");
   } while (keyNumber < 0 || keyNumber > 9);
 
   switch (keyNumber) {
@@ -95,8 +95,24 @@ function getSymbol() {
  */
 
 /*
- * Task 4 Запросіть у користувача рік та перевірте чи є він високосним. Високосний рік або кратний 400, або кратний 4 і при цьому не кратний 100.
+ * Task 4
  */
+
+function checkLeapYear() {
+  let year: number;
+
+  do {
+    year = getCorrectNumber("Enter a year:");
+  } while (year < 0);
+
+  if (year % 400 === 0 || (year % 4 === 0 && year % 100 != 0)) {
+    alert("This year is a leap year.");
+  } else {
+    alert("This year is not a leap year.");
+  }
+}
+
+//checkLeapYear();
 
 /*
  * Task 6
@@ -123,16 +139,16 @@ function getAmountOfMoney() {
   let amount: number;
 
   do {
-    amount = getCorrectNumber("Enter the amount to convert");
+    amount = getCorrectNumber("Enter the amount to convert:");
   } while (amount <= 0);
 
   return amount;
 }
 
 function getConvertedCurrency() {
-  const exchangeRateUAN : number = 36.81;
-  const exchangeRateEUR : number = 0.93;
-  const exchangeRateAZN : number = 1.7;
+  const exchangeRateUAN: number = 36.81;
+  const exchangeRateEUR: number = 0.93;
+  const exchangeRateAZN: number = 1.7;
 
   const currencyNumber = getCurrencyNumber();
   const amount = getAmountOfMoney();
