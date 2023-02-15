@@ -74,8 +74,34 @@ function getSymbol() {
 }
 // getSymbol();
 /*
- * Task 3 Запросіть у користувача тризначне число та перевірте чи є в ньому однакові цифри.
+ * Task 3
  */
+function getThreeDigitNumber() {
+    let threeDigitNumber;
+    do {
+        threeDigitNumber = getCorrectNumber("Enter a three digit number:");
+    } while (threeDigitNumber < 100 || threeDigitNumber > 999);
+    return threeDigitNumber;
+}
+function checkIdenticalDigits() {
+    const threeDigitNumber = getThreeDigitNumber();
+    const stringFromNumber = threeDigitNumber.toString();
+    let isIdenticalDigits = false;
+    for (let i = 0; i < stringFromNumber.length; i++) {
+        for (let j = 0; j < stringFromNumber.length; j++) {
+            if (stringFromNumber[i] === stringFromNumber[j] && i != j) {
+                isIdenticalDigits = true;
+            }
+        }
+    }
+    if (isIdenticalDigits) {
+        alert("The number contains the identical digits.");
+    }
+    else {
+        alert("There are no identical digits in the number.");
+    }
+}
+checkIdenticalDigits();
 /*
  * Task 4
  */
