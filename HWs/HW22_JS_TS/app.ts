@@ -1,7 +1,3 @@
-/*
- * Task 1
- */
-
 // ! used getCorrectNumber to avoid casting null to 0 when entering an empty string, don't know how to do it properly
 
 function getCorrectNumber(question: string) {
@@ -13,6 +9,10 @@ function getCorrectNumber(question: string) {
     return -1;
   }
 }
+
+/*
+ * Task 1
+ */
 
 function getStatus() {
   let age: number;
@@ -32,7 +32,7 @@ function getStatus() {
   }
 }
 
-// getStatus();
+getStatus();
 
 /*
  * Task 2
@@ -88,7 +88,7 @@ function getSymbol() {
   }
 }
 
-// getSymbol();
+getSymbol();
 
 /*
  * Task 3
@@ -145,7 +145,7 @@ function checkLeapYear() {
   }
 }
 
-//checkLeapYear();
+checkLeapYear();
 
 /*
  * Task 6
@@ -201,4 +201,4 @@ function getConvertedCurrency() {
   }
 }
 
-// getConvertedCurrency();
+getConvertedCurrency();

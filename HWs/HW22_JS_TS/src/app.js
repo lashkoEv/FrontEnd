@@ -1,7 +1,4 @@
 "use strict";
-/*
- * Task 1
- */
 // ! used getCorrectNumber to avoid casting null to 0 when entering an empty string, don't know how to do it properly
 function getCorrectNumber(question) {
     let userResponse = prompt(question);
@@ -12,6 +9,9 @@ function getCorrectNumber(question) {
         return -1;
     }
 }
+/*
+ * Task 1
+ */
 function getStatus() {
     let age;
     do {
@@ -30,7 +30,7 @@ function getStatus() {
         alert("You are a pensioner!");
     }
 }
-// getStatus();
+getStatus();
 /*
  * Task 2
  */
@@ -72,7 +72,7 @@ function getSymbol() {
             break;
     }
 }
-// getSymbol();
+getSymbol();
 /*
  * Task 3
  */
@@ -117,7 +117,7 @@ function checkLeapYear() {
         alert("This year is not a leap year.");
     }
 }
-//checkLeapYear();
+checkLeapYear();
 /*
  * Task 6
  */
@@ -157,4 +157,4 @@ function getConvertedCurrency() {
             break;
     }
 }
-// getConvertedCurrency();
+getConvertedCurrency();
