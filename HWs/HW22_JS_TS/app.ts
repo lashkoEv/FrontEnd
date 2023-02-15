@@ -2,7 +2,7 @@
  * Task 1
  */
 
-// used getCorrectNumber to avoid casting null to 0 when entering an empty string, don't know how to do it properly
+// ! used getCorrectNumber to avoid casting null to 0 when entering an empty string, don't know how to do it properly
 
 function getCorrectNumber(question: string) {
   let userResponse: string | null = prompt(question);
@@ -32,7 +32,7 @@ function getStatus() {
   }
 }
 
-getStatus();
+// getStatus();
 
 /*
  * Task 2
@@ -88,8 +88,68 @@ function getSymbol() {
   }
 }
 
-getSymbol();
+// getSymbol();
 
 /*
- * Task 3
+ * Task 3 Запросіть у користувача тризначне число та перевірте чи є в ньому однакові цифри.
  */
+
+/*
+ * Task 4 Запросіть у користувача рік та перевірте чи є він високосним. Високосний рік або кратний 400, або кратний 4 і при цьому не кратний 100.
+ */
+
+/*
+ * Task 6
+ */
+
+function convert(usd: number, exchangeRate: number) {
+  const result = usd * exchangeRate;
+  return result.toFixed(2);
+}
+
+function getCurrencyNumber() {
+  let currencyNumber: number;
+
+  do {
+    currencyNumber = getCorrectNumber(
+      "Enter the number of the currency:\n1. Convert to UAN\n2. Convert to EUR\n3. Convert to AZN"
+    );
+  } while (currencyNumber < 1 || currencyNumber > 3);
+
+  return currencyNumber;
+}
+
+function getAmountOfMoney() {
+  let amount: number;
+
+  do {
+    amount = getCorrectNumber("Enter the amount to convert");
+  } while (amount <= 0);
+
+  return amount;
+}
+
+function getConvertedCurrency() {
+  const exchangeRateUAN : number = 36.81;
+  const exchangeRateEUR : number = 0.93;
+  const exchangeRateAZN : number = 1.7;
+
+  const currencyNumber = getCurrencyNumber();
+  const amount = getAmountOfMoney();
+
+  switch (currencyNumber) {
+    case 1:
+      alert(`${amount} USD is ${convert(amount, exchangeRateUAN)} UAN`);
+      break;
+
+    case 2:
+      alert(`${amount} USD is ${convert(amount, exchangeRateEUR)} EUR`);
+      break;
+
+    case 3:
+      alert(`${amount} USD is ${convert(amount, exchangeRateAZN)} AZN`);
+      break;
+  }
+}
+
+// getConvertedCurrency();
