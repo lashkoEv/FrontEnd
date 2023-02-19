@@ -1,4 +1,4 @@
-function getCorrectNumber(question: string) {
+function getCorrectNumber(question: string): number {
   let isCorrect: boolean = false;
 
   while (!isCorrect) {
@@ -16,7 +16,7 @@ function getCorrectNumber(question: string) {
  * Task 5
  */
 
-function getNumber() {
+function getNumberString(): string {
   let answer: number;
 
   do {
@@ -26,8 +26,8 @@ function getNumber() {
   return answer.toString();
 }
 
-function checkPalindrome() {
-  const answer: string = getNumber();
+function checkPalindrome(): void {
+  const answer: string = getNumberString();
 
   const firstPart: string = answer.slice(0, 2);
   const lastPart: string = answer.slice(-2).split("").reverse().join("");
@@ -39,17 +39,17 @@ function checkPalindrome() {
   }
 }
 
-//checkPalindrome();
+checkPalindrome();
 
 /*
  * Task 7
  */
 
-function getDiscountedAmount(amount: number, discount: number) {
+function getDiscountedAmount(amount: number, discount: number): string {
   return (amount - (amount * discount) / 100).toFixed(2);
 }
 
-function checkDiscount() {
+function checkDiscount(): void {
   const purchaseAmount: number = getCorrectNumber("Enter purchase amount:");
 
   const isThreePercent: boolean =
@@ -68,7 +68,7 @@ function checkDiscount() {
   }
 }
 
-//checkDiscount();
+checkDiscount();
 
 /*
  * Task 8
@@ -76,7 +76,7 @@ function checkDiscount() {
 
 // The radius of the inscribed circle is half the side of the square.
 
-function checkInscribedCircle() {
+function checkInscribedCircle(): void {
   const circleLength: number = getCorrectNumber("Enter a circle length:");
   const perimeter: number = getCorrectNumber("Enter the square's perimeter:");
 
@@ -90,13 +90,13 @@ function checkInscribedCircle() {
   }
 }
 
-//checkInscribedCircle();
+checkInscribedCircle();
 
 /*
  * Task 9
  */
 
-function getAnswer(question: string) {
+function getAnswer(question: string): number {
   let answer: number;
 
   do {
@@ -106,7 +106,7 @@ function getAnswer(question: string) {
   return answer;
 }
 
-function checkAnswer(question: string, correctAnswer: number) {
+function checkAnswer(question: string, correctAnswer: number): number {
   const userAnswer: number = getAnswer(question);
 
   const isCorrect: boolean = userAnswer === correctAnswer;
@@ -118,10 +118,10 @@ function checkAnswer(question: string, correctAnswer: number) {
   }
 }
 
-function getQuiz() {
-  const firstQuestion: string = `When is the Constitution Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
-  const secondQuestion: string = `When is the National Flag Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
-  const thirdQuestion: string = `When is the Independence Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
+function getQuiz(): void {
+  const firstQuestion: string = `When is the Constitution Day of Ukraine celebrated?\n1. June 28\n2. August 23\n3. August 24`;
+  const secondQuestion: string = `When is the National Flag Day of Ukraine celebrated?\n1. June 28\n2. August 23\n3. August 24`;
+  const thirdQuestion: string = `When is the Independence Day of Ukraine celebrated?\n1. June 28\n2. August 23\n3. August 24`;
 
   const firstCorrectAnswer: number = 1;
   const secondCorrectAnswer: number = 2;
@@ -136,7 +136,7 @@ function getQuiz() {
   alert(`Congratulations! Your grade is ${grade}.`);
 }
 
-//getQuiz();
+getQuiz();
 
 /*
  * Task 10
@@ -208,7 +208,7 @@ function getDateToString(date: customDate): string {
   return dateString;
 }
 
-function getNextDate(): void {
+function getUserDate(): customDate {
   const year: number = getCorrectNumber("Enter a year:");
   const month: number = getCorrectMonth();
   const day: number = getCorrectDay(month, year);
@@ -219,6 +219,10 @@ function getNextDate(): void {
     year: year,
   };
 
+  return userDate;
+}
+
+function getNextDate(userDate: customDate): customDate {
   let nextDate: customDate = {
     day: userDate.day,
     month: userDate.month,
@@ -280,11 +284,17 @@ function getNextDate(): void {
     }
   }
 
-  console.log("[USER DATE]", `${getDateToString(userDate)}`);
+  return nextDate;
+}
 
+function checkNextDate(): void {
+  const userDate = getUserDate();
+  const nextDate = getNextDate(userDate);
+
+  console.log("[USER DATE]", `${getDateToString(userDate)}`);
   console.log("[NEXT DATE]", `${getDateToString(nextDate)}`);
 
   alert(`Next day: ${getDateToString(nextDate)}!`);
 }
 
-getNextDate();
+checkNextDate();

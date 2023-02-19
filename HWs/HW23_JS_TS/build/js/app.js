@@ -12,7 +12,7 @@ function getCorrectNumber(question) {
 /*
  * Task 5
  */
-function getNumber() {
+function getNumberString() {
     let answer;
     do {
         answer = getCorrectNumber("Enter a five-digit number:");
@@ -20,7 +20,7 @@ function getNumber() {
     return answer.toString();
 }
 function checkPalindrome() {
-    const answer = getNumber();
+    const answer = getNumberString();
     const firstPart = answer.slice(0, 2);
     const lastPart = answer.slice(-2).split("").reverse().join("");
     if (firstPart === lastPart) {
@@ -30,7 +30,7 @@ function checkPalindrome() {
         alert("It's not a palindrome.");
     }
 }
-//checkPalindrome();
+checkPalindrome();
 /*
  * Task 7
  */
@@ -55,7 +55,7 @@ function checkDiscount() {
         alert("Discount doesn't apply.");
     }
 }
-//checkDiscount();
+checkDiscount();
 /*
  * Task 8
  */
@@ -72,7 +72,7 @@ function checkInscribedCircle() {
         alert("The circle won't fit in the square.");
     }
 }
-//checkInscribedCircle();
+checkInscribedCircle();
 /*
  * Task 9
  */
@@ -94,9 +94,9 @@ function checkAnswer(question, correctAnswer) {
     }
 }
 function getQuiz() {
-    const firstQuestion = `When is the Constitution Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
-    const secondQuestion = `When is the National Flag Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
-    const thirdQuestion = `When is the Independence Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
+    const firstQuestion = `When is the Constitution Day of Ukraine celebrated?\n1. June 28\n2. August 23\n3. August 24`;
+    const secondQuestion = `When is the National Flag Day of Ukraine celebrated?\n1. June 28\n2. August 23\n3. August 24`;
+    const thirdQuestion = `When is the Independence Day of Ukraine celebrated?\n1. June 28\n2. August 23\n3. August 24`;
     const firstCorrectAnswer = 1;
     const secondCorrectAnswer = 2;
     const thirdCorrectAnswer = 3;
@@ -106,6 +106,7 @@ function getQuiz() {
     grade += checkAnswer(thirdQuestion, thirdCorrectAnswer);
     alert(`Congratulations! Your grade is ${grade}.`);
 }
+getQuiz();
 function getCorrectDay(month, year) {
     let day;
     const isFebruary = month === 2;
@@ -155,7 +156,7 @@ function getDateToString(date) {
     dateString += date.month + "." + date.year;
     return dateString;
 }
-function getNextDate() {
+function getUserDate() {
     const year = getCorrectNumber("Enter a year:");
     const month = getCorrectMonth();
     const day = getCorrectDay(month, year);
@@ -164,6 +165,9 @@ function getNextDate() {
         month: month,
         year: year,
     };
+    return userDate;
+}
+function getNextDate(userDate) {
     let nextDate = {
         day: userDate.day,
         month: userDate.month,
@@ -224,8 +228,13 @@ function getNextDate() {
             nextDate.day++;
         }
     }
+    return nextDate;
+}
+function checkNextDate() {
+    const userDate = getUserDate();
+    const nextDate = getNextDate(userDate);
     console.log("[USER DATE]", `${getDateToString(userDate)}`);
     console.log("[NEXT DATE]", `${getDateToString(nextDate)}`);
     alert(`Next day: ${getDateToString(nextDate)}!`);
 }
-getNextDate();
+checkNextDate();
