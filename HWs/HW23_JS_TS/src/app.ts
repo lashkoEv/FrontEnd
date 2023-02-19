@@ -139,5 +139,152 @@ function getQuiz() {
 //getQuiz();
 
 /*
- * Task 10 Запросіть дату (день, місяць, рік) і виведіть наступну дату. Врахуйте можливість переходу на наступний місяць, рік, а також високосний рік.
+ * Task 10
  */
+
+type customDate = {
+  day: number;
+  month: number;
+  year: number;
+};
+
+function getCorrectDay(month: number, year: number): number {
+  let day: number;
+
+  const isFebruary: boolean = month === 2;
+  const isLeapYear: boolean =
+    year % 400 === 0 || (year % 4 === 0 && year % 100 != 0);
+  const isContainsThirtyOneDays =
+    (month % 2 !== 0 && month <= 7) || (month % 2 === 0 && month > 7);
+  const isContainsThirtyDays =
+    (month % 2 !== 0 && month > 7) || (month % 2 === 0 && month <= 7);
+
+  if (isFebruary) {
+    if (isLeapYear) {
+      do {
+        day = getCorrectNumber("Enter a day");
+      } while (day < 1 || day > 29);
+    } else {
+      do {
+        day = getCorrectNumber("Enter a day");
+      } while (day < 1 || day > 28);
+    }
+  } else if (isContainsThirtyOneDays) {
+    do {
+      day = getCorrectNumber("Enter a day");
+    } while (day < 1 || day > 31);
+  } else if (isContainsThirtyDays) {
+    do {
+      day = getCorrectNumber("Enter a day");
+    } while (day < 1 || day > 30);
+  }
+
+  return day;
+}
+
+function getCorrectMonth(): number {
+  let month: number;
+
+  do {
+    month = getCorrectNumber("Enter a month:");
+  } while (month < 1 || month > 12);
+
+  return month;
+}
+
+function getDateToString(date: customDate): string {
+  let dateString: string = "";
+
+  if (date.day < 10) {
+    dateString += "0";
+  }
+  dateString += date.day + ".";
+
+  if (date.month < 10) {
+    dateString += "0";
+  }
+  dateString += date.month + "." + date.year;
+
+  return dateString;
+}
+
+function getNextDate(): void {
+  const year: number = getCorrectNumber("Enter a year:");
+  const month: number = getCorrectMonth();
+  const day: number = getCorrectDay(month, year);
+
+  const userDate: customDate = {
+    day: day,
+    month: month,
+    year: year,
+  };
+
+  let nextDate: customDate = {
+    day: userDate.day,
+    month: userDate.month,
+    year: userDate.year,
+  };
+
+  const isLastDayAtYear: boolean = userDate.month === 12 && userDate.day === 31;
+
+  const isFebruary: boolean = userDate.month === 2;
+  const isLeapYear: boolean =
+    userDate.year % 400 === 0 ||
+    (userDate.year % 4 === 0 && userDate.year % 100 !== 0);
+  const isLastDayAtFebruaryLeapYear = userDate.day === 29;
+  const isLastDayAtFebruaryNotLeapYear = userDate.day === 28;
+
+  const isThirtyOneDaysMonth =
+    (userDate.month % 2 !== 0 && userDate.month <= 7) ||
+    (userDate.month % 2 === 0 && userDate.month > 7);
+  const isLastDayInThirtyOneDaysMonth = userDate.day === 31;
+
+  const isThirtyDaysMonth =
+    (userDate.month % 2 !== 0 && userDate.month > 7) ||
+    (userDate.month % 2 === 0 && userDate.month <= 7);
+  const isLastDayInThirtyDaysMonth = userDate.day === 30;
+
+  if (isLastDayAtYear) {
+    nextDate.day = 1;
+    nextDate.month = 1;
+    nextDate.year++;
+  } else if (isFebruary) {
+    if (isLeapYear) {
+      if (isLastDayAtFebruaryLeapYear) {
+        nextDate.day = 1;
+        nextDate.month++;
+      } else {
+        nextDate.day++;
+      }
+    } else {
+      if (isLastDayAtFebruaryNotLeapYear) {
+        nextDate.day = 1;
+        nextDate.month++;
+      } else {
+        nextDate.day++;
+      }
+    }
+  } else if (isThirtyOneDaysMonth) {
+    if (isLastDayInThirtyOneDaysMonth) {
+      nextDate.day = 1;
+      nextDate.month++;
+    } else {
+      nextDate.day++;
+    }
+  } else if (isThirtyDaysMonth) {
+    if (isLastDayInThirtyDaysMonth) {
+      nextDate.day = 1;
+      nextDate.month++;
+    } else {
+      nextDate.day++;
+    }
+  }
+
+  console.log("[USER DATE]", `${getDateToString(userDate)}`);
+
+  console.log("[NEXT DATE]", `${getDateToString(nextDate)}`);
+
+  alert(`Next day: ${getDateToString(nextDate)}!`);
+}
+
+getNextDate();
