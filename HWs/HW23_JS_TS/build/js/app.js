@@ -36,10 +36,24 @@ function checkDiscount() {
         alert("Discount doesn't apply.");
     }
 }
-checkDiscount();
+//checkDiscount();
 /*
- * Task 8 Запросіть у користувача довжину кола та периметр квадрата. Визначте чи може таке коло поміститися у зазначений квадрат.
+ * Task 8
  */
+// The radius of the inscribed circle is half the side of the square.
+function checkInscribedCircle() {
+    const circleLength = getCorrectNumber("Enter a circle length:");
+    const perimeter = getCorrectNumber("Enter the square's perimeter:");
+    const radius = (circleLength / 2) * Math.PI;
+    const halfSide = perimeter / 8;
+    if (radius <= halfSide) {
+        alert("The circle will fit in the square.");
+    }
+    else {
+        alert("The circle won't fit in the square.");
+    }
+}
+checkInscribedCircle();
 /*
  * Task 9 Задайте користувачеві 3 питання, у кожному питанні по 3 варіанти відповіді. За кожну правильну відповідь нараховується 2 бали. Після запитань виведіть користувачеві кількість набраних балів.
  */
