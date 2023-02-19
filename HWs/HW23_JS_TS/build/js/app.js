@@ -10,8 +10,27 @@ function getCorrectNumber(question) {
     }
 }
 /*
- * Task 5 Запросіть у користувача п’ятирозрядне число і визначте, чи є воно паліндромом.
+ * Task 5
  */
+function getNumber() {
+    let answer;
+    do {
+        answer = getCorrectNumber("Enter a five-digit number:");
+    } while (answer.toString().length != 5);
+    return answer.toString();
+}
+function checkPalindrome() {
+    const answer = getNumber();
+    const firstPart = answer.slice(0, 2);
+    const lastPart = answer.slice(-2).split("").reverse().join("");
+    if (firstPart === lastPart) {
+        alert("It's a palindrome.");
+    }
+    else {
+        alert("It's not a palindrome.");
+    }
+}
+//checkPalindrome();
 /*
  * Task 7
  */
@@ -87,7 +106,7 @@ function getQuiz() {
     grade += checkAnswer(thirdQuestion, thirdCorrectAnswer);
     alert(`Congratulations! Your grade is ${grade}.`);
 }
-getQuiz();
+//getQuiz();
 /*
  * Task 10 Запросіть дату (день, місяць, рік) і виведіть наступну дату. Врахуйте можливість переходу на наступний місяць, рік, а також високосний рік.
  */
