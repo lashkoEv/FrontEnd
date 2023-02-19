@@ -65,12 +65,54 @@ function checkInscribedCircle() {
   }
 }
 
-checkInscribedCircle();
+//checkInscribedCircle();
 
 /*
- * Task 9 Задайте користувачеві 3 питання, у кожному питанні по 3 варіанти відповіді. За кожну правильну відповідь нараховується 2 бали. Після запитань виведіть користувачеві кількість набраних балів.
+ * Task 9
  */
 
+function getAnswer(question: string) {
+  let answer: number;
+
+  do {
+    answer = getCorrectNumber(question);
+  } while (answer < 1 || answer > 3);
+
+  return answer;
+}
+
+function checkAnswer(question: string, correctAnswer: number) {
+  const userAnswer: number = getAnswer(question);
+
+  const isCorrect: boolean = userAnswer === correctAnswer;
+
+  if (isCorrect) {
+    return 2;
+  } else {
+    return 0;
+  }
+}
+
+function getQuiz() {
+  const firstQuestion: string = `When is the Constitution Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
+  const secondQuestion: string = `When is the National Flag Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
+  const thirdQuestion: string = `When is the Independence Day of Ukraine celebrated?\nJune 28\nAugust 23\nAugust 24`;
+
+  const firstCorrectAnswer: number = 1;
+  const secondCorrectAnswer: number = 2;
+  const thirdCorrectAnswer: number = 3;
+
+  let grade: number = 0;
+
+  grade += checkAnswer(firstQuestion, firstCorrectAnswer);
+  grade += checkAnswer(secondQuestion, secondCorrectAnswer);
+  grade += checkAnswer(thirdQuestion, thirdCorrectAnswer);
+
+  alert(`Congratulations! Your grade is ${grade}.`);
+}
+
+getQuiz();
+
 /*
- * Task 9 Запросіть дату (день, місяць, рік) і виведіть наступну дату. Врахуйте можливість переходу на наступний місяць, рік, а також високосний рік.
+ * Task 10 Запросіть дату (день, місяць, рік) і виведіть наступну дату. Врахуйте можливість переходу на наступний місяць, рік, а також високосний рік.
  */
