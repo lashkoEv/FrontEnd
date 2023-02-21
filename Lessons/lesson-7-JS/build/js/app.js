@@ -52,8 +52,8 @@ function getNameLowerCase(name) {
 }
 
 function getNameMedian(name) {
-  const length = getNameLength(name);
-  return name.slice(length - 5, length - 2);
+  const length = getNameLength(name) / 2;
+  return name.slice(length - 2, length + 1);
 }
 
 function getAnalytics(user) {
