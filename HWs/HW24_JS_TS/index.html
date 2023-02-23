@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
+    <link rel="stylesheet" href="./src/sass/style.scss" />
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="input-wrapper">
+        <input type="text" class="input" disabled />
+      </div>
+
+      <div class="calculator">
+        <div class="column">
+          <button class="button clear">CE</button>
+
+          <div class="numbers">
+            <button class="button number">7</button>
+            <button class="button number">8</button>
+            <button class="button number">9</button>
+            <button class="button number">4</button>
+            <button class="button number">5</button>
+            <button class="button number">6</button>
+            <button class="button number">1</button>
+            <button class="button number">2</button>
+            <button class="button number">3</button>
+            <button class="button number">00</button>
+            <button class="button number">0</button>
+            <button class="button number">.</button>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="operations">
+            <button class="button operation">/</button>
+            <button class="button operation">*</button>
+            <button class="button operation">-</button>
+            <button class="button operation">+</button>
+            <button class="button calculate">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./build/js/app.js"></script>
+  </body>
+</html>

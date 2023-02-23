@@ -1,22 +1,8 @@
 type expression = {
   firstOperand: number;
-  operation: number;
+  operation: string;
   secondOperand: number;
 };
-
-function getCorrectNumber(question: string): number {
-  let isCorrect: boolean = false;
-
-  while (!isCorrect) {
-    let answer: string | null = prompt(question);
-
-    let isCorrectNumber = answer && !isNaN(+answer);
-
-    if (isCorrectNumber) {
-      return +answer;
-    }
-  }
-}
 
 function addition(firstOperand: number, secondOperand: number): number {
   return firstOperand + secondOperand;
@@ -34,52 +20,65 @@ function division(firstOperand: number, secondOperand: number): number {
   return firstOperand / secondOperand;
 }
 
-function getExpression(): expression {
-  const firstOperand: number = getCorrectNumber("Enter a first operand:");
+function parseExpression(expressionString: string): expression | undefined {
+  const expressionArray = expressionString.split(" ");
 
-  let operation: number;
+  if (expressionArray.length === 3) {
+    return {
+      firstOperand: +expressionArray[0],
+      operation: expressionArray[1],
+      secondOperand: +expressionArray[2],
+    };
+  }
+}
 
-  do {
-    operation = getCorrectNumber(
-      `Enter operation:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division`
+function getResult(inputExp: string): number | string | undefined {
+  try {
+    const parsedExp: expression = parseExpression(inputExp);
+
+    switch (parsedExp.operation) {
+      case "+":
+        return addition(parsedExp.firstOperand, parsedExp.secondOperand);
+
+      case "-":
+        return subtraction(parsedExp.firstOperand, parsedExp.secondOperand);
+
+      case "*":
+        return multiplication(parsedExp.firstOperand, parsedExp.secondOperand);
+
+      case "/":
+        return division(parsedExp.firstOperand, parsedExp.secondOperand);
+    }
+  } catch (e: any) {
+    alert("Incorrect expression!");
+    return "";
+  }
+}
+
+function initElements(): void {
+  const input = document.querySelector(".input") as HTMLInputElement;
+  const numbers = document.querySelectorAll(".number");
+  const operations = document.querySelectorAll(".operation");
+  const calculateButton = document.querySelector(".calculate");
+  const clearButton = document.querySelector(".clear");
+
+  numbers.forEach((number) => {
+    number.addEventListener("click", () => (input.value += number.innerHTML));
+  });
+
+  operations.forEach((operation) => {
+    operation.addEventListener(
+      "click",
+      () => (input.value += ` ${operation.innerHTML} `)
     );
-  } while (operation < 1 || operation > 4);
+  });
 
-  const secondOperand: number = getCorrectNumber("Enter a second operand:");
+  calculateButton?.addEventListener(
+    "click",
+    () => (input.value = `${getResult(input.value)}`)
+  );
 
-  return {
-    firstOperand: firstOperand,
-    operation: operation,
-    secondOperand: secondOperand,
-  };
+  clearButton?.addEventListener("click", () => (input.value = ""));
 }
 
-function checkOperation() {
-  const expression: expression = getExpression();
-
-  switch (expression.operation) {
-    case 1:
-      return addition(expression.firstOperand, expression.secondOperand);
-
-    case 1:
-      return subtraction(expression.firstOperand, expression.secondOperand);
-
-    case 1:
-      return multiplication(expression.firstOperand, expression.secondOperand);
-
-    case 1:
-      return division(expression.firstOperand, expression.secondOperand);
-  }
-}
-
-function app(): void {
-  let isContinue = true;
-
-  while (isContinue) {
-    alert(`Result: ${checkOperation()}`);
-
-    isContinue = prompt("Enter 'y' to continue:") === "y";
-  }
-}
-
-app();
+initElements();
