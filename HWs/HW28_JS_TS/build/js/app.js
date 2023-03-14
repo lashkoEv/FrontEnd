@@ -24,7 +24,10 @@ class Hero {
 
   setHP(HP) {
     this.HP -= HP;
-    console.log("new hp:", this.HP);
+  }
+
+  getDMG() {
+    return this.damage;
   }
 }
 
@@ -34,7 +37,8 @@ class Elf extends Hero {
   }
 
   magicKick() {
-    console.log("magicKick from elf");
+    console.log("Magic Kick from Elf!");
+
     return this.damage * 2;
   }
 }
@@ -45,78 +49,111 @@ class Archer extends Hero {
   }
 
   magicKick() {
-    console.log("magicKick from Archer");
+    console.log("Magic Kick from Archer!");
+
     return ((this.damage * 2) / 1.2) * 0.4 * 2.2;
   }
 }
 
 class Game {
+  run() {
+    const heroes = this.getCharacters();
+    const isUserGoesFirst = this.getWhoGoesFirst();
+
+    this.getStats(heroes);
+
+    while (heroes.userHero.getHP() > 0 && heroes.computerHero.getHP() > 0) {
+      if (isUserGoesFirst) {
+        this.getKicks(heroes.userHero, heroes.computerHero);
+      } else {
+        this.getKicks(heroes.computerHero, heroes.userHero);
+      }
+    }
+
+    if (heroes.userHero.getHP() >= 0) {
+      console.log("Congratulations! You won!");
+    } else {
+      console.log("You lose!");
+    }
+  }
+
   getCharacters() {
     const type = getCorrectNumber("Choose a hero: 1 - Elf, else - Archer:");
-    const damage = getCorrectNumber("Enter the damage:");
-    const hp = getCorrectNumber("Enter HP:");
 
     if (type === 1) {
+      console.log("Your character is an Elf.");
+
       return {
-        userCharacter: new Elf(damage, hp),
-        computerCharacter: new Archer(damage, hp),
+        userHero: new Elf(this.getDamage(), this.getHP()),
+        computerHero: new Archer(this.getDamage(), this.getHP()),
       };
     }
 
+    console.log("Your character is an Archer.");
+
     return {
-      userCharacter: new Archer(damage, hp),
-      computerCharacter: new Elf(damage, hp),
+      userHero: new Archer(this.getDamage(), this.getHP()),
+      computerHero: new Elf(this.getDamage(), this.getHP()),
     };
+  }
+
+  getDamage() {
+    return +Math.random().toString().slice(3, 4);
+  }
+
+  getHP() {
+    return +Math.random().toString().slice(3, 5);
+  }
+
+  getStats(heroes) {
+    console.log("[PLAYER_HP]", heroes.userHero.getHP());
+    console.log("[PLAYER_DMG]", heroes.userHero.getDMG());
+
+    console.log("[COMPUTER_HP]", heroes.computerHero.getHP());
+    console.log("[COMPUTER_DMG]", heroes.computerHero.getDMG());
   }
 
   getWhoGoesFirst() {
     if (+Math.random().toString().slice(3, 5) < 50) {
+      console.log("You go first...");
+
       return true;
     }
+
+    console.log("You go second...");
 
     return false;
   }
 
-  run() {
-    const characters = this.getCharacters();
-    const isUserGoesFirst = this.getWhoGoesFirst();
+  getKicks(first, second) {
+    second.setHP(first.magicKick());
+    first.setHP(second.magicKick());
 
-    if (isUserGoesFirst) {
-      while (
-        characters.userCharacter.getHP() > 0 ||
-        characters.computerCharacter.getHP() > 0
-      ) {
-        characters.computerCharacter.setHP(
-          characters.userCharacter.magicKick()
-        );
+    console.log("[FIRST_HP]", first.getHP());
+    console.log("[SECOND_HP]", second.getHP());
+  }
+}
 
-        characters.userCharacter.setHP(
-          characters.computerCharacter.magicKick()
-        );
-      }
-    } else {
-      while (
-        characters.userCharacter.getHP() > 0 ||
-        characters.computerCharacter.getHP() > 0
-      ) {
-        characters.userCharacter.setHP(
-          characters.computerCharacter.magicKick()
-        );
-        characters.computerCharacter.setHP(
-          characters.userCharacter.magicKick()
-        );
-      }
-    }
+function getGame() {
+  let isRunning = true;
 
-    if (
-      characters.userCharacter.getHP() <= characters.computerCharacter.getHP()
-    ) {
-      console.log("You win!");
-    } else {
-      console.log("You loose!");
+  while (isRunning) {
+    const menuItem = getCorrectNumber("Hello!\n1. Let's play!\n2. Exit");
+
+    switch (menuItem) {
+      case 1:
+        const game = new Game();
+        game.run();
+        break;
+
+      case 2:
+        isRunning = false;
+        break;
+
+      default:
+        alert("Incorrect! Try again!");
     }
   }
 }
 
-const game = new Game();
-game.run();
+getGame();
