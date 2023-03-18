@@ -81,45 +81,45 @@ export default class UserController {
 
   #getEditMenu() {
     const item = getCorrectNumber(
-        `         Select a field to edit:
+      `         Select a field to edit:
          1. First name
          2. Last name
          3. Age
          4. Email
          5. Password
          6. OK`
-      );
+    );
 
-      switch (item) {
-        case 1:
-          this.#changeFirstName();
-          break;
+    switch (item) {
+      case 1:
+        this.#changeFirstName();
+        break;
 
-        case 2:
-          this.#changeLastName();
-          break;
+      case 2:
+        this.#changeLastName();
+        break;
 
-        case 3:
-          this.#changeAge();
-          break;
+      case 3:
+        this.#changeAge();
+        break;
 
-        case 4:
-          this.#changeEmail();
-          break;
+      case 4:
+        this.#changeEmail();
+        break;
 
-        case 5:
-          this.#changePassword();
-          break;
+      case 5:
+        this.#changePassword();
+        break;
 
-        case 6:
-          alert("Well done!");
-          return false;
+      case 6:
+        alert("Well done!");
+        return false;
 
-        default:
-          alert("Incorrect! Try again!");
-      }
+      default:
+        alert("Incorrect! Try again!");
+    }
 
-      return true;
+    return true;
   }
 
   #changeFirstName() {
