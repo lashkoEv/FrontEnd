@@ -8,7 +8,7 @@ function app() {
 
   while (isRunning) {
     const menuItem = getCorrectNumber(
-      `Hello!
+      `         Hello!
        1. Sign up
        2. Sign in
        3. View all users list

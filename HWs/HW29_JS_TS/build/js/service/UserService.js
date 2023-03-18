@@ -43,4 +43,54 @@ export default class UserService {
     console.log("[EMAIL]", user.email);
     console.log("[PASSWORD]", user.password);
   }
+
+  setFirstName(currentUser, newFirstName) {
+    this.#users.find((user) => {
+      if (currentUser.email === user.email) {
+        user.firstName = newFirstName;
+      }
+    });
+
+    return this.findByEmail(currentUser.email);
+  }
+
+  setLastName(currentUser, newLastName) {
+    this.#users.find((user) => {
+      if (currentUser.email === user.email) {
+        user.lastName = newLastName;
+      }
+    });
+
+    return this.findByEmail(currentUser.email);
+  }
+
+  setAge(currentUser, newAge) {
+    this.#users.find((user) => {
+      if (currentUser.email === user.email) {
+        user.age = newAge;
+      }
+    });
+
+    return this.findByEmail(currentUser.email);
+  }
+
+  setEmail(currentUser, newEmail) {
+    this.#users.find((user) => {
+      if (currentUser.email === user.email) {
+        user.email = newEmail;
+      }
+    });
+
+    return this.findByEmail(newEmail);
+  }
+
+  setPassword(currentUser, newPassword) {
+    this.#users.find((user) => {
+      if (currentUser.email === user.email) {
+        user.password = newPassword;
+      }
+    });
+
+    return this.findByEmail(currentUser.email);
+  }
 }
