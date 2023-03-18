@@ -10,16 +10,10 @@ export default class UserController {
   }
 
   signUp() {
-    const firstName = getCorrectString("Enter first name:");
-    const lastName = getCorrectString("Enter last name:");
-    const age = getCorrectNumber("Enter age:");
-    const email = getCorrectString("Enter email:");
-    const password = getCorrectString("Enter password:");
+    const user = this.getUserFromData();
 
-    if (!this.#userService.findByEmail(email)) {
-      const newUser = this.#userService.add(
-        new User(firstName, lastName, age, email, password)
-      );
+    if (!this.#userService.findByEmail(user.email)) {
+      const newUser = this.#userService.add(user);
 
       console.log(
         `Successfully added new user: ${newUser.firstName} ${newUser.lastName}!`
@@ -58,5 +52,15 @@ export default class UserController {
 
   changeUserData() {
     console.log("changeUserData");
+  }
+
+  getUserFromData() {
+    const firstName = getCorrectString("Enter first name:");
+    const lastName = getCorrectString("Enter last name:");
+    const age = getCorrectNumber("Enter age:");
+    const email = getCorrectString("Enter email:");
+    const password = getCorrectString("Enter password:");
+
+    return new User(firstName, lastName, age, email, password);
   }
 }
