@@ -1,4 +1,4 @@
-import { getCorrectNumber } from "./getCorrectNumber.js";
+import { getCorrectNumber } from "./correctInput.js";
 import UserController from "./Controller/UserController.js";
 
 function app() {
@@ -19,21 +19,26 @@ function app() {
     switch (menuItem) {
       case 1:
         userController.signUp();
+        isRunning = checkContinue();
         break;
 
       case 2:
         userController.signIn();
+        isRunning = checkContinue();
         break;
 
       case 3:
         userController.viewAllUsers();
+        isRunning = checkContinue();
         break;
 
       case 4:
         userController.changeUserData();
+        isRunning = checkContinue();
         break;
 
       case 5:
+        alert("Goodbye!");
         isRunning = false;
         break;
 
@@ -41,6 +46,16 @@ function app() {
         alert("Incorrect! Try again!");
     }
   }
+}
+
+function checkContinue() {
+  const isContinue = confirm("Continue?");
+
+  if (!isContinue) {
+    alert("Goodbye!");
+  }
+
+  return isContinue;
 }
 
 app();
