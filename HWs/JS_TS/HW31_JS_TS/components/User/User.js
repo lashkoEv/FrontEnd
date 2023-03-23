@@ -1,35 +1,35 @@
 export class User {
-    #fullName;
-    #login;
-    #password;
-    
-    constructor(fullName, login, password) {
-        this.#fullName = fullName;
-        this.#login = login;
-        this.#password = password;
-    }
+  #fullName;
+  #login;
+  #password;
 
-    get fullName() {
-        return this.#fullName;
-    }
+  constructor(fullName, login, password) {
+    this.#fullName = fullName;
+    this.#login = login;
+    this.#password = password;
+  }
 
-    set fullName(fullName) {
-        this.#fullName = fullName;
-    }
+  get fullName() {
+    return this.#fullName;
+  }
 
-    get login() {
-        return this.#login;
-    }
+  set fullName(fullName) {
+    this.#fullName = fullName;
+  }
 
-    set login(login) {
-        this.#login = login;
-    }
+  get login() {
+    return this.#login;
+  }
 
-    get password() {
-        return this.#password;
-    }
+  set login(login) {
+    this.#login = login;
+  }
 
-    set password(password) {
-        this.#password = password;
-    }
+  get password() {
+    return this.#password;
+  }
+
+  set password(password) {
+    this.#password = password;
+  }
 }

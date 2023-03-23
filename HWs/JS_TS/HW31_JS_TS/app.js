@@ -1,9 +1,42 @@
-// 1) Create class : User
-// 2) Extends Manager and Customer from User
-// 3) Add action : Manager has product(s) => Create class Product
-// => Product has attributes : price , label
-// 4) Add to Customer wallet = ...$
-// 5) Add to Manager warehouse = []
-// 6) Add to Managers warehouse products
-// 7) Customer may buy product -> customer - money (wallet) ->
-// Manager - product (wich chose Customer)
+import { Shop } from "./components/Shop/Shop.js";
+import { getCorrectNumber } from "./utils/getCorrectNumber.js";
+
+function shop() {
+  const shop = new Shop();
+
+  let isRunning = true;
+
+  while (isRunning) {
+    const menuItem = getCorrectNumber(
+      `         Hello!
+             1. Get all products
+             2. Buy product
+             3. Get profile
+             4. Exit`
+    );
+
+    switch (menuItem) {
+      case 1:
+        shop.getAllProducts();
+        break;
+
+      case 2:
+        shop.buyProduct();
+        break;
+
+      case 3:
+        shop.getProfile();
+        break;
+
+      case 4:
+        alert("Goodbye!");
+        isRunning = false;
+        break;
+
+      default:
+        alert("Incorrect! Try again!");
+    }
+  }
+}
+
+shop();
