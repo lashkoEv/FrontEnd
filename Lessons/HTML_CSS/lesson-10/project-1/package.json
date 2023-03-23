@@ -1,0 +1,11 @@
+{
+  "name": "create-project-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "createStructure": "node create-project.js"
+  },
+  "author": "Kir Katason",
+  "license": "ISC"
+}
