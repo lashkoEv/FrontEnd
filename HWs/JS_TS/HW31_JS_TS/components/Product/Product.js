@@ -1,25 +1,41 @@
 export class Product {
-    #label;
-    #price;
+  #id;
+  #label;
+  #price;
+  #amount;
 
-    constructor(label, price) {
-        this.#label = label;
-        this.#price - price;
-    }
+  constructor(id, label, price, amount = 5) {
+    this.#id = id;
+    this.#label = label;
+    this.#price = price;
+    this.#amount = amount;
+  }
 
-    get label() {
-        return this.#label;
-    }
+  get id() {
+    return this.#id;
+  }
 
-    set label(label) {
-        this.#label = label;
-    }
+  get label() {
+    return this.#label;
+  }
 
-    get price() {
-        return this.#price;
-    }
+  set label(label) {
+    this.#label = label;
+  }
 
-    set price(price) {
-        this.#price = price;
-    }
+  get price() {
+    return this.#price;
+  }
+
+  set price(price) {
+    this.#price = price;
+  }
+
+  get amount() {
+    return this.#amount;
+  }
+
+  subtractAmount(amount) {
+    this.#amount -= amount;
+  }
 }

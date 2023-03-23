@@ -13,12 +13,12 @@ export class Customer extends User {
   }
 
   buyProduct(price) {
-    if (this.#wallet >= price) {
-      this.#wallet -= price;
-
-      return true;
+    if (this.#wallet < price) {
+      console.error("Not enough money!");
+      return false;
     }
 
-    return false;
+    this.#wallet -= price;
+    return true;
   }
 }
