@@ -1,0 +1,72 @@
+S - Single responsibility principle
+O - Open closed principle
+L - Liskov substitution principle
+I - Interface segregation principle
+D - Dependency Inversion principle
+
+1. Single responsibility principle - means that the class must perform only one type of work and describe only one type of object, for example, the class Car, Chair, Student, User, etc. It will be bad practice to create classes that will perform several actions that are not directly related to this class. A class should only contain fields and methods that are directly related to it.
+For example, the Student class, which has not only setters, getters and some additional methods, but also methods that perform CRUD operations with the corresponding entity in the database.
+
+2. Open closed principle - means that objects and entities should be open for extension, but closed for modification. Other users should not make changes to existing code, but should extend the functionality using inheritance, for example.
+For example, to extend the capability of the Student class, we should not make changes to an already existing class, but should create a Bachelor class and extend it from the Student class.
+
+3. Liskov substitution principle - means that each derived class must be replaceable for its parent class. This is difficult to demonstrate with Javascript, but in other languages (for example Java) it is possible to create constructs like:
+
+class Parent {
+    ...
+
+    protected void run() {
+        ...
+    }
+}
+
+class Derived extends Parent {
+    ...
+    
+    @Override
+    protected void run() {
+        super.run();
+        ...
+    }
+}
+
+...
+Parent example = new Derived();
+
+This allows you to replace the definition of the parent class with the definition of its child class, and the program will continue to work normally, because all the operations that are in the parent class are available in the child class.
+
+4. Interface segregation principle - means that a class must not implement an interface that it does not use and classes must not contain unused methods. 
+Since there are no interfaces in Javascript, this principle is also difficult to describe, but you can take the parent class as an impromptu interface. Then this means that we must declare in the parent class only those fields and methods that will definitely be overridden by the derived classes, and declare the remaining properties separately for the derived classes. Java example:
+
+interface IFirst {
+    void firstMethod();
+}
+
+interface ISecond {
+    void secondMethod();
+}
+
+class FirstSimpleClass implements IFirst {
+    ...
+    
+    @Override
+    public void firstMethod() {
+        ...
+    }
+}
+
+class SecondSimpleClass implements IFirst, ISecond {
+    ...
+    
+    @Override
+    public void firstMethod() {
+        ...
+    }
+
+    @Override
+    public void secondMethod() {
+        ...
+    }
+}
+
+My personal review: Javascript does not implement OOP very well, so implementing the Liskov substitution principle and Interface segregation principle is relatively clumsy. Therefore, to explain my thoughts, I gave examples in Java, sorry :(
