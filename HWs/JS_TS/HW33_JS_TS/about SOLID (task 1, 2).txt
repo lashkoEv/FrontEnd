@@ -36,7 +36,7 @@ Parent example = new Derived();
 This allows you to replace the definition of the parent class with the definition of its child class, and the program will continue to work normally, because all the operations that are in the parent class are available in the child class.
 
 4. Interface segregation principle - means that a class must not implement an interface that it does not use and classes must not contain unused methods. 
-Since there are no interfaces in Javascript, this principle is also difficult to describe, but you can take the parent class as an impromptu interface. Then this means that we must declare in the parent class only those fields and methods that will definitely be overridden by the derived classes, and declare the remaining properties separately for the derived classes. Java example:
+Since there are no interfaces in Javascript, this principle is also difficult to describe, but you can take the parent class as an improvised interface. Then this means that we must declare in the parent class only those fields and methods that will definitely be overridden by the derived classes, and declare the remaining properties separately for the derived classes. Java example:
 
 interface IFirst {
     void firstMethod();
