@@ -1,17 +1,5 @@
-// + выдайтена страницу любое слово на английском, ниже поле для ввода, еще ниже блок с цифрой 0.
-
-// + по нажатию на 'tab' должена переключаться фокусировка на поле ввода (по принципу toggle для классов).
-// + ('tab' должен работать только с полем, игнорируя все остальное)
-
-// каждый раз как человек вводит в поле правильную букву из слова - она выделяется(на странице) и дальше игнорируется
-// (выделяйте любым способом). Когда человек введет все слово - поле ввода удаляется со страницы.
-// Ввод должен работать только подряд: если вы выбрали, скажем, слово 'apple', человеку не засчитает
-// ни одну букву кроме 'a', затем только 'p' и так далее.
-
-// Блок с цифрой, где изначально 0 увеличивается каждый раз на 1 за каждый неверный ввод с клавиатуры.
-
 let currentIndex = 0;
-let string = "cat";
+let word = "apple";
 
 const createElement = (tag, id) => {
   const element = document.createElement(tag);
@@ -23,6 +11,7 @@ const createElement = (tag, id) => {
 
 const styleTheBody = (body) => {
   body.style.height = "100vh";
+
   body.style.display = "flex";
   body.style.justifyContent = "center";
   body.style.alignItems = "center";
@@ -61,11 +50,15 @@ const addTabListener = () => {
   });
 };
 
-const addInputListener = (input) => {
+const addInputListener = () => {
   input.addEventListener("input", () => {
     const inputArray = input.value.toLowerCase().split("");
-    
-    if (inputArray[inputArray.length - 1] === ["c", "a", "t"][currentIndex]) {
+
+    const isCorrectLetter =
+      inputArray[inputArray.length - 1] ===
+      word.toLowerCase().split("")[currentIndex];
+
+    if (isCorrectLetter) {
       setCorrect();
     } else {
       setIncorrect();
@@ -74,33 +67,18 @@ const addInputListener = (input) => {
 };
 
 const setCorrect = () => {
-  switch (currentIndex) {
-    case 0:
-        C.style.color = "red";
-      break;
-    case 1:
-        A.style.color = "red";
-      break;
-    case 2:
-        T.style.color = "red";
-        deleteInput();
-      break;
-
-    default:
-      break;
-  }
+  word = word.replace(word[currentIndex], word[currentIndex].toUpperCase());
+  wordSpan.textContent = word;
 
   currentIndex++;
+
+  if (currentIndex === word.length) {
+    input.remove();
+  }
 };
 
-const deleteInput = () => {
-    input.remove();
-}
-
 const setIncorrect = () => {
-  const count = document.getElementById("count");
-
-  count.textContent = +count.textContent + 1;
+  countBox.textContent = +countBox.textContent + 1;
 
   input.value = input.value.slice(0, input.value.length - 1);
 };
@@ -109,25 +87,21 @@ const app = () => {
   const body = document.body;
   styleTheBody(body);
 
-  const spanBox = createBox("spanBox");
-  const spanC = createSpan("C", "C");
-  const spanA = createSpan("A", "A");
-  const spanT = createSpan("T", "T");
-  spanBox.append(spanC);
-  spanBox.append(spanA);
-  spanBox.append(spanT);
-  body.append(spanBox);
+  const wordBox = createBox("wordBox");
+  const wordSpan = createSpan("wordSpan", word);
+  wordBox.append(wordSpan);
+  body.append(wordBox);
 
   const input = createElement("input", "input");
   body.append(input);
 
   const countBox = createBox("countBox");
-  const count = createSpan("count", "0");
-  countBox.append(count);
+  const countSpan = createSpan("countSpan", "0");
+  countBox.append(countSpan);
   body.append(countBox);
 
   addTabListener();
-  addInputListener(input);
+  addInputListener();
 };
 
 app();
