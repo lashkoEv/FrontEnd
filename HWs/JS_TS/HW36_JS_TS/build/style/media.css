@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Rubik";
+  src: url(../public/fonts/Rubic/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: "DeliciousHandrawn";
+  src: url(../public/fonts/DeliciousHandrawn/DeliciousHandrawn-Regular.ttf);
+}
+
+@media (max-width: 1200px) {
+  .notebook {
+    min-width: 60%;
+  }
+
+  .section {
+    padding: 1.5rem 2rem;
+  }
+
+  .note {
+    width: 45%;
+  }
+}
+
+@media (max-width: 800px) {
+  .notebook {
+    min-width: 100%;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+
+  .note {
+    width: 100%;
+  }
+}

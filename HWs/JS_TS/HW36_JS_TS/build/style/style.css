@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Rubik";
+  src: url(../../public/fonts/Rubic/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: "DeliciousHandrawn";
+  src: url(../../public/fonts/DeliciousHandrawn/DeliciousHandrawn-Regular.ttf);
+}
+
+@keyframes animation {
+  10% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  background: #272727;
+  font-family: "Rubik";
+  color: #ffffff;
+}
+
+.header,
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.header .logo,
+.footer .logo {
+  width: 4rem;
+}
+
+.header .logo-wrapper,
+.footer .logo-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.header .logo-wrapper:hover,
+.footer .logo-wrapper:hover {
+  animation: animation 0.5s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.header .logo__text,
+.footer .logo__text {
+  font-family: "DeliciousHandrawn";
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 1.5rem 5rem;
+  flex-wrap: wrap;
+}
+
+.delimiter {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #51565f;
+}
+
+.adding {
+  flex-direction: column;
+}
+
+.notebook {
+  background: #f2edda url(../../public/images/lining.png) repeat-y;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  font-family: "Rubik";
+  min-height: 20rem;
+  min-width: 40%;
+  max-width: 100%;
+  font-size: 1.2rem;
+  line-height: 24px;
+  overflow: hidden;
+}
+
+.button {
+  font-size: 1.5rem;
+  color: #51565f;
+  background: transparent;
+  border: 2px solid #51565f;
+  outline: none;
+  border-radius: 100%;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+  border: 2px solid #ff7474;
+  color: #ff7474;
+}
+
+.notes {
+  transition: 0.3s ease-in-out;
+}
+
+.note {
+  width: 30%;
+  margin: 1rem 0.5rem;
+  padding: 2rem;
+  border: 2px solid #51565f;
+  border-radius: 2rem;
+  transition: 0.3s ease-in-out;
+}
+.note__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.note:hover {
+  border: 2px solid #ff7474;
+}
+
+.edit,
+.delete {
+  margin: 1.5rem 0.5rem 0 0.5rem;
+}
+
+.footer__text {
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  margin-top: 1.5rem;
+}
