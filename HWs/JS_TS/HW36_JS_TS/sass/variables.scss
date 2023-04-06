@@ -1,30 +1,37 @@
 @font-face {
-  font-family: "Roboto";
-  src: url(../public/fonts/Roboto/Roboto-Regular.ttf);
+  font-family: "Rubik";
+  src: url(../public/fonts/Rubic/Rubik-Regular.ttf);
+}
+
+@font-face {
+  font-family: "DeliciousHandrawn";
+  src: url(../public/fonts/DeliciousHandrawn/DeliciousHandrawn-Regular.ttf);
 }
 
 $margin-s: 0.5rem;
 $margin-m: 1rem;
 $margin-l: 1.5rem;
 $margin-xl: 2rem;
-$margin-xxl: 4rem;
+$margin-2xl: 5rem;
 
 $padding-s: 0.5rem;
 $padding-m: 1rem;
 $padding-l: 1.5rem;
 $padding-xl: 2rem;
-$padding-xxl: 4rem;
+$padding-2xl: 5rem;
 
-$primary-color: #F7EDE2;
-$secondary-color: #F6BD60;
-$third-color: #F5CAC3;
-$fourth-color: #84A59D;
-$fifth-color: #F28482;
+$primary-color: #272727;
+$secondary-color: #f2edda;
+$third-color: #ff7474;
+$fourth-color: #51565f;
 
-$primary-text-color: #292929;
+$primary-text-color: #ffffff;
 
-$primary-font-family: "Roboto";
+$primary-font-family: "Rubik";
+$secondary-font-family: "DeliciousHandrawn";
 
-$primary-border-radius: 1rem;
+$primary-border-radius: 2rem;
+$secondary-border-radius: 100%;
 
 $primary-transition: 0.3s ease-in-out;
+$secondary-transition: 0.5s ease-in-out;

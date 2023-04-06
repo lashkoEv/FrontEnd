@@ -8,6 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./sass/style.css" />
+    <link rel="stylesheet" href="./sass/media.css" />
     <link
       rel="shortcut icon"
       href="./public/icons/logo.svg"
@@ -16,14 +17,19 @@
     <script defer src="./app.js"></script>
     <title>Notebook</title>
   </head>
+  
   <body>
     <div id="app">
       <header class="header">
-        <img src="./public/icons/logo.svg" alt="Logo" class="logo" />
+        <div class="logo-wrapper">
+          <img src="./public/icons/logo.svg" alt="Logo" class="logo" />
+
+          <span class="logo__text">NOTES</span>
+        </div>
       </header>
 
       <main class="main">
-        <section class="section">
+        <section class="section adding">
           <textarea class="notebook"></textarea>
 
           <button class="button add">
@@ -37,15 +43,83 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
               animi officia, possimus dolorum ad libero consectetur odio sit
               unde soluta deleniti dignissimos velit molestiae laboriosam alias
-              nam modi iure. Est voluptatem excepturi optio libero, unde
-              consequatur voluptas nisi quo minus iste nemo veritatis modi ex
-              blanditiis rem accusantium nam enim voluptates eligendi. Ratione
-              eos quis accusantium debitis! Tenetur ab asperiores cum facere
-              explicabo, quisquam, vero illum ex necessitatibus aut tempore
-              eveniet accusantium quis nihil sapiente dolorum adipisci esse
-              magnam ratione porro et animi, officiis impedit. Ipsa, voluptatum
-              magnam necessitatibus commodi fugiat reprehenderit provident rem
-              maiores dolores quis itaque ipsam quam.
+              nam modi iure. Est voluptatem excepturi
+            </p>
+
+            <div class="note__footer">
+              <button class="button edit">
+                <i class="fa-solid fa-pen icon"></i>
+              </button>
+
+              <button class="button delete">
+                <i class="fa-solid fa-minus icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="note">
+            <p class="note__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+              animi officia, possimus dolorum ad libero consectetur odio sit
+              unde soluta deleniti dignissimos velit molestiae laboriosam alias
+              nam modi iure. Est voluptatem excepturi
+            </p>
+
+            <div class="note__footer">
+              <button class="button edit">
+                <i class="fa-solid fa-pen icon"></i>
+              </button>
+
+              <button class="button delete">
+                <i class="fa-solid fa-minus icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="note">
+            <p class="note__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+              animi officia, possimus dolorum ad libero consectetur odio sit
+              unde soluta deleniti dignissimos velit molestiae laboriosam alias
+              nam modi iure. Est voluptatem excepturi
+            </p>
+
+            <div class="note__footer">
+              <button class="button edit">
+                <i class="fa-solid fa-pen icon"></i>
+              </button>
+
+              <button class="button delete">
+                <i class="fa-solid fa-minus icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="note">
+            <p class="note__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+              animi officia, possimus dolorum ad libero consectetur odio sit
+              unde soluta deleniti dignissimos velit molestiae laboriosam alias
+              nam modi iure. Est voluptatem excepturi
+            </p>
+
+            <div class="note__footer">
+              <button class="button edit">
+                <i class="fa-solid fa-pen icon"></i>
+              </button>
+
+              <button class="button delete">
+                <i class="fa-solid fa-minus icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="note">
+            <p class="note__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+              animi officia, possimus dolorum ad libero consectetur odio sit
+              unde soluta deleniti dignissimos velit molestiae laboriosam alias
+              nam modi iure. Est voluptatem excepturi
             </p>
 
             <div class="note__footer">
@@ -62,6 +136,12 @@
       </main>
 
       <footer class="footer">
+        <div class="logo-wrapper">
+          <img src="./public/icons/logo.svg" alt="Logo" class="logo" />
+
+          <span class="logo__text">NOTES</span>
+        </div>
+
         <h5 class="footer__text">
           Copyright &#169; Lashko E.L. All rights reserved.
         </h5>

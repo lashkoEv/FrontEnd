@@ -1,4 +1,6 @@
 @import "./variables.scss";
+@import "./keyframes.scss";
+@import "./mixins.scss";
 
 * {
   margin: 0;
@@ -7,43 +9,119 @@
 }
 
 #app {
+  background: $primary-color;
   font-family: $primary-font-family;
+  color: $primary-text-color;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    
-}
+.header,
+.footer {
+  @include flexbox(center, center, column);
+  padding: $padding-l;
 
-.logo {
-    width: 5rem;
-}
+  .logo {
+    width: 4rem;
 
-.main {
-  background: $secondary-color;
+    &-wrapper {
+      @include flexbox(start, center, row);
+      cursor: pointer;
+    }
+
+    &-wrapper:hover {
+      animation: animation $secondary-transition;
+      animation-iteration-count: 1;
+    }
+
+    &__text {
+      font-family: $secondary-font-family;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+      margin: $margin-s 0 0 $margin-s;
+    }
+  }
 }
 
 .section {
+  @include flexbox(space-evenly, center, row);
+  padding: $padding-l $padding-2xl;
+  flex-wrap: wrap;
+}
+
+.delimiter {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid $fourth-color;
+}
+
+.adding {
+  flex-direction: column;
 }
 
 .notebook {
+  background: $secondary-color url(../public/images/lining.png) repeat-y;
+  border: none;
+  outline: none;
+  border-radius: $primary-border-radius;
+  padding: $padding-l;
+  font-family: $primary-font-family;
+  min-height: 20rem;
+  min-width: 40%;
+  max-width: 100%;
+  font-size: 1.2rem;
+  line-height: 24px;
+  overflow: hidden;
 }
 
 .button {
+  font-size: 1.5rem;
+  color: $fourth-color;
+  background: transparent;
+  border: 2px solid $fourth-color;
+  outline: none;
+  border-radius: $secondary-border-radius;
+  width: 4rem;
+  height: 4rem;
+  margin: $margin-m;
+  transition: $primary-transition;
+
+  &:hover {
+    border: 2px solid $third-color;
+    color: $third-color;
+  }
+}
+
+.notes {
+  transition: $primary-transition;
 }
 
 .note {
+  width: 30%;
+  margin: $margin-m $margin-s;
+  padding: $padding-xl;
+  border: 2px solid $fourth-color;
+  border-radius: $primary-border-radius;
+  transition: $primary-transition;
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  &:hover {
+    border: 2px solid $third-color;
+  }
 }
 
-.note__text {
-}
-
-.note__footer {
+.edit,
+.delete {
+  margin: $margin-l $margin-s 0 $margin-s;
 }
 
 .footer {
-}
-
-.footer__text {
+  &__text {
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    margin-top: $margin-l;
+  }
 }

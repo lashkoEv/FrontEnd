@@ -1,0 +1,29 @@
+@import "./variables.scss";
+
+@media (max-width: 1200px) {
+  .notebook {
+    min-width: 60%;
+  }
+
+  .section {
+    padding: $padding-l $padding-xl;
+  }
+
+  .note {
+    width: 45%;
+  }
+}
+
+@media (max-width: 800px) {
+  .notebook {
+    min-width: 100%;
+  }
+
+  .section {
+    padding: $padding-l;
+  }
+
+  .note {
+    width: 100%;
+  }
+}
