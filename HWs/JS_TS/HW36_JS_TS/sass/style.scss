@@ -1,0 +1,49 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: $primary-font-family;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.logo {
+    width: 5rem;
+}
+
+.main {
+  background: $secondary-color;
+}
+
+.section {
+}
+
+.notebook {
+}
+
+.button {
+}
+
+.note {
+}
+
+.note__text {
+}
+
+.note__footer {
+}
+
+.footer {
+}
+
+.footer__text {
+}
