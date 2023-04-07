@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Rubik";
-  src: url(../public/fonts/Rubic/Rubik-Regular.ttf);
+  src: url(../../public/fonts/Rubic/Rubik-Regular.ttf);
 }
 
 @font-face {
   font-family: "DeliciousHandrawn";
-  src: url(../public/fonts/DeliciousHandrawn/DeliciousHandrawn-Regular.ttf);
+  src: url(../../public/fonts/DeliciousHandrawn/DeliciousHandrawn-Regular.ttf);
 }
 
 @media (max-width: 1200px) {

@@ -12,6 +12,7 @@
   background: $primary-color;
   font-family: $primary-font-family;
   color: $primary-text-color;
+  min-height: 100vh;
 }
 
 .header,
@@ -116,6 +117,11 @@
 .edit,
 .delete {
   margin: $margin-l $margin-s 0 $margin-s;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 .footer {

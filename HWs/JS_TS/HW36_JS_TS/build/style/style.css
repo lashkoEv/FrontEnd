@@ -30,6 +30,7 @@
   background: #272727;
   font-family: "Rubik";
   color: #ffffff;
+  min-height: 100vh;
 }
 
 .header,
@@ -146,6 +147,11 @@
 .edit,
 .delete {
   margin: 1.5rem 0.5rem 0 0.5rem;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 .footer__text {

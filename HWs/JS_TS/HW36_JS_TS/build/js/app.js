@@ -1,10 +1,133 @@
 "use strict";
 
-// Dz:
+let nextKey;
+let currentKey;
+let oldNote;
 
-// создайте приложение заметок как на схеме
-// - поле для ввода текста заметки
-// - кнопка для добавления заметки в список
-// - все заметки с новой строки и с маркером
-// - у каждой заметки есть кнпока для ее удаления(удаляется и со страницы и из localStorage)
-// - все заметки сохраняются в localStorage и при запуске страницы - выдаются на экран
+const addButtonEventListener = () => {
+  const currentNote = notebook.value;
+
+  if (currentNote.length > 0) {
+    localStorage.setItem(nextKey, currentNote);
+    notebook.value = "";
+    increaseNotesCount();
+    addNote(currentNote);
+  }
+};
+
+const getKeyOfElement = (text) => {
+  let key = -1;
+
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.getItem(localStorage.key(i)) === text) {
+      key = localStorage.key(i);
+    }
+  }
+
+  return key;
+};
+
+const deleteButtonListener = (event) => {
+  const text = event.currentTarget.parentElement.previousSibling.textContent;
+
+  const key = getKeyOfElement(text);
+
+  localStorage.removeItem(key);
+  event.currentTarget.parentElement.parentElement.remove();
+};
+
+const editButtonListener = (event) => {
+    // TODO заменить на поиск по селектору
+  const text = event.currentTarget.parentElement.previousSibling.textContent;
+  notebook.value = text;
+  oldNote = text;
+  currentKey = getKeyOfElement(notebook.value);
+
+  addButton.classList.add("hidden");
+  doneButton.classList.remove("hidden");
+};
+
+const doneButtonListener = (event) => {
+  localStorage.setItem(currentKey, notebook.value);
+
+  const notesText = document.getElementsByClassName("note__text");
+
+  for (let i = 0; i < notesText.length; i++) {
+    if (notesText[i].textContent === oldNote) {
+      notesText[i].textContent = notebook.value;
+    }
+  }
+
+  notebook.value = "";
+
+  addButton.classList.remove("hidden");
+  doneButton.classList.add("hidden");
+};
+
+const increaseNotesCount = () => {
+  nextKey++;
+
+  localStorage.setItem("nextKey", nextKey);
+};
+
+const loadExistingNotes = () => {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+
+    if (key !== "nextKey") {
+      addNote(localStorage.getItem(key));
+    }
+  }
+};
+
+const createElement = (tag, classes, parent) => {
+  const element = document.createElement(tag);
+
+  classes.forEach((item) => {
+    element.classList.add(item);
+  });
+
+  parent.append(element);
+
+  return element;
+};
+
+const addNote = (note) => {
+  const noteDiv = createElement("div", ["note"], notes);
+
+  const noteText = createElement("p", ["note__text"], noteDiv);
+  noteText.textContent = note;
+
+  const noteFooter = createElement("div", ["note__footer"], noteDiv);
+
+  const editButton = createElement("button", ["button", "edit"], noteFooter);
+  createElement("i", ["fa-solid", "fa-pen", "icon"], editButton);
+  editButton.addEventListener("click", editButtonListener);
+
+  const deleteButton = createElement(
+    "button",
+    ["button", "delete"],
+    noteFooter
+  );
+  createElement("i", ["fa-solid", "fa-minus", "icon"], deleteButton);
+  deleteButton.addEventListener("click", deleteButtonListener);
+};
+
+const loadNextKey = () => {
+  if (localStorage.getItem("nextKey")) {
+    nextKey = +localStorage.getItem("nextKey");
+  } else {
+    nextKey = 0;
+    localStorage.setItem("nextKey", nextKey);
+  }
+};
+
+const app = () => {
+  loadNextKey();
+
+  addButton.addEventListener("click", addButtonEventListener);
+  doneButton.addEventListener("click", doneButtonListener);
+  loadExistingNotes();
+};
+
+app();
