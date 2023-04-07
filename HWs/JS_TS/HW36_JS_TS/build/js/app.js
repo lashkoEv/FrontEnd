@@ -37,8 +37,8 @@ const deleteButtonListener = (event) => {
 };
 
 const editButtonListener = (event) => {
-    // TODO заменить на поиск по селектору
   const text = event.currentTarget.parentElement.previousSibling.textContent;
+
   notebook.value = text;
   oldNote = text;
   currentKey = getKeyOfElement(notebook.value);
@@ -47,21 +47,26 @@ const editButtonListener = (event) => {
   doneButton.classList.remove("hidden");
 };
 
-const doneButtonListener = (event) => {
+const doneButtonListener = () => {
   localStorage.setItem(currentKey, notebook.value);
 
-  const notesText = document.getElementsByClassName("note__text");
-
-  for (let i = 0; i < notesText.length; i++) {
-    if (notesText[i].textContent === oldNote) {
-      notesText[i].textContent = notebook.value;
-    }
-  }
+  const noteElement = getNoteElement(oldNote);
+  noteElement.textContent = notebook.value;
 
   notebook.value = "";
 
   addButton.classList.remove("hidden");
   doneButton.classList.add("hidden");
+};
+
+const getNoteElement = (text) => {
+  const notesText = document.getElementsByClassName("note__text");
+
+  for (let i = 0; i < notesText.length; i++) {
+    if (notesText[i].textContent === text) {
+      return notesText[i];
+    }
+  }
 };
 
 const increaseNotesCount = () => {
@@ -127,6 +132,7 @@ const app = () => {
 
   addButton.addEventListener("click", addButtonEventListener);
   doneButton.addEventListener("click", doneButtonListener);
+
   loadExistingNotes();
 };
 
