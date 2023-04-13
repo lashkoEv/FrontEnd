@@ -1,12 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script defer src="./app.js"></script>
-</body>
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link rel='stylesheet' href='./css.css'>
+		<script defer src='./workersGen.js'></script>
+		<script defer src='./core.js'></script>
+		<script defer src='./entrySection.js'></script>
+		<script defer src='./videoSection.js'></script>
+		<script defer src='./workersSection.js'></script>
+		<script defer src='./main.js'></script>
+	</head>
+	<body>
+		<section class='entrySection section'>
+			<span class='entryBtn btn'> click </span>
+		</section>
+		<section class='videoSection section hide'>
+			<span class='showWorkersBtn btn hide'> show workers list </span>
+			<video class='videoSection_video'> 
+				<source src='video.mp4'>
+				Change your trash browser
+			</video> 
+		</section>
+		<section class='workersSection section hide'>
+			<span class='copyWorkersListBtn btn'>copy</span>
+			<span class='rerandomWorkersListBtn btn'>get another workers(random)</span>
+			<div class='workersList'></div>
+			<audio class='workersSound'>
+				<source src='sound1.mp3'>
+			</audio>
+			<input class='workersListCopyInput hide'>
+		</section>
+	</body>
 </html>
