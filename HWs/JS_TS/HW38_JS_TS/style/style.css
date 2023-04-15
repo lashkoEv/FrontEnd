@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  background-color: rgb(31, 31, 31);
+  font-family: "Roboto", sans-serif;
+  color: rgb(243, 243, 243);
+}
+
+section {
+  padding: 1rem 2rem;
+}
+
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 4rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.criteria {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.criterion {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  background-color: rgb(160, 36, 36);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.employees {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.employee {
+  padding: 2rem;
+  border: 2px solid rgb(46, 46, 46);
+  border-radius: 2rem;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.employee:hover {
+  box-shadow: 0 8px 16px 0 rgba(117, 117, 117, 0.5);
+}
+
+.img {
+  width: 40%;
+}
+
+.field {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.key {
+  padding: 0.5rem;
+  width: 30%;
+}
+
+.value {
+  padding: 0.5rem;
+  border: 1px solid rgba(143, 143, 143, 0.5);
+  border-radius: 0.5rem;
+  width: 70%;
+}
+
+.red {
+  background-color: rgba(160, 36, 36, 0.2);
+  border: 1px solid rgb(160, 36, 36);
+}
