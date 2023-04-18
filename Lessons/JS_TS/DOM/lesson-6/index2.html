@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script defer src="js1.js"></script>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        height: 99vh;
+        width: 99vw;
+        border: solid 2px;
+      }
+      .sq {
+        height: 10px;
+        width: 10px;
+        background-color: black;
+        border: solid 1px orange;
+        position: absolute;
+        animation: 1s ani linear alternate infinite;
+      }
+      @keyframes ani {
+        to {
+          transform: translateX(100px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <canvas id="canvas"></canvas>
+
+  </body>
+</html>
