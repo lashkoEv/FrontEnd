@@ -1,0 +1,21 @@
+
+@bgColor: grey;
+
+body {
+  background-color: @bgColor;
+}
+
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+a {
+  color: red;
+  .bordered();
+}
+
+span {
+  color: blue;
+  .bordered();
+}
