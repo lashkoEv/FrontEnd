@@ -20,7 +20,7 @@ export class Meteorite {
     this.#height = 85;
 
     this.#positionX = canvas.width + 200;
-    this.#positionY = Math.floor(Math.random() * (canvas.height - 100) + 100);
+    this.#positionY = this.#getRandomPositionY();
 
     this.#image = new Image();
     this.#image.src = "./public/images/meteorite/meteorite.png";
@@ -41,14 +41,18 @@ export class Meteorite {
     this.#isFlew = false;
   }
 
+  #getRandomPositionY = () => {
+    return Math.floor(Math.random() * (canvas.height - 85));
+  }
+
   #move = () => {
-    this.#positionX -= 3;
+    this.#positionX -= 7;
     this.#checkPosition();
     this.#animationId = requestAnimationFrame(this.#move);
   };
 
   #checkPosition = () => {
-    if (this.#positionX <= 0) {
+    if (this.#positionX <= -200) {
       this.#isFlew = true;
     }
   };
