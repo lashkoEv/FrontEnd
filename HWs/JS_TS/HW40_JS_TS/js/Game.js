@@ -14,6 +14,8 @@ export class Game {
   #addMeteoritesIntervalId;
   #checkMeteoritesIntervalId;
 
+  #intersectionIntervalId;
+
   #audio;
 
   constructor(ctx) {
@@ -34,6 +36,8 @@ export class Game {
     this.#addMeteoritesIntervalId = this.addMeteorites();
     this.#checkMeteoritesIntervalId = this.checkMeteorites();
 
+    this.#intersectionIntervalId = this.checkIntersection();
+
     this.#audio = new Audio();
     this.#playAudio();
   }
@@ -52,9 +56,8 @@ export class Game {
     this.#audio.volume = 0.2;
     this.#audio.loop = true;
     document.onclick = () => {
-        this.#audio.play();
-
-    }
+      this.#audio.play();
+    };
   };
 
   #stopAudio = () => {
@@ -65,7 +68,7 @@ export class Game {
     return setInterval(() => {
       const meteorite = new Meteorite(this.#ctx);
       this.#meteorites.push(meteorite);
-    }, 1000);
+    }, 2000);
   };
 
   checkMeteorites = () => {
@@ -73,6 +76,24 @@ export class Game {
       this.#meteorites = this.#meteorites.filter((meteorite) => {
         if (!meteorite.isFlew) {
           return meteorite;
+        }
+      });
+    }, 1);
+  };
+
+  checkIntersection = () => {
+    return setInterval(() => {
+      this.#meteorites.forEach((meteorite) => {
+        const isIntersection =
+          (this.#character.positionY >= meteorite.positionY &&
+            this.#character.positionY <= meteorite.positionY + 80 &&
+            this.#character.positionX + 150 >= meteorite.positionX) ||
+          (this.#character.positionY + 80 >= meteorite.positionY &&
+            this.#character.positionY + 80 <= meteorite.positionY + 80 &&
+            this.#character.positionX + 150 >= meteorite.positionX);
+
+        if (isIntersection) {
+          alert("Lost");
         }
       });
     }, 1);
