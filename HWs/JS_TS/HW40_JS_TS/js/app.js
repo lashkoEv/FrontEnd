@@ -9,9 +9,25 @@
 // - фон на полотне, герой и снаряды это картинки(разбираете самостоятельно метод контекста canvas - drawImage)
 // - как выглядит герой, снаряды и фон - решаете сами
 
+import { Game } from "./Game.js";
+
 // ----
 
 // Доп. (не обязательно)
 // - стрельба персонажа
 // - счетчик очей
 // - тепорт с края полотна на противополоный край
+
+const app = () => {
+  const ctx = canvas.getContext("2d");
+
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  // const meteorite = new Image();
+  // meteorite.src = "./public/images/meteorite/meteorite.png";
+
+  const game = new Game(ctx);
+};
+
+app();
