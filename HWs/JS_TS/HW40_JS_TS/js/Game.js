@@ -35,7 +35,7 @@ export class Game {
     this.#checkMeteoritesIntervalId = this.checkMeteorites();
 
     this.#audio = new Audio();
-    // this.#playAudio();
+    this.#playAudio();
   }
 
   stopGame = () => {
@@ -48,10 +48,13 @@ export class Game {
   };
 
   #playAudio = () => {
-    audio.src = "./public/sounds/main-theme/main-theme-1.mp3";
-    audio.volume = 0.2;
-    audio.loop = true;
-    audio.play();
+    this.#audio.src = "./public/sounds/main-theme/main-theme-1.mp3";
+    this.#audio.volume = 0.2;
+    this.#audio.loop = true;
+    document.onclick = () => {
+        this.#audio.play();
+
+    }
   };
 
   #stopAudio = () => {
