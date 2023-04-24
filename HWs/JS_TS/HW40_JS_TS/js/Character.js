@@ -19,7 +19,7 @@ export class Character {
     this.#height = 85;
 
     this.#positionX = 0;
-    this.#positionY = 0;
+    this.#positionY = canvas.height / 2 - 40;
 
     this.#image = new Image();
     this.#image.src = "./public/images/character/character.png";
