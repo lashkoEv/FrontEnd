@@ -1,17 +1,4 @@
-// Создать игру на canvas, используя для отрисовки requestAnimationFrame
-// - страница главного меню с кнопкой старта для запуска игры и подсказками по управлению
-// - меню и подсказки - не canvas
-// - на полотне герой и фон
-// - героем можно управлять(двигать стрелками либо вверх\вниз, либо влево\вправо - выбираете только одну ось)
-// - через полотно летят снаряды(рандомное появление за краем полотна и летят в сторону героя)
-// - при столкновении с игроком - игра останавливается и воспроизводится звук, с полотна все пропадает, кроме фона
-// - при старте - на фоне играет музыка
-// - фон на полотне, герой и снаряды это картинки(разбираете самостоятельно метод контекста canvas - drawImage)
-// - как выглядит герой, снаряды и фон - решаете сами
-
-import { Game } from "./Game.js";
-
-// ----
+import { createMainMenu } from "./createMainMenu.js";
 
 // Доп. (не обязательно)
 // - стрельба персонажа
@@ -19,15 +6,8 @@ import { Game } from "./Game.js";
 // - тепорт с края полотна на противополоный край
 
 const app = () => {
-  const ctx = canvas.getContext("2d");
-
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-
-  // const meteorite = new Image();
-  // meteorite.src = "./public/images/meteorite/meteorite.png";
-
-  const game = new Game(ctx);
+  const app = document.getElementById("app");
+  app.replaceChildren(createMainMenu());
 };
 
 app();
