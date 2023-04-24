@@ -4,6 +4,8 @@ export const createMainMenu = () => {
   const firstTip = "TO CONTROL YOUR CHARACTER, USE THE UP AND DOWN ARROWS.";
   const secondTip =
     "IF THE CHARACTER COLLISIONS WITH THE METEOORITE - YOU LOSE, BE CAREFUL!";
+  const thirdTip =
+    "IF THE CHARACTER REACHES THE EDGE OF THE WINDOW, HE WILL TELEPORT TO THE OPPOSITE EDGE.";
 
   const menuWrapper = createElement("div", "menu-wrapper", "", null);
 
@@ -22,6 +24,8 @@ export const createMainMenu = () => {
 
   const thirdRow = createElement("p", "text", secondTip, controlTips);
 
+  const fourthRow = createElement("p", "text", thirdTip, controlTips);
+
   return menuWrapper;
 };
 
@@ -36,6 +40,10 @@ const createCanvas = () => {
 
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
+
+  const scoreWrapper = createElement("div", "score-wrapper", "SCORE: ", app);
+  const score = createElement("span", null, "0", scoreWrapper);
+  score.id = "score";
 
   initLostModal();
 
@@ -67,6 +75,7 @@ const initLostModal = () => {
   lostModal.id = "lostModal";
 
   const lostContent = createElement("div", "modal__content", "", lostModal);
+  lostContent.id = "lostContent";
 
   const lostTitle = createElement("div", "title", "YOU LOST!", lostContent);
 
@@ -76,6 +85,7 @@ const initLostModal = () => {
     "BACK TO MENU",
     lostContent
   );
+  backToMenu.id = "backToMenu";
   backToMenu.addEventListener("click", () => {
     lostModal.style.display = "none";
 

@@ -87,6 +87,8 @@ export class Game {
       this.#meteorites = this.#meteorites.filter((meteorite) => {
         if (!meteorite.isFlew) {
           return meteorite;
+        } else {
+          score.textContent = +score.textContent + 1;
         }
       });
     }, 1);
@@ -122,7 +124,13 @@ export class Game {
   };
 
   #lost() {
+    const playerScore = document.createElement("p");
+    playerScore.textContent = `YOUR SCORE: ${score.textContent}`;
+    playerScore.classList.add("text");
+    lostContent.insertBefore(playerScore, backToMenu);
+
     lostModal.style.display = "block";
+
     const audio = new Audio();
     audio.src = "./public/sounds/lost/lost.mp3";
     audio.volume = 0.4;

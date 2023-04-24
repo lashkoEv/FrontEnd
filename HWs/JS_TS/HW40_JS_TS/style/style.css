@@ -58,13 +58,27 @@ body {
 }
 
 .text {
-  margin-top: 4rem;
+  margin-top: 3rem;
   font-family: "primary";
   color: white;
   text-shadow: 5px 0 0 black, 0 -5px 0 black, 0 5px 0 black, -5px 0 0 black;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 5px;
   text-align: center;
+}
+
+/* -------------- SCORE ---------------- */
+
+.score-wrapper {
+  font-family: "primary";
+  color: white;
+  text-shadow: 5px 0 0 black, 0 -5px 0 black, 0 5px 0 black, -5px 0 0 black;
+  font-size: 30px;
+  letter-spacing: 5px;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
 
 /* -------------- BUTTON --------------- */
@@ -139,27 +153,4 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-@media (max-width: 1000px) {
-  .menu {
-    width: 60%;
-  }
-
-  .title {
-    font-size: 30px;
-  }
-
-  .text {
-    font-size: 14px;
-  }
-
-  .button {
-    font-size: 20px;
-  }
-}
-@media (max-width: 800px) {
-  .menu {
-    width: 95%;
-  }
 }

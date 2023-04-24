@@ -1,0 +1,30 @@
+@media (max-width: 1000px) {
+  .menu {
+    width: 60%;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 20px;
+  }
+
+  .modal__content {
+    width: 60%;
+  }
+}
+@media (max-width: 800px) {
+  .menu {
+    width: 95%;
+  }
+
+  .modal__content {
+    width: 95%;
+  }
+}
