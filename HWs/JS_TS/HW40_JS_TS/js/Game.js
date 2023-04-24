@@ -129,6 +129,8 @@ export class Game {
     playerScore.classList.add("text");
     lostContent.insertBefore(playerScore, backToMenu);
 
+    scoreWrapper.remove();
+    
     lostModal.style.display = "block";
 
     const audio = new Audio();

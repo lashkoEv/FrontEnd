@@ -42,6 +42,8 @@ const createCanvas = () => {
   canvas.width = window.innerWidth;
 
   const scoreWrapper = createElement("div", "score-wrapper", "SCORE: ", app);
+  scoreWrapper.id = "scoreWrapper";
+  
   const score = createElement("span", null, "0", scoreWrapper);
   score.id = "score";
 
