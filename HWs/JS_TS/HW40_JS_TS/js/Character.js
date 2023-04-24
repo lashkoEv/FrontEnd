@@ -56,7 +56,19 @@ export class Character {
       this.#positionY -= 3;
     }
 
+    this.#checkSceneEdges();
+
     this.#animationId = requestAnimationFrame(this.#move);
+  };
+
+  #checkSceneEdges = () => {
+    if (this.#positionY <= 0) {
+      this.#positionY = canvas.height - 85;
+    }
+
+    if (this.#positionY > canvas.height - 85) {
+      this.#positionY = 0;
+    }
   };
 
   #onKeyDown = ({ code }) => {
