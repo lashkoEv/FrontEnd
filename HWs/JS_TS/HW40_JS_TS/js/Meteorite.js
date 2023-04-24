@@ -13,7 +13,9 @@ export class Meteorite {
 
   #isFlew;
 
-  constructor(ctx) {
+  #speed;
+
+  constructor(ctx, speed = 3) {
     this.#ctx = ctx;
 
     this.#width = 200;
@@ -36,6 +38,8 @@ export class Meteorite {
 
     this.#animationId = 0;
 
+    this.#speed = speed;
+
     this.#move();
 
     this.#isFlew = false;
@@ -43,10 +47,10 @@ export class Meteorite {
 
   #getRandomPositionY = () => {
     return Math.floor(Math.random() * (canvas.height - 85));
-  }
+  };
 
   #move = () => {
-    this.#positionX -= 7;
+    this.#positionX -= this.#speed;
     this.#checkPosition();
     this.#animationId = requestAnimationFrame(this.#move);
   };
