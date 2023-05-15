@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./app.js"></script>
+    <title>Event Loop</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="demo">
+        <div class="column">
+          <h3 class="title">Call Stack</h3>
+
+          <div class="call-stack" id="callStack"></div>
+        </div>
+
+        <div class="column">
+          <h3 class="title">Event Queue</h3>
+
+          <div class="event-queue" id="eventQueue"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="control" id="addCallback">Add callback</button>
+
+        <input
+          class="control"
+          type="text"
+          id="callbackName"
+          placeholder="Name"
+        />
+
+        <input
+          class="control"
+          type="number"
+          id="callbackTime"
+          placeholder="Time in ms (> 1000ms)"
+        />
+      </div>
+    </div>
+  </body>
+</html>
