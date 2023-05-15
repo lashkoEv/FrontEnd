@@ -28,25 +28,26 @@
   width: 100%;
   margin: 1rem 0;
   padding: 1rem;
-  background-color: #177b8d;
+  background-color: #b95252;
   border: none;
   outline: none;
   border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
+  box-shadow: rgba(15, 15, 15, 0.4) 0px 8px 24px;
 }
 
 .control::placeholder {
-  color: #c2c2c2;
+  color: #e9a8a8;
 }
 
 .control:hover {
-  background-color: #0d6a7a;
+  background-color: #964444;
 }
 
 .control:active {
-  background-color: #065664;
+  background-color: #7e3636;
 }
 
 .demo {
@@ -57,6 +58,7 @@
   border-radius: 1rem;
   width: 60%;
   background-color: #3b3b3b;
+  box-shadow: rgba(15, 15, 15, 0.4) 0px 8px 24px;
 }
 
 .column {
@@ -84,6 +86,7 @@
   height: 50vh;
   background-color: #505050;
   overflow: hidden;
+  box-shadow: rgba(41, 41, 41, 0.4) 0px 8px 24px;
 }
 
 .event-queue {
@@ -95,11 +98,12 @@
   padding: 1rem;
   width: 100%;
   background-color: #505050;
-  height: 6rem;
+  min-height: 6.5rem;
   overflow: hidden;
+  box-shadow: rgba(41, 41, 41, 0.4) 0px 8px 24px;
 }
 
-.action {
+.callback {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,10 +113,17 @@
   margin: 0.5rem;
   background-color: #727272;
   text-align: center;
+  box-shadow: rgba(36, 36, 36, 0.4) 0px 8px 24px;
 }
 
-.event-action {
+.event-callback {
   width: auto;
+}
+
+.img {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
 }
 
 @media (max-width: 1000px) {
