@@ -40,11 +40,27 @@ const setCountListener = () => {
   });
 };
 
+const showMessage = () => {
+  $(".message").animate(
+    {
+      opacity: 1,
+    },
+    1000
+  );
+  $(".message").animate(
+    {
+      opacity: 0,
+    },
+    1000
+  );
+};
+
 const setBtnListener = () => {
   $(".product__btn").on("click", (event) => {
     event.preventDefault();
     $(".form")[0].reset();
     initForm();
+    showMessage();
   });
 };
 

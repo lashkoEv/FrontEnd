@@ -98,3 +98,13 @@
 .product__btn:active {
   background: #85e678;
 }
+
+.message {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: #b7f1af;
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  opacity: 0;
+}
