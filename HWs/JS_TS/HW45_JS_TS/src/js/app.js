@@ -1,20 +1,57 @@
-// создайте форму заказов еды для животных с полями:
-// - названия(выпадающий список, делаете 4 вариант)
-// - картинка(подтягивается сама, от выбранного названия, по умолчанию стоит картинка-заглушка)
-// - кол-ва(range, мин 1, макс 1000)
-// - цена(заблокирована, высчитыается от названия и кол-ва, у каждого вида соя цена)
-// - кнопка оформления покупки(поля формы очищаются, всплывает сообщение, что покупка оформлена)
+import { Product } from "./components/Product.js";
 
-// - всю логику полночтью пишите на jQuery
-// - форме и всплывающему сообщению задайте минимальные стили
+const products = [];
 
+const initProducts = () => {
+  products.push(new Product("./src/public/images/1.webp", "Lolo Pets", 5));
+  products.push(new Product("./src/public/images/2.webp", "Padovan", 4));
+  products.push(new Product("./src/public/images/3.webp", "Versele-Laga", 6));
+  products.push(new Product("./src/public/images/4.webp", "Vitakraft", 10));
+};
 
+const initForm = () => {
+  $(".product__name").trigger("change");
+  $(".product__count").trigger("input");
+};
 
-// $(document).ready(function(){
-//     $("#btn1").click(function(){
-//       alert("Text: " + $("#test").text());
-//     });
-//     $("#btn2").click(function(){
-//       alert("HTML: " + $("#test").html());
-//     });
-//   });
+const setListeners = () => {
+  setSelectListener();
+  setCountListener();
+  setBtnListener();
+};
+
+const setSelectListener = () => {
+  $(".product__name").on("change", ({ target }) => {
+    products.forEach((product) => {
+      if (product.name === target.value) {
+        product.show($(".product__count").val());
+      }
+    });
+  });
+};
+
+const setCountListener = () => {
+  $(".product__count").on("input", ({ target }) => {
+    products.forEach((product) => {
+      if (product.name === $(".product__name").val()) {
+        product.show(target.value);
+      }
+    });
+  });
+};
+
+const setBtnListener = () => {
+  $(".product__btn").on("click", (event) => {
+    event.preventDefault();
+    $(".form")[0].reset();
+    initForm();
+  });
+};
+
+const app = () => {
+  initProducts();
+  setListeners();
+  initForm();
+};
+
+app();
