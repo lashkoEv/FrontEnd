@@ -44,16 +44,47 @@ const task2Demo = () => {
 };
 
 /*
- ! Task 3
- * создать функцию возвращающую промис, который выполнится через рандомное время(1-3 секунды) 
+ * Task 3
+ * создать функцию возвращающую промис, который выполнится через рандомное время(1-3 секунды)
  * с 50% шанса успешного(resolve) выполнения, вернет строку "task done".
  * В случае не успеха(rejecft) вернет сообщение "processor overload".
  * Текст результат выдать в консоль используя async/await.
  */
 
+const getRandomTime = () => {
+  return Math.floor(Math.random() * 3 + 1) * 1000;
+};
+
+const getChance = () => {
+  return Boolean(Math.floor(Math.random() * 2));
+};
+
+const task3 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (getChance()) {
+        resolve("Task done!");
+      } else {
+        reject("Processor overload...");
+      }
+    }, getRandomTime());
+  });
+};
+
+const task3Demo = async () => {
+  try {
+    let result = await task3();
+
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const app = () => {
   task1Demo();
   task2Demo();
+  task3Demo();
 };
 
 app();
