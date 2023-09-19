@@ -52,9 +52,6 @@ const showUserData = ({ picture, phone, name, country, city, email }) => {
   emailEl.textContent = email;
 };
 
-// 2.
-// сохраняйте в localStorage данные под ключем randomUser, по последнему полученному человеку из 1го задания, сохраняете в виде json объекта поля, которые выдавали на страницу.
-
 const saveToLocalStorage = (user) => {
   localStorage.setItem("randomUser", JSON.stringify(user));
 
@@ -78,7 +75,7 @@ const task3 = () => {
   });
 };
 
-const showActivityData = ({ activity, type, price, participants }) => {
+const showActivityData = ({ activity, type, participants }) => {
   activityEl.textContent = activity;
   typeEl.textContent = type;
   participantsEl.textContent = participants;
