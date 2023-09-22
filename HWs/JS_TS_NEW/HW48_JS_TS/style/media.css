@@ -1,0 +1,19 @@
+@media (max-width: 1000px) {
+  #app {
+    padding: 5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  #app {
+    padding: 1rem;
+  }
+
+  .blocks {
+    flex-direction: column;
+  }
+
+  .block {
+    font-size: 0.8rem;
+  }
+}
