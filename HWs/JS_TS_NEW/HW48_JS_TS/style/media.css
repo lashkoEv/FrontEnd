@@ -1,11 +1,11 @@
 @media (max-width: 1000px) {
-  #app {
+  .app {
     padding: 5rem;
   }
 }
 
 @media (max-width: 700px) {
-  #app {
+  .app {
     padding: 1rem;
   }
 

@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-#app {
+.app {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   padding: 0 10rem;
   min-height: 100vh;
   background-color: #0e111d;
-  background-image: url(../public/bg.svg);
+  background-image: url(/bg.svg);
   background-size: cover;
 }
 
@@ -43,6 +43,11 @@
 
 .block:hover {
   background: rgba(35, 38, 51, 0.3);
+}
+
+.history {
+  white-space:pre-wrap;
+  text-align: center;
 }
 
 .history:hover {
