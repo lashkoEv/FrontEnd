@@ -12,25 +12,39 @@
 // 3.I've seen 'Harry Potter'
 // 4.I've seen 'Lord of the Rings'
 
-function closure() {
-  let iterator = 1;
-  let history = "";
+// function closure() {
+//   let iterator = 1;
+//   let history = "";
 
-  return function (movie) {
-    history += `\n${iterator}. I've seen '${movie}'`;
+//   return function (movie) {
+//     history += `\n${iterator}. I've seen '${movie}'`;
 
-    iterator++;
+//     iterator++;
 
-    return history;
-  };
+//     return history;
+//   };
+// }
+
+// const history = closure();
+// history("YouTube");
+// history("Harry Potter");
+// history("Lord of the Rings");
+// const result = history("Netflix");
+
+// console.log("[result]", result);
+
+const getTimeout = (interval) => {
+  for (let i = 1; i < 4; i++) {
+    setTimeout(() => {
+      portal.innerHTML = "Loading" + ".".repeat(i);
+    }, interval);
+  }
+};
+
+const count = 5;
+const interval = 0;
+
+for (let i = 0; i < count; i++) {
+  interval += 500;
+  getTimeout(interval);
 }
-
-const history = closure();
-history("YouTube");
-history("Harry Potter");
-history("Lord of the Rings");
-const result = history("Netflix");
-
-console.log("[result]", result);
-
-
