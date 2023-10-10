@@ -8,8 +8,9 @@ export class Human {
   #salary;
   #balance;
   #rel;
+  #imgSrc;
 
-  constructor({ name, surname, age = 0, gender, salary, balance, rel }) {
+  constructor({ name, surname, age = 0, gender, salary, balance, rel, imgSrc }) {
     isExisting(name) && (this.#name = name);
     isExisting(surname) && (this.#surname = surname);
     isExisting(age) && (this.#age = age);
@@ -17,6 +18,7 @@ export class Human {
     isExisting(salary) && (this.#salary = salary);
     isExisting(balance) && (this.#balance = balance);
     isExisting(rel) && (this.#rel = rel);
+    isExisting(imgSrc) && (this.#imgSrc = imgSrc);
   }
 
   get name() {
@@ -73,5 +75,13 @@ export class Human {
 
   set rel(rel) {
     this.#rel = rel;
+  }
+
+  get imgSrc() {
+    return this.#imgSrc;
+  }
+
+  set imgSrc(imgSrc) {
+    this.#imgSrc = imgSrc;
   }
 }

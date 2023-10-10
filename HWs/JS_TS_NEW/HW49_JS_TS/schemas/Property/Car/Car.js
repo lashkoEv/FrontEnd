@@ -9,6 +9,7 @@ export class Car {
   #yearOfProduction;
   #gearbox;
   #doorsCount;
+  #imgSrc;
 
   constructor({
     firm,
@@ -19,6 +20,7 @@ export class Car {
     yearOfProduction,
     gearbox,
     doorsCount = 4,
+    imgSrc,
   }) {
     isExisting(price) && (this.#price = price);
     isExisting(firm) && (this.#firm = firm);
@@ -28,6 +30,7 @@ export class Car {
     isExisting(yearOfProduction) && (this.#yearOfProduction = yearOfProduction);
     isExisting(gearbox) && (this.#gearbox = gearbox);
     isExisting(doorsCount) && (this.#doorsCount = doorsCount);
+    isExisting(imgSrc) && (this.#imgSrc = imgSrc);
   }
 
   get price() {
@@ -92,5 +95,13 @@ export class Car {
 
   set doorsCount(doorsCount) {
     this.#doorsCount = doorsCount;
+  }
+
+  get imgSrc() {
+    return this.#imgSrc;
+  }
+
+  set imgSrc(imgSrc) {
+    this.#imgSrc = imgSrc;
   }
 }

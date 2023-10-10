@@ -6,15 +6,15 @@ export class House {
   #description;
   #address;
   #numberOfRooms;
-  #imageSrc;
+  #imgSrc;
 
-  constructor({ price, area, description, address, numberOfRooms, imageSrc }) {
+  constructor({ price, area, description, address, numberOfRooms, imgSrc }) {
     isExisting(price) && (this.#price = price);
     isExisting(area) && (this.#area = area);
     isExisting(description) && (this.#description = description);
     isExisting(address) && (this.#address = address);
     isExisting(numberOfRooms) && (this.#numberOfRooms = numberOfRooms);
-    isExisting(imageSrc) && (this.#imageSrc = imageSrc);
+    isExisting(imgSrc) && (this.#imgSrc = imgSrc);
   }
 
   get price() {
@@ -57,11 +57,11 @@ export class House {
     this.#numberOfRooms = numberOfRooms;
   }
 
-  get imageSrc() {
-    return this.#imageSrc;
+  get imgSrc() {
+    return this.#imgSrc;
   }
 
-  set imageSrc(imageSrc) {
-    this.#imageSrc = imageSrc;
+  set imgSrc(imgSrc) {
+    this.#imgSrc = imgSrc;
   }
 }
