@@ -12,6 +12,10 @@ import { Under } from "./Positions/Under/Under";
 import { House } from "./Property/House/House";
 import { Car } from "./Property/Car/Car";
 import { City } from "./City/City";
+import { Education } from "./Education/Education/Education";
+import { BachelorsEducation } from "./Education/BachelorsEducation/BachelorsEducation";
+import { MastersEducation } from "./Education/MastersEducation/MastersEducation";
+import { DoctoralEducation } from "./Education/DoctoralEducation/DoctoralEducation";
 
 export {
   Human,
@@ -28,4 +32,8 @@ export {
   House,
   Car,
   City,
+  Education,
+  BachelorsEducation,
+  MastersEducation,
+  DoctoralEducation,
 };

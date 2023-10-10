@@ -13,6 +13,10 @@ import {
   Car,
   House,
   City,
+  Education,
+  BachelorsEducation,
+  MastersEducation,
+  DoctoralEducation,
 } from "./schemas";
 
 import "./style/style.css";
@@ -31,3 +35,7 @@ console.log(new Under());
 console.log(new Car({}));
 console.log(new House({}));
 console.log(new City({}));
+console.log(new Education({}));
+console.log(new BachelorsEducation({}));
+console.log(new MastersEducation({}));
+console.log(new DoctoralEducation({}));
