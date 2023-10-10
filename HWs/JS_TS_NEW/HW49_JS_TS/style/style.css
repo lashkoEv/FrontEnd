@@ -1,0 +1,159 @@
+@font-face {
+  font-family: primary;
+  src: url(/fonts/Atarian/SF\ Atarian\ System\ Extended\ Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: primary;
+}
+
+#app,
+body {
+  overflow: hidden;
+}
+
+#app {
+  background-image: url(/images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  filter: saturate(130%);
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form,
+.info {
+  height: 600px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  padding: 6rem;
+
+  background-color: rgba(164, 134, 192, 0.336);
+  backdrop-filter: blur(8px);
+
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px,
+    rgba(0, 0, 0, 0.3) 0px 2px 16px 0px;
+}
+
+.name,
+.surname,
+.gender,
+.button {
+  width: 100%;
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.name::placeholder,
+.surname::placeholder {
+  color: rgba(237, 219, 255, 0.7);
+}
+
+.gender {
+  font-size: 1rem;
+
+  border: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.5rem 0;
+
+  background-color: transparent;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.7rem;
+}
+
+.radio {
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.3rem;
+  color: white;
+  padding: 0.2rem;
+  border: 0.15em solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.radio::before {
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease-in-out;
+  box-shadow: inset 1em 1em rgba(183, 0, 255, 0.7);
+  background-color: transparent;
+}
+
+.radio:checked::before {
+  transform: scale(1);
+}
+
+.button {
+  margin-top: 1rem;
+  width: auto;
+  padding: 1rem 2rem;
+  transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.image {
+  width: 11rem;
+  filter: saturate(150%);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 0.1rem;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.column {
+  padding: 1rem;
+}
+
+.column:first-child {
+  background-color: rgba(255, 255, 255, 0.2);
+}
