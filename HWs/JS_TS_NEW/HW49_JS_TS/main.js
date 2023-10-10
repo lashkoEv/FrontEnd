@@ -12,6 +12,7 @@ import {
   Under,
   Car,
   House,
+  City,
 } from "./schemas";
 
 import "./style/style.css";
@@ -29,4 +30,4 @@ console.log(new Medium());
 console.log(new Under());
 console.log(new Car({}));
 console.log(new House({}));
-
+console.log(new City({}));

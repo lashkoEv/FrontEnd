@@ -11,6 +11,7 @@ import { Medium } from "./Positions/Medium/Medium";
 import { Under } from "./Positions/Under/Under";
 import { House } from "./Property/House/House";
 import { Car } from "./Property/Car/Car";
+import { City } from "./City/City";
 
 export {
   Human,
@@ -24,6 +25,7 @@ export {
   Over,
   Medium,
   Under,
-  House, 
-  Car
+  House,
+  Car,
+  City,
 };

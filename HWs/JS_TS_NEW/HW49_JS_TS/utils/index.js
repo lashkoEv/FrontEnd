@@ -1,3 +1,4 @@
 import { isExisting } from "./isExisting";
+import { checkLvl } from "./checkLvl";
 
-export { isExisting };
+export { isExisting, checkLvl };

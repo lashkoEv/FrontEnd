@@ -8,7 +8,7 @@ export class Car {
   #driveUnit;
   #yearOfProduction;
   #gearbox;
-//   doors
+  #doorsCount;
 
   constructor({
     firm,
@@ -18,6 +18,7 @@ export class Car {
     driveUnit,
     yearOfProduction,
     gearbox,
+    doorsCount = 4,
   }) {
     isExisting(price) && (this.#price = price);
     isExisting(firm) && (this.#firm = firm);
@@ -26,6 +27,7 @@ export class Car {
     isExisting(driveUnit) && (this.#driveUnit = driveUnit);
     isExisting(yearOfProduction) && (this.#yearOfProduction = yearOfProduction);
     isExisting(gearbox) && (this.#gearbox = gearbox);
+    isExisting(doorsCount) && (this.#doorsCount = doorsCount);
   }
 
   get price() {
@@ -82,5 +84,13 @@ export class Car {
 
   set gearbox(gearbox) {
     this.#gearbox = gearbox;
+  }
+
+  get doorsCount() {
+    return this.#doorsCount;
+  }
+
+  set doorsCount(doorsCount) {
+    this.#doorsCount = doorsCount;
   }
 }
