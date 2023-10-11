@@ -18,6 +18,9 @@ import {
   MastersEducation,
   DoctoralEducation,
 } from "./schemas";
+import { Form, HumanInfo } from "./components";
+import { append, prepend } from "./core";
+import { initSaveButtonListener } from "./utils";
 
 import "./style/style.css";
 
@@ -39,3 +42,13 @@ console.log(new Education({}));
 console.log(new BachelorsEducation({}));
 console.log(new MastersEducation({}));
 console.log(new DoctoralEducation({}));
+
+const humanInfo = new HumanInfo();
+
+prepend(app, humanInfo.humanInfoElement);
+
+const form = new Form();
+
+append(app, form.form);
+
+initSaveButtonListener(humanInfo, form);
