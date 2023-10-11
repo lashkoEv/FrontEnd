@@ -31,7 +31,7 @@ body {
 
 .form,
 .info {
-  height: 600px;
+  min-height: 650px;
   width: 500px;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: row-reverse;
   gap: 0.7rem;
 }
 
