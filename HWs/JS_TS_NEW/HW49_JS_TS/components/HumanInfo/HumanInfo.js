@@ -2,12 +2,14 @@ import { AdvancedComponent, Component } from "../../core";
 
 export class HumanInfo {
   #humanInfoElement;
+  #imageElement;
   #nameElement;
   #surnameElement;
   #genderElement;
+  #ageElement;
 
   constructor() {
-    const humanImg = new AdvancedComponent({
+    this.#imageElement = new AdvancedComponent({
       tagName: "img",
       className: "image",
       src: "/images/user4.png",
@@ -24,6 +26,11 @@ export class HumanInfo {
     });
 
     this.#genderElement = new Component({
+      tagName: "div",
+      className: "column",
+    });
+
+    this.#ageElement = new Component({
       tagName: "div",
       className: "column",
     });
@@ -67,10 +74,23 @@ export class HumanInfo {
       ],
     });
 
+    const ageRow = new Component({
+      tagName: "div",
+      className: "row",
+      children: [
+        new AdvancedComponent({
+          tagName: "div",
+          className: "column",
+          textContent: "Age:",
+        }),
+        this.#ageElement,
+      ],
+    });
+
     this.#humanInfoElement = new Component({
       tagName: "div",
       className: "info",
-      children: [humanImg, nameRow, surnameRow, genderRow],
+      children: [this.#imageElement, nameRow, surnameRow, genderRow, ageRow],
     });
   }
 
@@ -88,5 +108,13 @@ export class HumanInfo {
 
   get genderElement() {
     return this.#genderElement;
+  }
+
+  get ageElement() {
+    return this.#ageElement;
+  }
+
+  get imageElement() {
+    return this.#imageElement;
   }
 }

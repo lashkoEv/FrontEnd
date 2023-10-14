@@ -49,6 +49,10 @@ body {
     rgba(0, 0, 0, 0.3) 0px 2px 16px 0px;
 }
 
+.info {
+  gap: 1rem;
+}
+
 .name,
 .surname,
 .gender,
@@ -159,4 +163,8 @@ body {
 
 .info > .button {
   width: 100%;
+}
+
+.rounded {
+  border-radius: 100%;
 }
