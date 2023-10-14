@@ -88,7 +88,7 @@ export class Scene {
   }
 
   #yearEvent() {
-    this.#human.age += 1;
+    this.#human.age = +(this.#human.age + 1).toFixed(2);
     this.#checkAge();
   }
 
