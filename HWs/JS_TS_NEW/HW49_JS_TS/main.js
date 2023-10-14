@@ -6,7 +6,7 @@ import {
   Doctor,
   Driver,
   Unemployed,
-  Position,
+  Wealth,
   Over,
   Medium,
   Under,
@@ -31,7 +31,7 @@ console.log(new Clerk({}));
 console.log(new Doctor({}));
 console.log(new Driver({}));
 console.log(new Unemployed({}));
-console.log(new Position());
+console.log(new Wealth());
 console.log(new Over());
 console.log(new Medium());
 console.log(new Under());

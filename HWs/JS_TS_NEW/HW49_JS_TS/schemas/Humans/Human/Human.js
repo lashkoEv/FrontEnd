@@ -1,5 +1,7 @@
 import { isExisting } from "../../../utils";
 
+// SRP (single reason for change)
+// OCP (private, getters/setters)
 export class Human {
   #name;
   #surname;
