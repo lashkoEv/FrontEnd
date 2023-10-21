@@ -10,6 +10,7 @@ import {
   maxPriceRequest,
   manufacturerRequest,
   filterRequest,
+  catManMenuRequest,
 } from "./requests";
 import { categories } from "./categories";
 import { manufacturers } from "./manufacturers";
@@ -28,4 +29,5 @@ export {
   manufacturerRequest,
   manufacturers,
   filterRequest,
+  catManMenuRequest,
 };
