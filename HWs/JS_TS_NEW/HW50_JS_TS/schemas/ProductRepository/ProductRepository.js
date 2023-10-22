@@ -109,8 +109,10 @@ export class ProductRepository {
 
     return products.filter((product) => {
       const condition =
-        new Date(product.createdAt) >= minDateFilter &&
-        new Date(product.createdAt) <= maxDateFilter;
+        (product.createdAt >= minDateFilter &&
+          product.createdAt <= maxDateFilter) ||
+        (product.createdAt <= minDateFilter &&
+          product.createdAt >= maxDateFilter);
 
       if (condition) {
         return product;
