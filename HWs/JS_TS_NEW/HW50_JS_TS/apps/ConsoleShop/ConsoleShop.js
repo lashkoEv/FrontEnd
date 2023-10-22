@@ -17,25 +17,6 @@ import {
   catManMenuRequest,
 } from "../../store";
 
-//  снятие фильтров
-
-//  снятие сортировки
-
-//  вернуться в меню с меню фильтров
-
-//  Добавить логи "Установлен фильтр .... "
-
-// * Категории:
-// *     Пользователь может выбрать один !!!или несколько!!! пунктов, написанных слитно
-// *     Все, кроме
-
-// * Производитель:
-// *     Пользователь может выбрать один !!!или несколько!!! пунктов, написанных слитно
-// *     Все, кроме
-
-//  Дата
-//      только год и месяц
-
 export class ConsoleShop {
   #isWorking;
   #productRepository;
@@ -79,8 +60,8 @@ export class ConsoleShop {
 
   #transit(transitions, item) {
     transitions.forEach((element) => {
-      if (element.item === item) {
-        element.callback();
+      if (element[0] === item) {
+        element[1]();
       }
     });
   }
@@ -91,184 +72,63 @@ export class ConsoleShop {
     this.#transit(transitions, item);
   }
 
+  #parseFilter(filter, dataArray) {
+    filter = filter.split("");
+
+    for (let i = 1; i < filter.length; i++) {
+      filter[i] = dataArray[filter[i]];
+    }
+
+    return filter;
+  }
+
   #getTransitionsMainMenu() {
     return [
-      {
-        item: "1",
-        callback: () => {
-          this.#viewProducts();
-        },
-      },
-      {
-        item: "2",
-        callback: () => {
-          this.#setItem(filterRequest, this.#getTransitionsFilter());
-          this.#printFiltersInfo();
-        },
-      },
-      {
-        item: "3",
-        callback: () => {
-          const item = this.#enterItem(criterionRequest);
-
-          this.#transit(this.#getTransitionsCriterion(), item);
-
-          if (item !== "5") {
-            this.#setItem(directionRequest, this.#getTransitionsDirection());
-          }
-
-          this.#printSortingInfo();
-        },
-      },
-      {
-        item: "4",
-        callback: () => {
-          this.#isWorking = false;
-        },
-      },
+      ["1", this.#viewProductsCallback],
+      ["2", this.#filtersCallback],
+      ["3", this.#sortingCallback],
+      ["4", () => (this.#isWorking = false)],
     ];
   }
 
   #getTransitionsCategoryMenu() {
     return [
-      {
-        item: "1",
-        callback: () => {
-          this.#categoryFilter = "+ ";
-        },
-      },
-      {
-        item: "2",
-        callback: () => {
-          this.#categoryFilter = "- ";
-        },
-      },
+      ["1", () => (this.#categoryFilter = "+")],
+      ["2", () => (this.#categoryFilter = "-")],
     ];
   }
 
   #getTransitionsManufacturerMenu() {
     return [
-      {
-        item: "1",
-        callback: () => {
-          this.#manufacturerFilter = "+ ";
-        },
-      },
-      {
-        item: "2",
-        callback: () => {
-          this.#manufacturerFilter = "- ";
-        },
-      },
+      ["1", () => (this.#manufacturerFilter = "+")],
+      ["2", () => (this.#manufacturerFilter = "-")],
     ];
   }
 
   #getTransitionsFilter() {
     return [
-      {
-        item: "1",
-        callback: () => {
-          this.#setItem(catManMenuRequest, this.#getTransitionsCategoryMenu());
-
-          this.#categoryFilter += this.#enterItem(categoryRequest)
-            .split("")
-            .join(" ");
-        },
-      },
-      {
-        item: "2",
-        callback: () => {
-          this.#minPriceFilter = +this.#enterItem(minPriceRequest);
-          this.#maxPriceFilter = +this.#enterItem(maxPriceRequest);
-        },
-      },
-      {
-        item: "3",
-        callback: () => {
-          this.#setItem(
-            catManMenuRequest,
-            this.#getTransitionsManufacturerMenu()
-          );
-
-          this.#manufacturerFilter += this.#enterItem(manufacturerRequest)
-            .split("")
-            .join(" ");
-        },
-      },
-      {
-        item: "4",
-        callback: () => {
-          const minDate = this.#enterItem(minDateRequest).split(".");
-          const maxDate = this.#enterItem(maxDateRequest).split(".");
-
-          this.#minDateFilter = new Date(minDate[1], minDate[0]);
-          this.#maxDateFilter = new Date(maxDate[1], maxDate[0]);
-        },
-      },
-      {
-        item: "5",
-        callback: () => {
-          this.#categoryFilter = null;
-          this.#minPriceFilter = null;
-          this.#maxPriceFilter = null;
-          this.#manufacturerFilter = null;
-          this.#minDateFilter = null;
-          this.#maxDateFilter = null;
-        },
-      },
+      ["1", this.#categoryFilterCallback],
+      ["2", this.#priceFilterCallback],
+      ["3", this.#manufacturerFilterCallback],
+      ["4", this.#dateFilterCallback],
+      ["5", this.#removeFiltersCallback],
     ];
   }
 
   #getTransitionsCriterion() {
     return [
-      {
-        item: "1",
-        callback: () => {
-          this.#sortColumn = "Category";
-        },
-      },
-      {
-        item: "2",
-        callback: () => {
-          this.#sortColumn = "Price";
-        },
-      },
-      {
-        item: "3",
-        callback: () => {
-          this.#sortColumn = "Manufacturer";
-        },
-      },
-      {
-        item: "4",
-        callback: () => {
-          this.#sortColumn = "Date";
-        },
-      },
-      {
-        item: "5",
-        callback: () => {
-          this.#sortColumn = null;
-          this.#isDesc = null;
-        },
-      },
+      ["1", () => (this.#sortColumn = "category")],
+      ["2", () => (this.#sortColumn = "price")],
+      ["3", () => (this.#sortColumn = "manufacturer")],
+      ["4", () => (this.#sortColumn = "createdAt")],
+      ["5", () => this.#removeSortingOptionsCallback],
     ];
   }
 
   #getTransitionsDirection() {
     return [
-      {
-        item: "1",
-        callback: () => {
-          this.#isDesc = false;
-        },
-      },
-      {
-        item: "2",
-        callback: () => {
-          this.#isDesc = true;
-        },
-      },
+      ["1", () => (this.#isDesc = false)],
+      ["2", () => (this.#isDesc = true)],
     ];
   }
 
@@ -278,7 +138,7 @@ export class ConsoleShop {
     }
   }
 
-  #viewProducts() {
+  #viewProductsCallback = () => {
     const result = this.#productRepository.getProducts(
       this.#categoryFilter,
       this.#minPriceFilter,
@@ -292,9 +152,72 @@ export class ConsoleShop {
 
     console.table(result.products);
     console.log(`Count: ${result.count}`);
-    console.log(`Total price: ${result.totalPrice}`);
+    console.log(`Total price: ${result.totalPrice.toFixed(2)}`);
     console.log(`Average price: ${result.averagePrice.toFixed(2)}`);
-  }
+  };
+
+  #sortingCallback = () => {
+    const item = this.#enterItem(criterionRequest);
+
+    this.#transit(this.#getTransitionsCriterion(), item);
+
+    if (item !== "5") {
+      this.#setItem(directionRequest, this.#getTransitionsDirection());
+    }
+
+    this.#printSortingInfo();
+  };
+
+  #filtersCallback = () => {
+    this.#setItem(filterRequest, this.#getTransitionsFilter());
+    this.#printFiltersInfo();
+  };
+
+  #categoryFilterCallback = () => {
+    this.#setItem(catManMenuRequest, this.#getTransitionsCategoryMenu());
+
+    this.#categoryFilter += this.#enterItem(categoryRequest);
+
+    this.#categoryFilter = this.#parseFilter(this.#categoryFilter, categories);
+  };
+
+  #priceFilterCallback = () => {
+    this.#minPriceFilter = +this.#enterItem(minPriceRequest);
+    this.#maxPriceFilter = +this.#enterItem(maxPriceRequest);
+  };
+
+  #manufacturerFilterCallback = () => {
+    this.#setItem(catManMenuRequest, this.#getTransitionsManufacturerMenu());
+
+    this.#manufacturerFilter += this.#enterItem(manufacturerRequest);
+
+    this.#manufacturerFilter = this.#parseFilter(
+      this.#manufacturerFilter,
+      manufacturers
+    );
+  };
+
+  #dateFilterCallback = () => {
+    const minDate = this.#enterItem(minDateRequest).split(".");
+    const maxDate = this.#enterItem(maxDateRequest).split(".");
+
+    this.#minDateFilter = new Date(minDate[1], minDate[0]);
+    this.#maxDateFilter = new Date(maxDate[1], maxDate[0]);
+  };
+
+  #removeFiltersCallback = () => {
+    this.#categoryFilter = null;
+    this.#minPriceFilter = null;
+    this.#maxPriceFilter = null;
+    this.#manufacturerFilter = null;
+    this.#minDateFilter = null;
+    this.#maxDateFilter = null;
+  };
+
+  #removeSortingOptionsCallback = () => {
+    this.#sortColumn = null;
+    this.#isDesc = null;
+  };
 
   #printSortingInfo() {
     console.log(
@@ -304,18 +227,27 @@ export class ConsoleShop {
 
   #printFiltersInfo() {
     console.log(`Category filters: ${this.#categoryFilter || "(No filter)"}`);
+
     console.log(
       `Price filters: from ${this.#minPriceFilter || "(No filter)"} to ${
         this.#maxPriceFilter || "(No filter)"
       }`
     );
+
     console.log(
       `Manufacturers filters: ${this.#manufacturerFilter || "(No filter)"}`
     );
+
     console.log(
       `Date filters: from ${
-        this.#minDateFilter.toLocaleString("uk-UA") || "(No filter)"
-      } to ${this.#maxDateFilter.toLocaleString("uk-UA") || "(No filter)"}`
+        this.#minDateFilter
+          ? this.#minDateFilter.toLocaleString("uk-UA")
+          : "(No filter)"
+      } to ${
+        this.#maxDateFilter
+          ? this.#maxDateFilter.toLocaleString("uk-UA")
+          : "(No filter)"
+      }`
     );
   }
 }

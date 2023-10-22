@@ -1,8 +1,5 @@
-import { jsonProducts } from './store';
-import { parseProducts } from './utils';
+import { ConsoleShop } from "./apps";
 
-import './style.css'
-import { ProductRepository } from './schemas';
-import { ConsoleShop } from './apps';
+import "./style.css";
 
 const shop = new ConsoleShop();

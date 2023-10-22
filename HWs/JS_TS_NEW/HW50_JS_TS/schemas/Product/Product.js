@@ -8,7 +8,16 @@ export class Product {
     this.#category = category || "";
     this.#price = price || 0;
     this.#manufacturer = manufacturer || "";
-    this.#createdAt = new Date(createdAt).toLocaleString("uk-UA");
+    this.#createdAt = new Date(createdAt);
+  }
+
+  get DTO() {
+    return {
+      category: this.category,
+      price: this.price,
+      manufacturer: this.manufacturer,
+      createdAt: this.createdAt.toLocaleString("uk-UA"),
+    };
   }
 
   get category() {
@@ -36,14 +45,14 @@ export class Product {
   }
 
   get createdAt() {
-    return this.#createdAt.toLocaleString("uk-UA");
+    return this.#createdAt;
   }
 
   set createdAt(createdAt) {
     if (typeof createdAt === Date) {
-      this.#createdAt = createdAt.toLocaleString("uk-UA");
+      this.#createdAt = createdAt;
     } else {
-      this.#createdAt = new Date(createdAt).toLocaleString("uk-UA");
+      this.#createdAt = new Date(createdAt);
     }
   }
 }
