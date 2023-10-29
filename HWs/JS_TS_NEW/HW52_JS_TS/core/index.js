@@ -1,5 +1,5 @@
-import { Component } from "./Component";
+import { Component, AdvancedComponent } from "./Component";
+import { append, appendMany } from "./append";
 import { render } from "./render";
-import { toHTML } from "./toHTML";
 
-export { Component, render, toHTML };
+export { Component, AdvancedComponent, render, append, appendMany };

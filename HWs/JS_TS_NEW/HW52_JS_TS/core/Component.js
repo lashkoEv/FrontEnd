@@ -1,91 +1,41 @@
-import { toHTML } from "./toHTML";
+import { isArray, isExisting } from "../utils";
 
 export class Component {
-  #tagName;
-  #className;
-  #children;
-  #events;
-  #textContent;
-  #attrs;
-  #html;
+  constructor({ tagName = "div", className, children }) {
+    const element = document.createElement(tagName);
 
-  constructor({
-    tagName,
-    className,
-    children,
-    events,
-    textContent,
-    html,
-    ...attrs
-  }) {
-    this.#tagName = tagName;
-    this.#className = [className];
-    this.#textContent = textContent;
-    this.#children = children || [];
-    this.#events = events;
-    this.#attrs = attrs;
-    this.#html = html;
+    className && (element.className = className);
+
+    if (!children || !isArray(children)) return element;
+
+    element.append(...children);
+
+    return element;
   }
+}
 
-  get attributes() {
-    return this.#attrs;
-  }
+export class AdvancedComponent extends Component {
+  constructor({ tagName, className, children, events, html, ...attrs }) {
+    super({ tagName, className, children });
 
-  get html() {
-    return this.#html;
-  }
-
-  get tagName() {
-    return this.#tagName;
-  }
-
-  get className() {
-    return this.#className;
-  }
-
-  get children() {
-    return this.#children;
-  }
-
-  get events() {
-    return this.#events;
-  }
-
-  get textContent() {
-    return this.#textContent;
-  }
-
-  setTagName(tagName) {
-    this.#tagName = tagName;
-  }
-
-  setHTML(html) {
-    this.#html = html;
-  }
-
-  setClassName(className) {
-    this.#className = className;
-  }
-
-  addChildren(children) {
-    for (const child of children) {
-      this.#children.push(child);
+    if (isExisting(attrs)) {
+      for (const attr in attrs) {
+        this[attr] = attrs[attr];
+      }
     }
-  }
 
-  setChildren(children) {
-    this.#children = children;
-  }
+    isExisting(html) && this.insertAdjacentHTML(html.position, html.text);
 
-  setEvents(events) {
-    this.#events = events;
-  }
+    if (isExisting(events)) {
+      for (const event in events) {
+        this.addEventListener(event, events[event]);
+      }
+    }
 
-  setText(textContent) {
-    this.#textContent = textContent;
-  }
+    if (!children || !isArray(children)) return this;
 
-  toHTML() {
-    return toHTML(this);
+    this.append(...children);
+
+    return this;
   }
 }

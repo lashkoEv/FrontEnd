@@ -1,12 +1,13 @@
-// Remove old information / node / children ...
-// then put there new children / node / element ...
-export const render = (node, elements) => {
-  // take node , then split it
-  const children = node.children;
+import { isArray } from "../utils";
 
-  [...children].forEach((child) => {
-    child.remove();
+export const render = (parent, component) => {
+  [...parent.children].forEach((el) => {
+    el.remove();
   });
 
-  if (Array.isArray(elements)) return node.append(...elements);
+  if (isArray(component)) {
+    parent.append(...component);
+  } else {
+    parent.append(component);
+  }
 };
