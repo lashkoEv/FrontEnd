@@ -1,4 +1,4 @@
-import { Info } from "../";
+import { Info } from "..";
 import { AdvancedComponent, render } from "../../core";
 
 export class InfoBox {

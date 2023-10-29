@@ -1,4 +1,4 @@
-import { Button } from "../Components";
+import { Button } from "../components";
 
 export const getButtons = () => {
   const buttons = [];

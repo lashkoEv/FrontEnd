@@ -1,5 +1,5 @@
 import { AdvancedComponent } from "../../core";
-import { Row } from "../";
+import { Row } from "..";
 
 export class Info {
   #rows;
