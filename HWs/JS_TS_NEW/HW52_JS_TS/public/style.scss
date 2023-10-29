@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: $primary-bg;
+}
+
+
+
+.spinner {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: linear-gradient($primary-bg , $secondary-bg ,$third-bg) ;
+    border: 2px solid $secondary-bg;
+    position: absolute;
+    transform:  translate(-50%, -50%);
+    top : 50% ; 
+    left: 50%;
+    animation: Spin 1000ms ease infinite;
+    
+}
+
+
+.portal--active {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    opacity: 0.4;
+}
+
+.portal{
+    display: none;
+}
+
+
+@keyframes Spin {
+    from {
+        
+       opacity: 0.6; 
+    }to {
+        opacity: 1;
+    }
+}
