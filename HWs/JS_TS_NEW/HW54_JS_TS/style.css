@@ -87,7 +87,7 @@ button:focus-visible {
 }
 
 .bar-wrapper {
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   width: calc(8vw * 4 + 1rem * 3);
   height: 1.7rem;
   background-color: rgb(56, 56, 56);
@@ -96,7 +96,7 @@ button:focus-visible {
 }
 
 .bar {
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   width: 66%;
   height: 1.7rem;
   background-color: rgb(99, 99, 99);
@@ -109,7 +109,7 @@ button:focus-visible {
 .block {
   width: 8vw;
   height: 8vw;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.16) 0px 3px 6px;
 }
 
