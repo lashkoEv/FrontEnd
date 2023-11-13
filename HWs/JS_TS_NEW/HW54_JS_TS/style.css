@@ -97,13 +97,14 @@ button:focus-visible {
 
 .bar {
   border-radius: 0.3rem;
-  width: 66%;
+  width: 0%;
   height: 1.7rem;
   background-color: rgb(99, 99, 99);
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
+  transition: 0.5s ease;
 }
 
 .block {
@@ -111,6 +112,7 @@ button:focus-visible {
   height: 8vw;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.16) 0px 3px 6px;
+  transition: 0.3s ease-in-out;
 }
 
 .empty {
