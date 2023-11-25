@@ -5,7 +5,7 @@ export class Select {
   private component: Component;
 
   constructor({ className, children, events }: IComponentInput) {
-    let selectClassName = "button";
+    let selectClassName = "select";
 
     if (className) selectClassName += ` ${className}`;
 
