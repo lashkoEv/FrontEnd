@@ -1,3 +1,5 @@
 import { Button } from "./Button";
+import { Select } from "./Select";
+import { Option } from "./Option";
 
-export { Button };
+export { Button, Select, Option };

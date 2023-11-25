@@ -1,31 +1,31 @@
 import { Component } from "../core";
-import { childrenType } from "../types";
+import { IComponentInput } from "../interfaces";
 
 export class Button {
   private component: Component;
 
-  constructor(
-    className?: string,
-    children?: childrenType,
-    textContent?: string,
-    events?: {},
-    attrs?: {}
-  ) {
+  constructor({
+    className,
+    children,
+    textContent,
+    events,
+    attrs,
+  }: IComponentInput) {
     let buttonClassName = "button";
 
-    if(className) buttonClassName += ` ${className}`;
+    if (className) buttonClassName += ` ${className}`;
 
-    this.component = new Component(
-      "button",
-      buttonClassName,
+    this.component = new Component({
+      tagName: "button",
+      className: buttonClassName,
       children,
       textContent,
       events,
-      attrs
-    );
+      attrs,
+    });
   }
 
-  getComponent() : Component {
+  getComponent(): Component {
     return this.component;
   }
 }

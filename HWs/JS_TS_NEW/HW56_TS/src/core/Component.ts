@@ -1,17 +1,24 @@
-import { IComponent } from "../interfaces";
+import { IComponent, IComponentInput } from "../interfaces";
 import { childrenType, objectType, stringType } from "../types";
 import { append } from ".";
 
 export class Component implements IComponent {
-  constructor(
-    private tagName: string,
-    private className?: string,
-    private children?: Component[],
-    private textContent?: string,
-    private events?: {},
-    private attrs?: {}
-  ) {
-    this.tagName = tagName;
+  private tagName: string;
+  private className?: string;
+  private children?: Component[];
+  private textContent?: string;
+  private events?: {};
+  private attrs?: {};
+
+  constructor({
+    tagName,
+    className,
+    children,
+    textContent,
+    events,
+    attrs,
+  }: IComponentInput) {
+    this.tagName = tagName || "div";
     this.className = className;
     this.children = children;
     this.textContent = textContent;
