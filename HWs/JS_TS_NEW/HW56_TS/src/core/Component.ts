@@ -19,15 +19,15 @@ export class Component implements IComponent {
     this.attrs = attrs;
   }
 
-  public getTagName(): string {
+  public getTagName() {
     return this.tagName;
   }
 
-  public setTagName(tagName: string): void {
+  public setTagName(tagName: string) {
     this.tagName = tagName;
   }
 
-  public getClassName(): stringType {
+  public getClassName() {
     return this.className;
   }
 
@@ -35,7 +35,7 @@ export class Component implements IComponent {
     this.className = className;
   }
 
-  public getChildren(): childrenType {
+  public getChildren() {
     return this.children;
   }
 
@@ -43,7 +43,7 @@ export class Component implements IComponent {
     this.children = children;
   }
 
-  public getTextContent(): stringType {
+  public getTextContent() {
     return this.textContent;
   }
 
@@ -51,7 +51,7 @@ export class Component implements IComponent {
     this.textContent = textContent;
   }
 
-  public getEvents(): objectType {
+  public getEvents() {
     return this.events;
   }
 
@@ -59,7 +59,7 @@ export class Component implements IComponent {
     this.events = events;
   }
 
-  public getAttrs(): objectType {
+  public getAttrs() {
     return this.attrs;
   }
 
@@ -67,7 +67,7 @@ export class Component implements IComponent {
     this.attrs = attrs;
   }
 
-  public toHtml(): HTMLElement {
+  public toHtml() {
     const component = document.createElement(this.tagName);
 
     component.className = this.className || "";
