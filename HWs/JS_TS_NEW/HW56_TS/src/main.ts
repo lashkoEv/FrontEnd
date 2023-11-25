@@ -1,4 +1,4 @@
-import { Button, Select, Option } from "./components";
+import { Button, Select, Option, Header, ModalWindow } from "./components";
 import "./style.css";
 
 const btn = new Button({ textContent: "Button" });
@@ -11,3 +11,9 @@ console.log(o);
 const sel = new Select({ children: [o.getComponent()] });
 console.log(sel);
 app.append(sel.getComponent().toHtml());
+
+const h = new Header({}, {});
+app.append(h.getComponent().toHtml());
+
+const m = new ModalWindow({});
+app.append(m.getComponent().toHtml());
