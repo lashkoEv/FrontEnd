@@ -1,9 +1,21 @@
+import { Component } from "../../core";
 import { IComponent, IHtmlData } from "../../interfaces";
 
 export class Button implements IComponent {
-  constructor({}: IHtmlData) {}
+  private component: Component;
+
+  constructor({ className, textContent, events }: IHtmlData) {
+    className = className ? `button ${className}` : "button";
+
+    this.component = new Component({
+      tagName: "button",
+      className,
+      textContent,
+      events,
+    });
+  }
 
   getComponent(): HTMLElement {
-    throw new Error("Method not implemented.");
+    return this.component.getComponent();
   }
 }
