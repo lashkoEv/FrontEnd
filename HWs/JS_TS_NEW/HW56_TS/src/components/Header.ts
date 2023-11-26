@@ -9,7 +9,7 @@ export class Header {
       textContent: "Add",
       events: addButtonEvents,
     });
-    
+
     const removeButton = new Button({
       textContent: "Remove",
       events: removeButtonEvents,
