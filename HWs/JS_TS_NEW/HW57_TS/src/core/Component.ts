@@ -20,7 +20,7 @@ export class Component implements IComponent {
 
     if (children) {
       children.forEach((child) => {
-        append(this.component, child.getComponent());
+        append(this.component, child);
       });
     }
 
