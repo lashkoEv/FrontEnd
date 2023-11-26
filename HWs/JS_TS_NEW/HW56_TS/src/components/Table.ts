@@ -1,4 +1,4 @@
-import { Component, append } from "../core";
+import { Component } from "../core";
 import { Row } from "./Row";
 
 export class Table {
@@ -32,7 +32,7 @@ export class Table {
 
     const header = new Component({
       tagName: "div",
-      className: "tableHead",
+      className: "row",
       children: [name, age, gender, ready, toRemove],
     });
 
@@ -48,6 +48,7 @@ export class Table {
   }
 
   addRow(row: Row) {
-    append(this.component.toHtml(), row.getComponent().toHtml());
+    this.component.getChildren()?.push(row.getComponent());
+    this.component.toHtml().append(row.getComponent().toHtml());
   }
 }

@@ -9,13 +9,7 @@ export class Row {
   private readyComponent: Component;
   private toRemoveCheckBox: CheckBox;
 
-  constructor(
-    name: string,
-    age: string,
-    gender: string,
-    ready: string,
-    toRemoveEvents: {}
-  ) {
+  constructor(name: string, age: string, gender: string, ready: string) {
     this.nameComponent = new Component({
       tagName: "div",
       textContent: name,
@@ -36,9 +30,7 @@ export class Row {
       textContent: ready,
     });
 
-    this.toRemoveCheckBox = new CheckBox({
-      events: toRemoveEvents,
-    });
+    this.toRemoveCheckBox = new CheckBox({});
 
     this.component = new Component({
       tagName: "div",

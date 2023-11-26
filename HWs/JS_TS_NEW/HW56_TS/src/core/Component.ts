@@ -1,5 +1,4 @@
 import { IComponent, IComponentInput } from "../interfaces";
-import { childrenType, objectType, stringType } from "../types";
 import { append } from ".";
 
 export class Component implements IComponent {
@@ -9,6 +8,8 @@ export class Component implements IComponent {
   private textContent?: string;
   private events?: {};
   private attrs?: {};
+
+  private component: HTMLElement;
 
   constructor({
     tagName,
@@ -24,57 +25,34 @@ export class Component implements IComponent {
     this.textContent = textContent;
     this.events = events;
     this.attrs = attrs;
+
+    this.component = this.toHtmlElement();
   }
 
   public getTagName() {
     return this.tagName;
   }
 
-  public setTagName(tagName: string) {
-    this.tagName = tagName;
-  }
-
   public getClassName() {
     return this.className;
-  }
-
-  public setClassName(className: stringType) {
-    this.className = className;
   }
 
   public getChildren() {
     return this.children;
   }
 
-  public setChildren(children: childrenType) {
-    this.children = children;
-  }
-
   public getTextContent() {
     return this.textContent;
-  }
-
-  public setTextContent(textContent: stringType) {
-    this.textContent = textContent;
   }
 
   public getEvents() {
     return this.events;
   }
-
-  public setEvents(events: objectType) {
-    this.events = events;
-  }
-
   public getAttrs() {
     return this.attrs;
   }
 
-  public setAttrs(attrs: objectType) {
-    this.attrs = attrs;
-  }
-
-  public toHtml() {
+  private toHtmlElement() {
     const component = document.createElement(this.tagName);
 
     component.className = this.className || "";
@@ -100,5 +78,9 @@ export class Component implements IComponent {
     }
 
     return component;
+  }
+
+  public toHtml(): HTMLElement {
+    return this.component;
   }
 }

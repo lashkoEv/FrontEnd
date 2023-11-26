@@ -8,12 +8,5 @@ export interface IComponent {
   getEvents(): objectType;
   getAttrs(): objectType;
 
-  setTagName(tagName: string): void;
-  setClassName(className: stringType): void;
-  setChildren(children: childrenType): void;
-  setTextContent(textContent: stringType): void;
-  setEvents(events: objectType): void;
-  setAttrs(attrs: objectType): void;
-
   toHtml(): HTMLElement;
 }
