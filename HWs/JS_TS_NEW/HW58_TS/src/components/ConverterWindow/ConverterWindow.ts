@@ -5,6 +5,7 @@ import { Component } from "../../core";
 export class ConverterWindow implements IComponent {
   private component: Component;
   private input: Input;
+  private result: Input;
   private fromSelect: Select;
   private toSelect: Select;
   private applyBtn: Button;
@@ -14,6 +15,14 @@ export class ConverterWindow implements IComponent {
       attrs: {
         placeholder: "Amount",
         type: "number",
+        value: 1,
+      },
+    });
+
+    this.result = new Input({
+      attrs: {
+        placeholder: "Result",
+        disabled: true,
       },
     });
 
@@ -52,6 +61,7 @@ export class ConverterWindow implements IComponent {
         this.getFromSelect(),
         this.getToSelect(),
         this.getApplyButton(),
+        this.result.getComponent(),
       ],
     });
   }
@@ -62,6 +72,10 @@ export class ConverterWindow implements IComponent {
 
   getInput() {
     return this.input.getComponent();
+  }
+
+  getResult() {
+    return this.result.getComponent();
   }
 
   getFromSelect() {
