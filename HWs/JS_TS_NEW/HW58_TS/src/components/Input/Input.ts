@@ -13,9 +13,6 @@ export class Input implements IComponent {
       events,
       attrs
     });
-
-    console.log(this.component);
-    console.log(this.component.getComponent());
   }
 
   getComponent(): HTMLElement {
