@@ -1,4 +1,4 @@
-import { ConverterWindow, Table, Row } from "../../components";
+import { ConverterWindow, Table, Row, ModalWindow } from "../../components";
 import { append } from "../../core";
 
 export class Application {
@@ -9,7 +9,23 @@ export class Application {
   private isClicked: boolean;
   private attempts: number;
 
+  private modalWindow: ModalWindow;
+  private inactionInterval: number;
+  private timerInterval: number;
+
+  private MAX_TIME = 10;
+  private timer: number;
+
   constructor(currencies: string[]) {
+    this.timer = 0;
+
+    this.modalWindow = new ModalWindow(
+      this.getStayEvents(),
+      this.getLeaveEvents()
+    );
+    this.inactionInterval = -1;
+    this.timerInterval = -1;
+
     this.isClicked = false;
     this.attempts = 0;
 
@@ -23,9 +39,69 @@ export class Application {
       this.getInputEvents(currencies)
     );
 
+    
     this.table = new Table();
 
     this.loadTable(currencies);
+
+    this.checkInaction();
+  }
+
+  private checkInaction() {
+    this.timer = 0;
+
+    document.addEventListener("click", () => {
+      this.timer = 0;
+    });
+
+    if (this.inactionInterval !== -1) clearInterval(this.inactionInterval);
+
+    this.inactionInterval = setInterval(() => {
+      this.timer++;
+
+      if (this.timer >= this.MAX_TIME) {
+        clearInterval(this.inactionInterval);
+        this.showModalWindow();
+      }
+    }, 1000);
+  }
+
+  private showModalWindow() {
+    this.modalWindow.getTimer().reset();
+
+    append(this.app, this.modalWindow.getComponent());
+
+    if (this.timerInterval !== -1) clearInterval(this.timerInterval);
+
+    this.timerInterval = setInterval(() => {
+      const count = this.modalWindow.getTimer().decreaseTime();
+
+      if (count < 0) {
+        alert("R U here?");
+        this.modalWindow.getComponent().remove();
+        clearInterval(this.timerInterval);
+        this.checkInaction();
+      }
+    }, 1000);
+  }
+
+  private getStayEvents() {
+    return {
+      click: () => {
+        if (this.timerInterval !== -1) clearInterval(this.timerInterval);
+        this.modalWindow.getComponent().remove();
+        this.checkInaction();
+      },
+    };
+  }
+
+  private getLeaveEvents() {
+    return {
+      click: () => {
+        alert("Goodbye!");
+        window.close();
+      },
+    };
   }
 
   private getApplyEvents(currencies: string[]) {
