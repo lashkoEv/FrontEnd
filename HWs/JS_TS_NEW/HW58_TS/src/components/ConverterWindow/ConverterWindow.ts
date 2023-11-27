@@ -10,13 +10,20 @@ export class ConverterWindow implements IComponent {
   private toSelect: Select;
   private applyBtn: Button;
 
-  constructor(currencies: string[], applyEvents: {}) {
+  constructor(
+    currencies: string[],
+    applyEvents: {},
+    fromSelectEvents: {},
+    toSelectEvents: {},
+    inputEvents: {}
+  ) {
     this.input = new Input({
       attrs: {
         placeholder: "Amount",
         type: "number",
         value: 1,
       },
+      events: inputEvents,
     });
 
     this.result = new Input({
@@ -46,11 +53,16 @@ export class ConverterWindow implements IComponent {
 
     this.fromSelect = new Select({
       children: optionsFrom,
+      events: fromSelectEvents,
     });
 
     this.toSelect = new Select({
       children: optionsTo,
+      events: toSelectEvents,
     });
+
+    this.toSelect.getComponent().value = optionsTo[1].value;
+    optionsTo[0].classList.add("hidden");
 
     this.applyBtn = new Button({ textContent: "Apply", events: applyEvents });
 
