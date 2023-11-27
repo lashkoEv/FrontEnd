@@ -10,7 +10,7 @@ export class Component implements IComponent {
     children,
     textContent,
     events,
-    ...attrs
+    attrs
   }: IHtmlData) {
     this.component = document.createElement(tagName);
 
