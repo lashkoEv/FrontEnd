@@ -39,7 +39,6 @@ export class Application {
       this.getInputEvents(currencies)
     );
 
-    
     this.table = new Table();
 
     this.loadTable(currencies);
