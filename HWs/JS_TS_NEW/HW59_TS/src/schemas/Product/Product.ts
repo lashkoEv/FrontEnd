@@ -2,11 +2,16 @@ import { IProduct } from "../../interfaces";
 
 export class Product implements IProduct {
   constructor(
+    private id: number,
     private title: string,
     private description: string,
     private price: string,
     private imageUrl: string
   ) {}
+
+  getId(): number {
+    return this.id;
+  }
 
   getTitle(): string {
     return this.title;

@@ -1,4 +1,5 @@
 export interface IProduct {
+  getId(): number;
   getTitle(): string;
   getDescription(): string;
   getPrice(): string;
