@@ -1,4 +1,4 @@
-import { ProductRepository } from "..";
+import { Product, ProductRepository } from "..";
 import { getProducts } from "../../utils";
 
 export class ProductController {
@@ -14,7 +14,17 @@ export class ProductController {
     this.productRepository.addMany(getProducts());
   }
 
-  public getAll() {
+  getAll() {
     return this.productRepository.getAll();
+  }
+
+  update(
+    product: Product,
+    title: string,
+    description: string,
+    price: string,
+    url: string
+  ) {
+    this.productRepository.update(product, title, description, price, url);
   }
 }

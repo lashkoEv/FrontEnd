@@ -1,16 +1,6 @@
-import { ProductController } from "./schemas/ProductController/ProductController";
+import { Application } from "./apps";
 import "./style.css";
 
-const p = new ProductController();
+const application = new Application();
 
-const products = p.getAll();
-
-console.log(products);
-
-products.forEach((product) => {
-  const img = document.createElement("img");
-
-  img.src = product.getImageUrl();
-
-  app.append(img);
-});
+application.run();
