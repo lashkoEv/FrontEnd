@@ -73,8 +73,6 @@ export class Application {
           this.authorizationWindow.getPasswordInput().value
         );
 
-        console.log(this.currentUser);
-
         if (this.currentUser) {
           this.authorizationWindow.success();
 
@@ -101,7 +99,7 @@ export class Application {
   }
 
   private setDisplayedProducts() {
-    const paginationButtons = this.getPaginationButtons();
+    this.getPagination();
 
     this.getCards(
       this.productController.getFromPage(this.currentPage, this.maxCount)
@@ -110,7 +108,7 @@ export class Application {
     render(this.products, this.toShow);
   }
 
-  private getPaginationButtons() {
+  private getPagination() {
     const count = Math.ceil(
       this.productController.getAll().length / this.maxCount
     );
