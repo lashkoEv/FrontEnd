@@ -34,4 +34,27 @@ export class ProductRepository implements IRepository<Product> {
     toUpdate?.setPrice(price);
     toUpdate?.setImageUrl(url);
   }
+
+  delete(product: Product) {
+    this.products.splice(this.products.indexOf(product), 1);
+  }
+
+  getLast() {
+    return this.products[this.products.length - 1];
+  }
+
+  getFromPage(page: number, amount: number) : Product[] {
+    const start = (page - 1) * amount;
+    let end = page * amount;
+
+    if (end > this.products.length - 1) end = this.products.length;
+
+    const fromPage = this.products.slice(start, end);
+
+    if (fromPage.length === 0) {
+      return this.getFromPage(page - 1, amount);
+    }
+
+    return fromPage;
+  }
 }

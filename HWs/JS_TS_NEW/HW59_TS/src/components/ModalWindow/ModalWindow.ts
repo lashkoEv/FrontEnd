@@ -10,8 +10,10 @@ export class ModalWindow implements IComponent {
   private priceInput: Input;
   private urlInput: Input;
   private applyBtn: Button;
+  private deleteBtn: Button;
+  private addBtn: Button;
 
-  constructor(applyEvents: {}) {
+  constructor(applyEvents: {}, deleteEvents: {}, addEvents: {}) {
     this.titleInput = new Input({
       attrs: {
         placeholder: "Title",
@@ -41,6 +43,16 @@ export class ModalWindow implements IComponent {
       events: applyEvents,
     });
 
+    this.deleteBtn = new Button({
+      textContent: "Delete",
+      events: deleteEvents,
+    });
+
+    this.addBtn = new Button({
+      textContent: "Add new",
+      events: addEvents,
+    });
+
     this.component = new Component({
       className: "modal hide",
       children: [
@@ -49,6 +61,8 @@ export class ModalWindow implements IComponent {
         this.getPriceInput(),
         this.getUrlInput(),
         this.getApplyBtn(),
+        this.getDeleteBtn(),
+        this.getAddBtn(),
       ],
     });
   }
@@ -79,5 +93,13 @@ export class ModalWindow implements IComponent {
 
   getApplyBtn(): HTMLElement {
     return this.applyBtn.getComponent();
+  }
+
+  getDeleteBtn(): HTMLElement {
+    return this.deleteBtn.getComponent();
+  }
+
+  getAddBtn(): HTMLElement {
+    return this.addBtn.getComponent();
   }
 }

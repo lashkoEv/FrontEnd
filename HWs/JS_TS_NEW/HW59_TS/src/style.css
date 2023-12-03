@@ -38,8 +38,14 @@ h1 {
 #app {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .logo {
@@ -152,6 +158,17 @@ button:focus-visible {
 .hide {
   display: none;
   visibility: hidden;
+}
+
+.active {
+  background-color: rgb(104, 50, 204);
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 @keyframes spin {

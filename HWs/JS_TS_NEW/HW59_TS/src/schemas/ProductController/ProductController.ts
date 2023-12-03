@@ -27,4 +27,24 @@ export class ProductController {
   ) {
     this.productRepository.update(product, title, description, price, url);
   }
+
+  delete(product: Product) {
+    this.productRepository.delete(product);
+  }
+
+  add(title: string, description: string, price: string, url: string) {
+    this.productRepository.add(
+      new Product(
+        this.productRepository.getLast().getId() + 1,
+        title,
+        description,
+        price,
+        url
+      )
+    );
+  }
+
+  getFromPage(page: number, amount: number) {
+    return this.productRepository.getFromPage(page, amount);
+  }
 }
