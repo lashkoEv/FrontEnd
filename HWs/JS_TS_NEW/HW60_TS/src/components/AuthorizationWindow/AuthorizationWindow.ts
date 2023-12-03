@@ -67,7 +67,7 @@ export class AuthorizationWindow implements IComponent, IWindow {
   reset() {
     this.getLoginInput().value = "";
     this.getPasswordInput().value = "";
-    
+
     this.getLoginInput().className = "input";
     this.getPasswordInput().className = "input";
   }
