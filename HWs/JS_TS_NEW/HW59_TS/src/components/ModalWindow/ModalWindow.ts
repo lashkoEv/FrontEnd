@@ -1,8 +1,8 @@
 import { Button, Input } from "..";
 import { Component } from "../../core";
-import { IComponent } from "../../interfaces";
+import { IComponent, IWindow } from "../../interfaces";
 
-export class ModalWindow implements IComponent {
+export class ModalWindow implements IComponent, IWindow {
   private component: Component;
 
   private titleInput: Input;
@@ -71,7 +71,7 @@ export class ModalWindow implements IComponent {
     return this.component.getComponent();
   }
 
-  changeVisibility() {
+  changeVisibility(): void {
     this.getComponent().classList.toggle("hide");
   }
 

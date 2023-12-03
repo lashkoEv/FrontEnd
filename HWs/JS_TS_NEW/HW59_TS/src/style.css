@@ -171,6 +171,15 @@ button:focus-visible {
   gap: 1rem;
 }
 
+.modal > .success {
+  border-bottom: 1px solid rgb(19, 136, 4)
+}
+
+.modal > .error {
+  border: none;
+  border-bottom: 1px solid rgb(197, 4, 4)
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

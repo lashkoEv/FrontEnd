@@ -1,21 +1,46 @@
-import { Button, Card, ModalWindow, Spinner } from "../../components";
+import {
+  AuthorizationWindow,
+  Button,
+  Card,
+  ModalWindow,
+  Spinner,
+} from "../../components";
 import { Component, append, render } from "../../core";
-import { Product, ProductController } from "../../schemas";
+import { UserType } from "../../enums";
+import {
+  Product,
+  ProductController,
+  User,
+  UserController,
+} from "../../schemas";
 
 export class Application {
   private productController: ProductController;
+  private currentProduct: Product | null;
+
+  private userController: UserController;
+  private currentUser: User | undefined;
+
+  private app: HTMLElement;
+
+  private toShow: HTMLElement[];
+
   private spinner: Spinner;
   private modalWindow: ModalWindow;
-  private currentProduct: Product | null;
-  private app: HTMLElement;
-  private toShow: HTMLElement[];
+  private authorizationWindow: AuthorizationWindow;
   private products: HTMLElement;
-  private maxCount: number;
-  private currentPage: number;
   private paginationWrapper: HTMLElement;
 
+  private maxCount: number;
+  private currentPage: number;
+
   constructor() {
+    this.userController = new UserController();
+
+    this.currentUser = undefined;
+
     this.maxCount = 10;
+
     this.currentPage = 1;
 
     this.paginationWrapper = document.createElement("div");
@@ -28,12 +53,41 @@ export class Application {
     this.currentProduct = null;
 
     this.productController = new ProductController();
+
     this.spinner = new Spinner();
+
     this.modalWindow = new ModalWindow(
       this.getApplyEvents(),
       this.getDeleteEvents(),
       this.getAddEvents()
     );
+
+    this.authorizationWindow = new AuthorizationWindow(this.getSendEvents());
+  }
+
+  getSendEvents() {
+    return {
+      click: () => {
+        this.currentUser = this.userController.authorize(
+          this.authorizationWindow.getLoginInput().value,
+          this.authorizationWindow.getPasswordInput().value
+        );
+
+        console.log(this.currentUser);
+
+        if (this.currentUser) {
+          this.authorizationWindow.success();
+
+          this.app.append(this.spinner.getComponent());
+
+          setTimeout(() => {
+            this.launchApp();
+          }, 2000);
+        } else {
+          this.authorizationWindow.error();
+        }
+      },
+    };
   }
 
   private getCards(products: Product[]) {
@@ -83,14 +137,17 @@ export class Application {
   private getCardEvents(product: Product) {
     return {
       dblclick: () => {
-        this.currentProduct = product;
+        if (this.currentUser?.getUserType() === UserType.Admin) {
+          this.currentProduct = product;
 
-        this.modalWindow.getTitleInput().value = product.getTitle();
-        this.modalWindow.getDescriptionInput().value = product.getDescription();
-        this.modalWindow.getPriceInput().value = product.getPrice();
-        this.modalWindow.getUrlInput().value = product.getImageUrl();
+          this.modalWindow.getTitleInput().value = product.getTitle();
+          this.modalWindow.getDescriptionInput().value =
+            product.getDescription();
+          this.modalWindow.getPriceInput().value = product.getPrice();
+          this.modalWindow.getUrlInput().value = product.getImageUrl();
 
-        this.modalWindow.changeVisibility();
+          this.modalWindow.changeVisibility();
+        }
       },
     };
   }
@@ -145,13 +202,17 @@ export class Application {
     };
   }
 
-  run() {
+  private launchApp() {
     this.setDisplayedProducts();
 
-    this.app.append(this.products);
+    render(this.app, this.products);
 
     this.app.append(this.paginationWrapper);
 
     this.app.append(this.modalWindow.getComponent());
+  }
+
+  run() {
+    this.app.append(this.authorizationWindow.getComponent());
   }
 }
