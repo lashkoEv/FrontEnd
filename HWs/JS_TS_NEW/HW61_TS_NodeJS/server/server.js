@@ -1,7 +1,5 @@
-const http = require("http");
+// const http = require("http");
 
-const server = http.createServer((request, response) => {
-  console.log("Server was successfully created!");
-});
+const app = require("./backend");
 
-server.listen(3000);
+app.listen(3000);
