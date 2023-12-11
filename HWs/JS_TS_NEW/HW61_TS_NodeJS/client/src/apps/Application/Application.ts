@@ -1,4 +1,4 @@
-import { AuthorizationWindow, Board } from "../../components";
+import { AuthorizationWindow, Board, Field } from "../../components";
 import { append, render } from "../../core";
 import { UserController } from "../../schemas";
 
@@ -55,6 +55,30 @@ export class Application {
 
   private launchApp() {
     render(this.app, this.board.getComponent());
+
+    this.setFirstStep();
+  }
+
+  setFirstStep() {
+    const first = this.board.getFields()[43];
+    const second = this.board.getFields()[35];
+    const initial = this.board.getFields()[51];
+
+    this.setFieldsListener([first, second], initial);
+  }
+
+  setFieldsListener(fields: Field[], initial: Field) {
+    fields.forEach((field) => {
+      field.active();
+
+      field.getComponent().addEventListener("click", () => {
+        fields.forEach((field) => {
+          field.reset();
+        });
+
+        field.setFigure(initial.removeFigure());
+      });
+    });
   }
 
   run() {

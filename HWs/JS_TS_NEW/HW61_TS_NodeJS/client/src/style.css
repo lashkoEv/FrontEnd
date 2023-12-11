@@ -178,7 +178,12 @@ button:focus-visible {
 }
 
 .darkmagenta {
-  background-color: darkmagenta;
+  background-color: rgb(197, 149, 193);
+}
+
+.active {
+  z-index: 2;
+  box-shadow: darkmagenta 0px 0px 0px 3px;
 }
 
 @media (prefers-color-scheme: light) {

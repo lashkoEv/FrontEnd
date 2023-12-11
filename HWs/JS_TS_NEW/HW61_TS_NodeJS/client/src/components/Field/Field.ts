@@ -58,4 +58,22 @@ export class Field implements IComponent {
   getFigureComponent() {
     return this.figureComponent.getComponent();
   }
+
+  active() {
+    this.component.getComponent().classList.add("active");
+  }
+
+  reset() {
+    this.component.getComponent().classList.remove("active");
+  }
+
+  removeFigure() {
+    const src = this.figureComponent.getComponent().getAttribute("src") || "";
+    this.figureComponent.getComponent().setAttribute("src", "");
+    return src;
+  }
+
+  setFigure(src: string) {
+    this.figureComponent.getComponent().setAttribute("src", src);
+  }
 }

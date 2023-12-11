@@ -23,4 +23,8 @@ export class Board implements IComponent {
   getComponent(): HTMLElement {
     return this.component.getComponent();
   }
+
+  getFields() {
+    return this.fields;
+  }
 }
