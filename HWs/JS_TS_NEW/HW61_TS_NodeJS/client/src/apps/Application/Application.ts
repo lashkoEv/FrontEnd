@@ -1,11 +1,12 @@
-import { AuthorizationWindow } from "../../components";
-import { append } from "../../core";
+import { AuthorizationWindow, Board } from "../../components";
+import { append, render } from "../../core";
 import { UserController } from "../../schemas";
 
 export class Application {
   private app: HTMLElement;
   private authorizationWindow: AuthorizationWindow;
   private userController: UserController;
+  private board: Board;
 
   constructor() {
     this.app = document.getElementById("app");
@@ -13,6 +14,8 @@ export class Application {
     this.authorizationWindow = new AuthorizationWindow(this.getSendEvents());
 
     this.userController = new UserController();
+
+    this.board = new Board();
   }
 
   private getSendEvents() {
@@ -51,7 +54,7 @@ export class Application {
   }
 
   private launchApp() {
-
+    render(this.app, this.board.getComponent());
   }
 
   run() {

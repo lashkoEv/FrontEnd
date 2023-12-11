@@ -40,6 +40,8 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .logo {
@@ -119,6 +121,62 @@ button:focus-visible {
 .modal > .error {
   border: none;
   border-bottom: 1px solid rgb(197, 4, 4);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.field {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.white > .number {
+  color: darkmagenta;
+}
+
+.darkmagenta > .number {
+  color: white;
+}
+
+.white > .letter {
+  color: darkmagenta;
+}
+
+.darkmagenta > .letter {
+  color: white;
+}
+
+.number {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+}
+
+.letter {
+  position: absolute;
+  bottom: 5px;
+  right: 7px;
+}
+
+.figure {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.white {
+  background-color: white;
+}
+
+.darkmagenta {
+  background-color: darkmagenta;
 }
 
 @media (prefers-color-scheme: light) {
