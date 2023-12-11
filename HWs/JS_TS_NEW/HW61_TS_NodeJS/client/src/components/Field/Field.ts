@@ -9,7 +9,12 @@ export class Field implements IComponent {
   private letterComponent: Component;
   private figureComponent: Component;
 
-  constructor(number: StringField, letter: StringField, figure: StringField, color: string) {
+  constructor(
+    number: StringField,
+    letter: StringField,
+    figure: StringField,
+    color: string
+  ) {
     this.numberComponent = new Component({
       className: "number",
       textContent: number,
