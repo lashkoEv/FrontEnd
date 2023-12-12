@@ -31,7 +31,7 @@ export class Application {
           this.currentId,
           postData.title,
           postData.text,
-          postData.author,
+          postData.author
         );
 
         this.currentId++;
