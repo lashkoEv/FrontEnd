@@ -120,13 +120,17 @@ button:focus-visible {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .card {
+  width: 48%;
   background-color: #2e2e2e;
   border-radius: 1rem;
-  min-width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
@@ -146,7 +150,8 @@ button:focus-visible {
 .title,
 .text,
 .author {
-  padding: 2rem 0.5rem;
+  padding: 1rem 0.5rem;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
