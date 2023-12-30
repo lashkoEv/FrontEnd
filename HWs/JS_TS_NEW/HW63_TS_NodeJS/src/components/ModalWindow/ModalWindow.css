@@ -1,0 +1,26 @@
+.modal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 48%;
+  left: 50%;
+  background-color: rgb(43, 43, 43);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.modal > .input {
+  width: 100%;
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}

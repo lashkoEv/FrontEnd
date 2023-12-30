@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -36,13 +42,15 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
   padding: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
 .logo {
@@ -85,9 +93,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-#tasks{
+#tasks {
   margin-top: 8rem;
-  
 }
 
 #tasks > div > button {
