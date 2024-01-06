@@ -19,12 +19,12 @@ mongoose.connect(
 );
 
 app.get("/authorization/init", async (req, res) => {
-  const found = await User.find({ login: "admin", password: "admin" });
+  const found = await User.find({ login: "admin", password: "admin123" });
 
   if (found.length < 1) {
     const user = new User({
       login: "admin",
-      password: "admin",
+      password: "admin123",
     });
 
     user
@@ -41,12 +41,11 @@ app.get("/authorization/init", async (req, res) => {
 });
 
 app.post("/authorization", async (req, res) => {
+  console.log(req.body);
   const user = await User.find({
     login: req.body.login,
     password: req.body.password,
   });
-  console.log(req.body.login, req.body.password);
-console.log(user);
   if (user.length < 1) {
     res.send({ isValid: false });
   } else {
@@ -56,6 +55,7 @@ console.log(user);
 
 app.get("/products", async (req, res) => {
   const products = await Product.find();
+
   res.send(products);
 });
 
