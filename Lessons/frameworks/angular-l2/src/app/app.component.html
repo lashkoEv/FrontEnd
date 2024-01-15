@@ -1,0 +1,7 @@
+<div class="app">
+  <app-header [signInEvent]="signInEvent"></app-header>
+  <button (click)="changeVisibilityForm()">Sign In</button>
+  <app-main [users]="users" *ngIf="isVisibleMain"></app-main>
+  <app-form [sendEvent]="sendEvent" *ngIf="isVisibleForm"></app-form>
+  <app-footer></app-footer>
+</div>
