@@ -1,0 +1,10 @@
+.task {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    padding: .5rem;
+}

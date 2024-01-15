@@ -1,0 +1,12 @@
+<input type="text" (change)="readValue(newInputValue)" [value]="inputValue" #newInputValue> 
+<button (click)="addTask()">Add new task</button>
+
+<section *ngFor="let task of getTasks()">
+    <div class="task">
+        <p>{{task.id}}</p>
+        <h3>{{task.description}}</h3>
+        <p>{{task.date}}</p>
+        <p>{{task.status}}</p>
+        <button (click)="deleteTask(task.id)">Delete</button>
+    </div>
+</section>
