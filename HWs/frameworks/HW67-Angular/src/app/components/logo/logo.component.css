@@ -1,0 +1,16 @@
+.logo-wrapper {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 4rem;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
