@@ -1,0 +1,21 @@
+<form
+  class="form"
+  *ngIf="getVisibility()"
+  #form="ngForm"
+  (submit)="onSubmitHandler(form.value)"
+>
+  <mat-form-field class="input-field">
+    <mat-label>Title</mat-label>
+
+    <input
+      name="title"
+      matInput
+      ngModel
+      placeholder="Title"
+      value=""
+      class="input"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="warn">Add</button>
+</form>

@@ -1,0 +1,3 @@
+<section *ngFor="let post of getPosts()" class="posts">
+  <app-post [title]="post.getTitle()"></app-post>
+</section>

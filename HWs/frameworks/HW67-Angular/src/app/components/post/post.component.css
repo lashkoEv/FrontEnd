@@ -1,0 +1,9 @@
+.post {
+  width: 90vw;
+  background-color: #272727;
+  border-radius: 0.5rem;
+}
+
+.title {
+  padding: 2rem;
+}
