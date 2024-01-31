@@ -1,0 +1,32 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+}
+
+.login {
+  margin: 0;
+}

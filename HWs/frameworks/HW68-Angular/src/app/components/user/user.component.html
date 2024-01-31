@@ -1,1 +1,17 @@
-<p>user works!</p>
+<div class="user">
+  <div class="info">
+    <div class="icon" #icon></div>
+
+    <h3 class="login">{{ getLogin() }}</h3>
+  </div>
+
+  <div class="buttons">
+    <button mat-raised-button color="accent" (click)="addToFriends()">
+      Add to friends
+    </button>
+
+    <button mat-raised-button color="warn" (click)="openChat()">
+      Open chat
+    </button>
+  </div>
+</div>

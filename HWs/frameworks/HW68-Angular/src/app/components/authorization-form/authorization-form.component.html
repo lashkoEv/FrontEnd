@@ -1,1 +1,35 @@
-<p>authorization-form works!</p>
+<form
+  class="form"
+  *ngIf="getVisibility()"
+  #form="ngForm"
+  (submit)="onSubmitHandler(form.value)"
+>
+  <mat-form-field class="input-field">
+    <mat-label>Login</mat-label>
+
+    <input
+      name="login"
+      matInput
+      ngModel
+      placeholder="Login"
+      value=""
+      class="input"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Password</mat-label>
+
+    <input
+      name="password"
+      matInput
+      ngModel
+      placeholder="Password"
+      value=""
+      class="input"
+      type="password"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Authorize</button>
+</form>

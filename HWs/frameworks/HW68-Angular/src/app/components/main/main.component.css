@@ -1,0 +1,11 @@
+.main {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 2rem;
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

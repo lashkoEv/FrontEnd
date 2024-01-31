@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header class="header">
+  <h2 class="title">Hi, {{ getLogin() }}!</h2>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="logout()">
+      Log Out
+    </button>
+
+    <button mat-raised-button color="primary" (click)="logUsers()">
+      Log users
+    </button>
+  </div>
+</header>

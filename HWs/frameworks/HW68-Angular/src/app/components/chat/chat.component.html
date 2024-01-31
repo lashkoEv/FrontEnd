@@ -1,1 +1,28 @@
-<p>chat works!</p>
+<div class="chat" *ngIf="getVisibility()">
+  <div class="messages">
+    <div class="message" *ngFor="let message of getMessages()">
+      <h3><b>From:</b> {{ message.getFrom().getLogin() }}</h3>
+      <h3><b>To:</b> {{ message.getTo().getLogin() }}</h3>
+      <h3><b>Date:</b> {{ message.getDate().toLocaleString("uk-UA") }}</h3>
+      <p class="text">{{ message.getText() }}</p>
+    </div>
+  </div>
+
+  <form class="form" #form="ngForm" (submit)="sendMessage(form.value)">
+    <mat-form-field class="input-field">
+      <mat-label>Text</mat-label>
+
+      <input
+        name="text"
+        matInput
+        ngModel
+        placeholder="Text"
+        value=""
+        class="input"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Send</button>
+    <button mat-raised-button color="primary" (click)="close()">Close</button>
+  </form>
+</div>
