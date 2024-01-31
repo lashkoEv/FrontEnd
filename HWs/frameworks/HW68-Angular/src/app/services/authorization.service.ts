@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthorizationService {
+  private isVisible = true;
 
-  constructor() { }
+  constructor() {}
+
+  getVisibility() {
+    return this.isVisible;
+  }
+
+  changeVisibility() {
+    this.isVisible = !this.isVisible;
+  }
 }
