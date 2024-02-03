@@ -1,0 +1,9 @@
+<div class="tasks">
+  <div class="task" *ngFor="let task of getTasks()">
+    <div class="text">{{ task.getDescription() }}</div>
+    <div class="info">
+      <div class="date">Date: {{ task.getDate().toLocaleString("uk-UA") }}</div>
+      <div class="status">Status: {{ task.getStatus() }}</div>
+    </div>
+  </div>
+</div>

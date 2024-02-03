@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="add">
+    <mat-form-field>
+      <mat-label>Task</mat-label>
+      <input #task matInput placeholder="Enter a task..." />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      (click)="add(task.value)"
+    >
+      Add
+    </button>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Sort by date</mat-label>
+    <mat-select
+      matNativeControl
+      #sortValue
+      (valueChange)="sort(sortValue.value)"
+    >
+      <mat-option value="asc">Asc</mat-option>
+      <mat-option value="desc">Desc</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <mat-select
+      matNativeControl
+      #filterValue
+      (valueChange)="filter(filterValue.value)"
+    >
+      <mat-option value="todo">To Do</mat-option>
+      <mat-option value="inProgress">In progress</mat-option>
+      <mat-option value="done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+</header>

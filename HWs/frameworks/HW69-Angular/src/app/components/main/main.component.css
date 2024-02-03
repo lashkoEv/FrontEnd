@@ -1,0 +1,35 @@
+.tasks,
+.task {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.task {
+  padding: 0;
+  gap: 0;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 1rem;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.info {
+  background-color: rgb(233, 233, 233);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.text,
+.date,
+.status {
+  padding: 1rem;
+}
