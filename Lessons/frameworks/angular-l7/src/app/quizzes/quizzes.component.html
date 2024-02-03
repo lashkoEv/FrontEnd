@@ -1,0 +1,13 @@
+<nav class="nav">
+    <a (click)="onClickHandler(link)"
+        *ngFor="let topic of topics"
+        [routerLink]="topic.url"
+        #link
+        >
+    {{ topic.label }}
+    </a>
+</nav>
+<section class="sub-header" *ngFor="let quiz of quizzes">
+    {{quiz.for}}
+    {{quiz.question}}
+</section>

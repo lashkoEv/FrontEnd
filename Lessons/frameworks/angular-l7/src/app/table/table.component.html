@@ -1,0 +1,10 @@
+<button (click)="addRow()">Add row</button>
+<button (click)="addColumn()">Add column</button>
+
+<table class="table">
+  <tr class="row" *ngFor="let row of getTable()">
+    <td *ngFor="let item of row">
+      <input class="field" type="text" value="{{ item.data }}" />
+    </td>
+  </tr>
+</table>

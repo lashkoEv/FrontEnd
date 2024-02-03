@@ -1,0 +1,26 @@
+.field {
+  border: none;
+  outline: none;
+}
+
+.field:active {
+  border: none;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  font-size: 16px;
+  font-family: sans-serif;
+}
