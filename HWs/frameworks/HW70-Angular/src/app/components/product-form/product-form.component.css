@@ -1,0 +1,17 @@
+.form {
+  width: 49vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.form-field {
+  width: 50%;
+}
+
+.checkbox {
+  margin-bottom: 1rem;
+}

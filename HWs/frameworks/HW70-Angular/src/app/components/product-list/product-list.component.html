@@ -1,0 +1,16 @@
+<div class="products">
+  <div class="product" *ngFor="let product of getProducts()">
+    <h2 class="label">{{ product.getLabel() }}</h2>
+    <div class="descriprion">{{ product.getDescription() }}</div>
+    <h2 class="new" *ngIf="product.getHasDiscount()">
+      {{ product.getDiscountPrice() }} $
+      <span class="old">{{ product.getPrice() }} $</span>
+    </h2>
+    <h2 class="price" *ngIf="!product.getHasDiscount()">
+      {{ product.getPrice() }} $
+    </h2>
+    <div class="date">
+      <b>Date: </b>{{ product.getDate().toLocaleString("uk-UA") }}
+    </div>
+  </div>
+</div>

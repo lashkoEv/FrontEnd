@@ -1,0 +1,62 @@
+<form class="form" #form="ngForm" (submit)="addProduct(form.value)">
+  <mat-form-field class="form-field">
+    <mat-label>Label</mat-label>
+    <input
+      name="label"
+      ngModel
+      required
+      matInput
+      placeholder="Enter a label..."
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Description</mat-label>
+    <textarea
+      name="description"
+      ngModel
+      required
+      matInput
+      placeholder="Enter a description..."
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Price</mat-label>
+    <input
+      name="price"
+      type="number"
+      min="0"
+      ngModel
+      required
+      matInput
+      placeholder="Enter a price..."
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" name="date" ngModel required />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-checkbox name="hasDiscount" #hasDiscount ngModel class="checkbox">
+    Has discount
+  </mat-checkbox>
+
+  <mat-form-field class="form-field" *ngIf="form.value.hasDiscount">
+    <mat-label>Discount, %</mat-label>
+    <input
+      name="discount"
+      type="number"
+      min="1"
+      max="100"
+      ngModel
+      matInput
+      placeholder="Enter a discount (%)..."
+    />
+  </mat-form-field>
+
+  <button mat-flat-button color="primary">Add</button>
+</form>
