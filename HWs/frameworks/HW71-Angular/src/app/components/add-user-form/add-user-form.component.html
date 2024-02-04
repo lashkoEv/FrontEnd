@@ -1,0 +1,41 @@
+<form
+  #form="ngForm"
+  (submit)="add(form.value)"
+  class="form"
+  *ngIf="getVisibility()"
+>
+  <mat-form-field class="field">
+    <mat-label>Login</mat-label>
+    <input
+      name="login"
+      ngModel
+      matInput
+      required
+      placeholder="Enter a login..."
+      value=""
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Password</mat-label>
+    <input
+      name="password"
+      ngModel
+      matInput
+      required
+      placeholder="Enter a password..."
+      value=""
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Role</mat-label>
+    <mat-select ngModel name="type" required>
+      <mat-option value="User">User</mat-option>
+      <mat-option value="Manager">Manager</mat-option>
+      <mat-option value="Delivery">Delivery</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary">Add user</button>
+</form>

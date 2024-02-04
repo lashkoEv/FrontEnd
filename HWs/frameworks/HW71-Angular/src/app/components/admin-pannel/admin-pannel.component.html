@@ -1,0 +1,27 @@
+<div class="panel">
+  <div class="control">
+    <button mat-flat-button color="primary" (click)="changeVisibilityProduct()">
+      Add product
+    </button>
+    <button mat-flat-button color="primary" (click)="changeVisibilityUser()">
+      Add user
+    </button>
+  </div>
+
+  <h1>Users:</h1>
+
+  <div class="users">
+    <div class="user" *ngFor="let user of getUsers()">
+      <div>
+        <p><b>Login:</b></p>
+        <p>{{ user.getLogin() }}</p>
+      </div>
+      <div>
+        <p><b>Role:</b></p>
+        <p>{{ user.getRole() }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-add-product-form></app-add-product-form>
+<app-add-user-form></app-add-user-form>

@@ -1,0 +1,46 @@
+.panel,
+.control,
+.users {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.panel {
+  flex-direction: column;
+}
+
+.control,
+.users {
+  padding: 0;
+}
+
+.users {
+  flex-direction: column;
+}
+
+.user {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  width: 30%;
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+p {
+  margin-bottom: 0;
+}

@@ -1,0 +1,54 @@
+<form
+  #form="ngForm"
+  (submit)="add(form.value)"
+  class="form"
+  *ngIf="getVisibility()"
+>
+  <mat-form-field class="field">
+    <mat-label>Title</mat-label>
+    <input
+      name="title"
+      ngModel
+      matInput
+      required
+      placeholder="Enter a title..."
+      value=""
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Description</mat-label>
+    <textarea
+      name="description"
+      ngModel
+      matInput
+      required
+      placeholder="Enter a description..."
+      value=""
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Price</mat-label>
+    <input
+      name="price"
+      type="number"
+      min="0"
+      ngModel
+      required
+      matInput
+      placeholder="Enter a price..."
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Type</mat-label>
+    <mat-select ngModel name="type" required>
+      <mat-option value="burger">Burger</mat-option>
+      <mat-option value="pizza">Pizza</mat-option>
+      <mat-option value="taco">Taco</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary">Add product</button>
+</form>
