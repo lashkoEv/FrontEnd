@@ -18,8 +18,8 @@ export class Product implements IProduct {
     return this.description;
   };
 
-  getPrice = (): number => {
-    return this.price;
+  getPrice = (): string => {
+    return this.price.toFixed(2);
   };
 
   getDate = (): Date => {
