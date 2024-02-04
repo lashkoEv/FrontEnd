@@ -1,0 +1,16 @@
+.header,
+.nav {
+  width: 100%;
+  padding: 1rem;
+}
+
+.header {
+  background-color: rgb(240, 240, 240);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

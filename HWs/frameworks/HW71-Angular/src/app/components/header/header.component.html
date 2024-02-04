@@ -1,0 +1,23 @@
+<header class="header">
+  <nav class="nav">
+    <button
+      mat-raised-button
+      color="primary"
+      *ngFor="let category of getCategories()"
+      [routerLink]="category.path"
+    >
+      {{ category.title }}
+    </button>
+
+    <button
+      *ngIf="isAuth()"
+      mat-raised-button
+      color="primary"
+      [routerLink]="[getRouteToAdminPanel()]"
+    >
+      Admin panel
+    </button>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
