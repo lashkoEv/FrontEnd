@@ -1,0 +1,10 @@
+<header class="header">
+  <button
+    mat-flat-button
+    color="primary"
+    [routerLink]="routerLink.href"
+    *ngFor="let routerLink of getRouterLinks()"
+  >
+    {{ routerLink.label }}
+  </button>
+</header>
