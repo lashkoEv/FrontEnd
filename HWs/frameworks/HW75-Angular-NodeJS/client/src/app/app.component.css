@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  background-color: rgb(231, 231, 231);
+  padding: 2rem;
+  width: 50%;
+  text-align: center;
+  border-radius: 1rem;
+}
