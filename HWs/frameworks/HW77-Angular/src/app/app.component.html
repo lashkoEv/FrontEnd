@@ -1,0 +1,79 @@
+<mat-tab-group (selectedTabChange)="onTabChanged()">
+  <mat-tab label="Posts">
+    <div class="main" *ngIf="!getVisibility()">
+      <div class="item" *ngFor="let post of getPosts()">
+        <h3 class="title" *ngIf="post.title">
+          {{ post.title }}
+        </h3>
+
+        <p class="body" *ngIf="post.body">
+          {{ post.body }}
+        </p>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Comments">
+    <div class="main" *ngIf="!getVisibility()">
+      <div class="item" *ngFor="let comment of getComments()">
+        <h3 class="name" *ngIf="comment.name">Name: {{ comment.name }}</h3>
+
+        <h3 class="email" *ngIf="comment.email">Email: {{ comment.email }}</h3>
+
+        <p class="body" *ngIf="comment.body">
+          {{ comment.body }}
+        </p>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Albums">
+    <div class="main" *ngIf="!getVisibility()">
+      <div class="item" *ngFor="let album of getAlbums()">
+        <h3 class="title" *ngIf="album.title">
+          {{ album.title }}
+        </h3>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Photos">
+    <div class="main" *ngIf="!getVisibility()">
+      <div *ngFor="let photo of getPhotos()">
+        <img class="image" src="{{ photo.url }}" />
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Todos">
+    <div class="main" *ngIf="!getVisibility()">
+      <div class="item" *ngFor="let todo of getTodos()">
+        <h3 class="title" *ngIf="todo.title">
+          {{ todo.title }}
+        </h3>
+
+        <h3 class="completed">Completed: {{ todo.completed }}</h3>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Users">
+    <div class="main" *ngIf="!getVisibility()">
+      <div class="item" *ngFor="let user of getUsers()">
+        <h3 class="username" *ngIf="user.username">
+          {{ user.username }}
+        </h3>
+
+        <h3 class="name" *ngIf="user.name">Name: {{ user.name }}</h3>
+
+        <h3 class="email" *ngIf="user.email">Email: {{ user.email }}</h3>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<mat-spinner
+  class="spinner"
+  mode="indeterminate"
+  *ngIf="getVisibility()"
+></mat-spinner>
