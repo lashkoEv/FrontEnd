@@ -1,20 +1,35 @@
 h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-wrapper {
-    height: 70vh;
-    display: flex;
-    justify-content: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
 }
 
 .err-wrapper {
-    height: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.err-wrapper > h3 {
+  width: 90%;
+  background-color: rgb(255, 152, 152);
+  border-radius: 1rem;
+  padding: 1rem;
 }

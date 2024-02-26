@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProfileService {
+  private currentUser: any;
 
-  constructor() { }
+  constructor() {
+    this.loadUser();
+  }
+
+  loadUser() {
+    this.currentUser = localStorage.getItem('user');
+  }
+
+  getUser() {
+    return this.currentUser;
+  }
 }

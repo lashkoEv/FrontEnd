@@ -3,37 +3,46 @@ import { Injectable } from '@angular/core';
 import { IRouterLink } from '../interfaces/RouterLink';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeaderService {
-  public authLink = {
-    label:"Login", //
-    href:"/auth",
+  constructor() {}
+
+  getRouterLinks() {
+    return [
+      {
+        label: 'Quizzes',
+        href: '/quizzes',
+        info: 'Here there are quizzes where you can check your knowledges according to your specialization.',
+        disabled: false,
+      },
+      {
+        label: 'Resources',
+        href: '/resources',
+        info: 'Here there are links where you can find useful resources which will fit to ur specialization.',
+        disabled: false,
+      },
+      {
+        label: 'Profile',
+        href: '/profile',
+        info: "It's ur personal page where you can see ur achivments and add there information about yourself.",
+        disabled: this.getProfileMode(),
+      },
+    ];
   }
 
-  private routerLinks: IRouterLink[] = [
-    {
-      label:"Quizzes",
-      href:  "/quizzes",
-      info: "Here there are quizzes where you can check your knowledges according to your specialization."
-    },
-    {
-      label:"Resources",
-      href:"/resources",
-      info: "Here there are links where you can find useful resources which will fit to ur specialization."
-    },
-    {
-      label:"Profile",
-      href:"/profile",
-      info: "It's ur personal page where you can see ur achivments and add there information about yourself."
-    },
-  ]
-  constructor() { }
-
-
-  public getRouterLinks(): IRouterLink[] {
-    return this.routerLinks;
+  getProfileMode() {
+    return localStorage.getItem('user') ? false : true;
   }
 
+  getLabel() {
+    return localStorage.getItem('user') ? 'Logout' : 'Login';
+  }
 
+  getAuthLink() {
+    return {
+      label: this.getLabel(),
+      href: '/auth',
+    };
+  }
 }
