@@ -1,0 +1,18 @@
+<section class="wrapper">
+  <section class="product">
+    <img
+      src="https://clipart-library.com/new_gallery/23-234638_sansevieria-moonshine-small-transparent-small-plant-png.png"
+      class="img"
+    />
+    <h1>Plant</h1>
+    <h1 class="price">10.00 $</h1>
+  </section>
+
+  <section class="timer" *ngIf="isVisible">
+    <app-timer></app-timer>
+
+    <button mat-raised-button color="primary" (click)="stopTimer()">
+      Don't interesting
+    </button>
+  </section>
+</section>

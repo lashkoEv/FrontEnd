@@ -1,0 +1,21 @@
+.wrapper,
+.product,
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.product,
+.timer {
+  flex-direction: column;
+}
+
+.img {
+  width: 20%;
+}
+
+.price {
+  font-weight: 600;
+}
