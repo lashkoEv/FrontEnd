@@ -11,10 +11,14 @@ export class ProfileService {
   }
 
   loadUser() {
-    this.currentUser = localStorage.getItem('user');
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
 
   getUser() {
     return this.currentUser;
+  }
+
+  getImageUrl() {
+    return '../../assets/user.svg';
   }
 }

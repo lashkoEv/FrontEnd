@@ -8,7 +8,7 @@ import { IRouterLink } from '../interfaces/RouterLink';
 export class HeaderService {
   constructor() {}
 
-  getRouterLinks() {
+  getRouterLinks(): IRouterLink[] {
     return [
       {
         label: 'Quizzes',

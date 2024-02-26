@@ -1,0 +1,41 @@
+.controls {
+  display: flex;
+  justify-content: end;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image {
+  max-width: 11%;
+}
+
+.info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 0;
+}
+
+.field {
+  border-bottom: 1px solid rgb(194, 194, 194);
+  padding: 0.5rem 0;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

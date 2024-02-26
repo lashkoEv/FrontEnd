@@ -1,3 +1,4 @@
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,8 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms'
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
@@ -45,9 +45,10 @@ import { ProfileComponent } from './profile/profile.component';
     MatTabsModule,
     MatExpansionModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
