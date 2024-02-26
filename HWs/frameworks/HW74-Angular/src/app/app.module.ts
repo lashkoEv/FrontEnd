@@ -1,3 +1,4 @@
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,8 +11,18 @@ import { ProductComponent } from './components/product/product.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
-  declarations: [AppComponent, TimerComponent, ProductComponent, CarouselComponent],
-  imports: [BrowserModule, AppRoutingModule, MatButtonModule],
+  declarations: [
+    AppComponent,
+    TimerComponent,
+    ProductComponent,
+    CarouselComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+  ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })

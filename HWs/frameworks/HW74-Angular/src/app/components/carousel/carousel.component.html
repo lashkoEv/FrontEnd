@@ -1,0 +1,15 @@
+<div class="wrapper" *ngIf="!getVisibility()">
+  <button mat-button (click)="setLeftDirection()">❮</button>
+
+  <div class="carousel">
+    <img src="{{ getImage() }}" class="img" />
+  </div>
+
+  <button mat-button (click)="setRightDirection()">❯</button>
+</div>
+
+<mat-spinner
+  class="spinner"
+  mode="indeterminate"
+  *ngIf="getVisibility()"
+></mat-spinner>
