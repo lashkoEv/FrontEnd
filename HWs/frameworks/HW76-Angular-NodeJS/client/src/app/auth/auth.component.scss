@@ -1,0 +1,20 @@
+h3 {
+    margin: 0;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-wrapper {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.err-wrapper {
+    height: 3rem;
+}

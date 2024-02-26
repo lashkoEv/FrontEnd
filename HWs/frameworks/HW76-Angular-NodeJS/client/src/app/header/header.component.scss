@@ -1,0 +1,33 @@
+.link-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a {
+    padding: .5em;
+    text-decoration: none;
+    color: aliceblue;
+    background: #ff4081;
+    font-size: .8em;
+}
+
+a:first-child {
+    border-bottom: 1px solid aliceblue;
+}
+
+mat-accordion {
+    position: absolute;
+    top: 8%;
+    z-index: 9;
+}
+
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    display: flex;
+    align-items: center;
+}

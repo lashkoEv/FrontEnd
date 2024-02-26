@@ -1,0 +1,64 @@
+<section class="err-wrapper">
+    <h3>{{errMessage}}</h3>
+</section>
+
+
+<mat-tab-group>
+    <mat-tab label="Sign In"> 
+        <section class="form-wrapper">
+            <form (submit)="formHandler(ngForm)" class="form" #ngForm="ngForm">
+                <mat-form-field class="example-full-width">
+                    <mat-label>E-mail</mat-label>
+                    <input ngModel type="email" name="email" matInput placeholder="Email">
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input ngModel type="password" name="password" matInput placeholder="Password">
+                </mat-form-field>
+            
+                <div class="btn-wrapper">
+                    <button type="submit" mat-raised-button color="accent">Sign In</button>
+                </div>
+            </form>
+        </section>
+    </mat-tab>
+
+    <mat-tab label="Sign Up">
+        <section class="form-wrapper">
+            <form (submit)="formHandler(ngForm)" class="form" #ngForm="ngForm">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input ngModel type="text" name="name" matInput placeholder="Email">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Age</mat-label>
+                    <input ngModel step="1" type="number" name="age" matInput placeholder="Email">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>E-mail</mat-label>
+                    <input ngModel type="email" name="email" matInput placeholder="Email">
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input ngModel type="password" name="password" matInput placeholder="Password">
+                </mat-form-field>
+            
+            
+                <mat-form-field class="example-full-width">
+                    <mat-label>Confirm Password</mat-label>
+                    <input ngModel type="confirm-password" name="password" matInput placeholder="Password">
+                </mat-form-field>
+            
+                <div class="btn-wrapper">
+                    <button type="submit" mat-raised-button color="accent">Sign Up</button>
+                </div>
+            </form>
+        </section>
+    </mat-tab>
+  
+  </mat-tab-group>
+
