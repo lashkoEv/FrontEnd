@@ -1,0 +1,60 @@
+<form
+  #form="ngForm"
+  (submit)="edit(form.value)"
+  class="form"
+  *ngIf="getVisibility()"
+>
+  <mat-form-field class="field">
+    <mat-label>Name</mat-label>
+    <input
+      name="name"
+      ngModel
+      matInput
+      required
+      placeholder="Enter a name..."
+      [(ngModel)]="getUser().name"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Age</mat-label>
+    <input
+      name="age"
+      type="number"
+      min="0"
+      ngModel
+      required
+      matInput
+      placeholder="Enter a price..."
+      [(ngModel)]="getUser().age"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Email</mat-label>
+    <input
+      name="email"
+      ngModel
+      matInput
+      required
+      type="email"
+      placeholder="Enter a email..."
+      [(ngModel)]="getUser().email"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Password</mat-label>
+    <input
+      name="password"
+      ngModel
+      matInput
+      required
+      type="password"
+      placeholder="Enter a password..."
+      [(ngModel)]="getUser().password"
+    />
+  </mat-form-field>
+
+  <button mat-flat-button color="accent">Edit</button>
+</form>

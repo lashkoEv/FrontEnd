@@ -32,4 +32,8 @@ export class ProfileComponent implements OnInit {
   getVisibility() {
     return this.isVisibleSpinner;
   }
+
+  showModal() {
+    this.profileService.changeVisibility();
+  }
 }

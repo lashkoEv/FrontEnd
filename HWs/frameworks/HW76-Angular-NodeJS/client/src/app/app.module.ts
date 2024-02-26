@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditUserModalWindowComponent } from './edit-user-modal-window/edit-user-modal-window.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProfileComponent } from './profile/profile.component';
     AsideComponent,
     AuthComponent,
     ProfileComponent,
+    EditUserModalWindowComponent,
   ],
   imports: [
     BrowserModule,

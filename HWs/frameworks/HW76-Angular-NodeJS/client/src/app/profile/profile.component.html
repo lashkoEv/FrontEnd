@@ -22,6 +22,10 @@
   </section>
 
   <section class="controls">
-    <button mat-raised-button color="accent">Edit user info</button>
+    <button mat-raised-button color="accent" (click)="showModal()">
+      Edit user info
+    </button>
   </section>
 </section>
+
+<app-edit-user-modal-window></app-edit-user-modal-window>

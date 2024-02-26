@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ProfileService {
   private currentUser: any;
+  private isVisibleModal: boolean;
 
   constructor() {
     this.loadUser();
@@ -21,4 +22,14 @@ export class ProfileService {
   getImageUrl() {
     return '../../assets/user.svg';
   }
+
+  getVisibility() {
+    return this.isVisibleModal;
+  }
+
+  changeVisibility() {
+    this.isVisibleModal = !this.isVisibleModal;
+  }
+
+  edit(data: any) {}
 }

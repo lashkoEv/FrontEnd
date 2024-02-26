@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(109, 109, 109, 0.35) 0px 5px 15px;
+  box-sizing: border-box;
+  background-color: white;
+  width: 30%;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.field {
+  width: 100%;
+}
