@@ -28,10 +28,10 @@
 .link {
   padding: 1em;
   border-radius: 1em;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(241, 241, 241);
   transition: 0.3s ease-in-out;
 }
 
 .link:hover {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(230, 230, 230);
 }
