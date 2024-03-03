@@ -1,0 +1,56 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  padding: 0 10em;
+}
+
+.product {
+  position: relative;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 1em;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 5em;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+}
+
+.icon-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  background-color: rgb(236, 236, 236);
+  width: 100%;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-wrapper:hover {
+  color: white;
+  background-color: rgb(70, 70, 70);
+}
+
+.icon-wrapper > .icon {
+  color: rgb(70, 70, 70);
+  font-size: larger;
+  color: inherit;
+}
