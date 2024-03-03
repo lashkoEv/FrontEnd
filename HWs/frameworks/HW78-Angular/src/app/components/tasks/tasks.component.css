@@ -39,3 +39,7 @@ p {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
+
+.line {
+  text-decoration: line-through;
+}

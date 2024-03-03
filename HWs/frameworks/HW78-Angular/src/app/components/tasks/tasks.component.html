@@ -1,7 +1,9 @@
 <div class="tasks">
   <div class="task" *ngFor="let task of getTasks() | async">
     <div class="task-info">
-      <p class="title">{{ task.title }}</p>
+      <p class="{{ task.status === 'Done' ? 'title line' : 'title' }}">
+        {{ task.title }}
+      </p>
 
       <div class="controls">
         <button mat-raised-button color="primary" (click)="edit(task)">
