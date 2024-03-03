@@ -18,6 +18,7 @@
 .icon {
   color: rgb(70, 70, 70);
   font-size: 2em;
+  transition: 0.3s ease-in-out;
 }
 
 .icon:hover {
@@ -28,6 +29,7 @@
   padding: 1em;
   border-radius: 1em;
   background-color: rgb(247, 247, 247);
+  transition: 0.3s ease-in-out;
 }
 
 .link:hover {

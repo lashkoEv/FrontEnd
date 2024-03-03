@@ -1,0 +1,54 @@
+.header {
+  border-bottom: 1px dashed rgb(216, 216, 216);
+  padding: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.input-wrapper,
+.navigation,
+.login-wrapper {
+  width: 100%;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 0.5em 0.1em;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  width: 50%;
+  font-size: medium;
+}
+
+.login {
+  background-color: rgb(70, 70, 70);
+  color: white;
+  padding: 1em;
+  border: none;
+  outline: none;
+  border-radius: 1em;
+  font-size: medium;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.login:hover {
+  background-color: rgb(231, 231, 231);
+  color: black;
+}
