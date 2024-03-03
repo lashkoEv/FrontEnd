@@ -1,4 +1,8 @@
 .header {
-  padding: 2rem;
+  padding: 2rem 2rem 0.7rem 2rem;
   width: 100vw;
+  background-color: rgb(103, 58, 183);
+  color: white;
+  display: flex;
+  gap: 2rem;
 }

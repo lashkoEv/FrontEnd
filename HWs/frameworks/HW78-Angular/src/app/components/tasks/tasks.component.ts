@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ITask } from '../../interfaces/ITask';
 import { TaskService } from '../../services/task.service';
 import { Observable } from 'rxjs';
+import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-tasks',
@@ -11,20 +12,24 @@ import { Observable } from 'rxjs';
 export class TasksComponent {
   private tasks: Observable<ITask[]>;
 
-  constructor(private taskService: TaskService) {
-    this.tasks = this.taskService.getTasks();
-
+  constructor(
+    private taskService: TaskService,
+    private formService: FormService
+  ) {
     taskService.add('1');
     taskService.add('2');
   }
 
   getTasks() {
-    return this.tasks;
+    return this.taskService.getAll();
   }
 
   remove(id: String) {
     this.taskService.remove(id);
   }
 
-  edit(task: ITask) {}
+  edit(task: ITask) {
+    this.taskService.setCurrentTask(task);
+    this.formService.changeVisibility();
+  }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ITask } from '../interfaces/ITask';
 import { v4 } from 'uuid';
 
@@ -7,16 +7,34 @@ import { v4 } from 'uuid';
   providedIn: 'root',
 })
 export class TaskService {
+  private currentTask: ITask | undefined;
+  private filterMode: string | undefined;
+  private sortMode: string | undefined;
+  private toShow: Observable<ITask[]>;
+
   private tasksSubj: BehaviorSubject<ITask[]> = new BehaviorSubject<ITask[]>(
     []
   );
 
-  private tasks: Observable<ITask[]> = this.tasksSubj.asObservable();
+  constructor() {
+    this.setShown();
+  }
 
-  constructor() {}
+  setCurrentTask(task: ITask) {
+    this.currentTask = task;
+  }
 
-  public getTasks() {
-    return this.tasksSubj;
+  getCurrentTask() {
+    return {
+      id: this.currentTask.id,
+      title: this.currentTask.title,
+      date: this.currentTask.date,
+      status: this.currentTask.status,
+    };
+  }
+
+  public getAll() {
+    return this.toShow;
   }
 
   public add(title: String) {
@@ -30,6 +48,8 @@ export class TaskService {
     };
 
     this.tasksSubj.next([...tasksValues, newTask]);
+
+    this.setShown();
   }
 
   public remove(id: String) {
@@ -38,6 +58,8 @@ export class TaskService {
     const updatedTasks = tasksValues.filter((task) => task.id !== id);
 
     this.tasksSubj.next(updatedTasks);
+
+    this.setShown();
   }
 
   public edit(id: String, updatedTask: Partial<ITask>) {
@@ -51,5 +73,60 @@ export class TaskService {
     });
 
     this.tasksSubj.next(updatedTasks);
+
+    this.setShown();
+  }
+
+  public setFilter(mode: string) {
+    if (mode !== 'default') {
+      this.filterMode = mode;
+    } else {
+      this.filterMode = undefined;
+    }
+
+    this.setShown();
+  }
+
+  private filter(tasksValues: ITask[]) {
+    const filteredTasks = [...tasksValues].filter(
+      (task) => task.status === this.filterMode
+    );
+
+    return filteredTasks;
+  }
+
+  public setSort(mode: string) {
+    this.sortMode = mode;
+
+    this.setShown();
+  }
+
+  private sort(tasksValues: ITask[]) {
+    const sortedTasks = [...tasksValues].sort((a, b) => {
+      switch (this.sortMode) {
+        case 'asc':
+          return a.date.getTime() - b.date.getTime();
+        case 'desc':
+          return b.date.getTime() - a.date.getTime();
+        default:
+          return 0;
+      }
+    });
+
+    return sortedTasks;
+  }
+
+  private setShown() {
+    let tasksValues = this.tasksSubj.value;
+
+    if (this.filterMode) {
+      tasksValues = this.filter(tasksValues);
+    }
+
+    if (this.sortMode) {
+      tasksValues = this.sort(tasksValues);
+    }
+
+    this.toShow = of(tasksValues);
   }
 }

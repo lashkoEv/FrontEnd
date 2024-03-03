@@ -1,1 +1,40 @@
-<p>edit-form works!</p>
+<form
+  #form="ngForm"
+  (submit)="edit(form.value)"
+  class="form"
+  *ngIf="getVisibility()"
+>
+  <mat-form-field class="field">
+    <mat-label>Title</mat-label>
+    <input
+      name="title"
+      [(ngModel)]="getTask().title"
+      matInput
+      placeholder="Enter a title..."
+    />
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="getTask().status" name="status">
+      <mat-option value="To Do">To Do</mat-option>
+      <mat-option value="In Progress">In Progress</mat-option>
+      <mat-option value="Done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <mat-label>Date</mat-label>
+    <input
+      matInput
+      name="date"
+      [(ngModel)]="getTask().date"
+      [matDatepicker]="picker"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary">Edit task</button>
+</form>
