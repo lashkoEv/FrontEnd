@@ -1,0 +1,35 @@
+.footer {
+  border-top: 1px dashed rgb(216, 216, 216);
+  padding: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.icons,
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.icon {
+  color: rgb(70, 70, 70);
+  font-size: 2em;
+}
+
+.icon:hover {
+  color: rgb(107, 107, 107);
+}
+
+.link {
+  padding: 1em;
+  border-radius: 1em;
+  background-color: rgb(247, 247, 247);
+}
+
+.link:hover {
+  background-color: rgb(238, 238, 238);
+}
