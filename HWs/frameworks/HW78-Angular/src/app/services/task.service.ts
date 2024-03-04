@@ -167,7 +167,7 @@ export class TaskService {
   getBrokenPlans() {
     const dayMilliseconds = 24 * 60 * 60 * 1000;
 
-    const tasksValues = this.tasksSubj.value;
+    let tasksValues = this.tasksSubj.value;
 
     const filteredTasks = [...tasksValues].filter(
       (task) =>
