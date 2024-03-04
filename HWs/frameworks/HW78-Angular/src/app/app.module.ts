@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { EditFormComponent } from './components/edit-form/edit-form.component';
+import { BrokenPlansComponent } from './components/broken-plans/broken-plans.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EditFormComponent } from './components/edit-form/edit-form.component';
     FooterComponent,
     TasksComponent,
     EditFormComponent,
+    BrokenPlansComponent,
   ],
   imports: [
     BrowserModule,

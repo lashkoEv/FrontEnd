@@ -1,28 +1,40 @@
 <header class="header" color="primary">
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <mat-select
-      name="filter"
-      #selectFilter
-      (valueChange)="changeFilter(selectFilter.value)"
-    >
-      <mat-option value="default">Default</mat-option>
-      <mat-option value="To Do">To Do</mat-option>
-      <mat-option value="In Progress">In Progress</mat-option>
-      <mat-option value="Done">Done</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="controls">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <mat-select
+        name="filter"
+        #selectFilter
+        (valueChange)="changeFilter(selectFilter.value)"
+      >
+        <mat-option value="default">Default</mat-option>
+        <mat-option value="To Do">To Do</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Done">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Sort</mat-label>
-    <mat-select
-      name="sort"
-      #selectSort
-      (valueChange)="changeSort(selectSort.value)"
+    <mat-form-field>
+      <mat-label>Sort</mat-label>
+      <mat-select
+        name="sort"
+        #selectSort
+        (valueChange)="changeSort(selectSort.value)"
+      >
+        <mat-option value="default">Default</mat-option>
+        <mat-option value="asc">Asc</mat-option>
+        <mat-option value="desc">Desc</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <nav class="nav">
+    <button
+      mat-raised-button
+      *ngFor="let routerLink of getRouterLinks()"
+      [routerLink]="routerLink.href"
     >
-      <mat-option value="default">Default</mat-option>
-      <mat-option value="asc">Asc</mat-option>
-      <mat-option value="desc">Desc</mat-option>
-    </mat-select>
-  </mat-form-field>
+      {{ routerLink.title }}
+    </button>
+  </nav>
 </header>

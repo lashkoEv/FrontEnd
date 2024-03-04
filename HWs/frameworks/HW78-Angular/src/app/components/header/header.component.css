@@ -4,5 +4,22 @@
   background-color: rgb(103, 58, 183);
   color: white;
   display: flex;
+  justify-content: space-between;
   gap: 2rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav {
+  height: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }

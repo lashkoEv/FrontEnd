@@ -4,30 +4,18 @@ import { TaskService } from '../../services/task.service';
 import { FormService } from '../../services/form.service';
 
 @Component({
-  selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrl: './tasks.component.css',
+  selector: 'app-broken-plans',
+  templateUrl: './broken-plans.component.html',
+  styleUrl: './broken-plans.component.css',
 })
-export class TasksComponent {
+export class BrokenPlansComponent {
   constructor(
     private taskService: TaskService,
     private formService: FormService
   ) {}
 
-  public change(event: any) {
-    this.taskService.changePage(event);
-  }
-
   getTasks() {
-    return this.taskService.getAll();
-  }
-
-  getLength() {
-    return this.taskService.getLength();
-  }
-
-  getPageSize() {
-    return this.taskService.getPageSize();
+    return this.taskService.getBrokenPlans();
   }
 
   remove(id: String) {

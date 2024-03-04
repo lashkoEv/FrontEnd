@@ -16,4 +16,17 @@ export class HeaderComponent {
   changeSort(data: any) {
     this.taskService.setSort(data);
   }
+
+  getRouterLinks() {
+    return [
+      {
+        href: '/',
+        title: 'Home',
+      },
+      {
+        href: '/broken',
+        title: 'Broken plans',
+      },
+    ];
+  }
 }

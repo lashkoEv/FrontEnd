@@ -1,0 +1,26 @@
+<div class="tasks">
+  <div class="task" *ngFor="let task of getTasks() | async">
+    <div class="task-info">
+      <p class="title">
+        {{ task.title }}
+      </p>
+
+      <div class="controls">
+        <button mat-raised-button color="primary" (click)="edit(task)">
+          Edit
+        </button>
+
+        <button mat-raised-button color="warn" (click)="remove(task.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="task-footer">
+      <p class="status">Status: {{ task.status }}</p>
+      <p class="date">{{ task.date.toLocaleString("uk-UA") }}</p>
+    </div>
+  </div>
+</div>
+
+<app-edit-form></app-edit-form>

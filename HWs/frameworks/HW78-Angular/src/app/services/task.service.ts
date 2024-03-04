@@ -12,14 +12,18 @@ export class TaskService {
   private sortMode: string | undefined;
   private toShow: Observable<ITask[]>;
   private length: number;
-  private pageSize: number = 3;
-  private currentPage: number = 1;
+  private pageSize: number;
+  private currentPage: number;
 
   private tasksSubj: BehaviorSubject<ITask[]> = new BehaviorSubject<ITask[]>(
     []
   );
 
   constructor() {
+    this.add('First task!');
+    this.add('Second task...');
+    this.pageSize = 3;
+    this.currentPage = 1;
     this.setShown();
   }
 
@@ -158,5 +162,19 @@ export class TaskService {
     this.pageSize = event.pageSize;
 
     this.setShown();
+  }
+
+  getBrokenPlans() {
+    const dayMilliseconds = 24 * 60 * 60 * 1000;
+
+    const tasksValues = this.tasksSubj.value;
+
+    const filteredTasks = [...tasksValues].filter(
+      (task) =>
+        task.date.getTime() <= new Date().getTime() - dayMilliseconds * 3 &&
+        task.status !== 'Done'
+    );
+
+    return of(filteredTasks);
   }
 }
