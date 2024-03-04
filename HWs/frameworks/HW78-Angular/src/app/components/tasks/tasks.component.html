@@ -21,6 +21,16 @@
       <p class="date">{{ task.date.toLocaleString("uk-UA") }}</p>
     </div>
   </div>
+
+  <mat-paginator
+    [length]="getLength()"
+    [pageSize]="getPageSize()"
+    [pageSizeOptions]="[3, 5, 10]"
+    *ngIf="getLength() > getPageSize()"
+    (page)="change($event)"
+    aria-label="Select page"
+  >
+  </mat-paginator>
 </div>
 
 <app-edit-form></app-edit-form>

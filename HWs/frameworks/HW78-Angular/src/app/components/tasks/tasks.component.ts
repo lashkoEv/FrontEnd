@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ITask } from '../../interfaces/ITask';
 import { TaskService } from '../../services/task.service';
-import { Observable } from 'rxjs';
 import { FormService } from '../../services/form.service';
 
 @Component({
@@ -10,8 +9,6 @@ import { FormService } from '../../services/form.service';
   styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-  private tasks: Observable<ITask[]>;
-
   constructor(
     private taskService: TaskService,
     private formService: FormService
@@ -20,8 +17,20 @@ export class TasksComponent {
     taskService.add('2');
   }
 
+  public change(event: any) {
+    this.taskService.changePage(event);
+  }
+
   getTasks() {
     return this.taskService.getAll();
+  }
+
+  getLength() {
+    return this.taskService.getLength();
+  }
+
+  getPageSize() {
+    return this.taskService.getPageSize();
   }
 
   remove(id: String) {

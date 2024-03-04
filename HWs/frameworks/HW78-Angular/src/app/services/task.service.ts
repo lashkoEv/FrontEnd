@@ -11,6 +11,9 @@ export class TaskService {
   private filterMode: string | undefined;
   private sortMode: string | undefined;
   private toShow: Observable<ITask[]>;
+  private length: number;
+  private pageSize: number = 3;
+  private currentPage: number = 1;
 
   private tasksSubj: BehaviorSubject<ITask[]> = new BehaviorSubject<ITask[]>(
     []
@@ -127,6 +130,33 @@ export class TaskService {
       tasksValues = this.sort(tasksValues);
     }
 
+    tasksValues = this.pagination(tasksValues);
+
     this.toShow = of(tasksValues);
+  }
+
+  pagination(tasksValues: ITask[]) {
+    this.length = tasksValues.length;
+
+    const start = (this.currentPage - 1) * this.pageSize;
+
+    const end = start + this.pageSize;
+
+    return tasksValues.slice(start, end);
+  }
+
+  getLength() {
+    return this.length;
+  }
+
+  getPageSize() {
+    return this.pageSize;
+  }
+
+  changePage(event: any) {
+    this.currentPage = event.pageIndex + 1;
+    this.pageSize = event.pageSize;
+
+    this.setShown();
   }
 }
