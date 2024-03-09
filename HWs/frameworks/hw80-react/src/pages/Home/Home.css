@@ -1,0 +1,40 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 95%;
+  gap: 4rem;
+}
+
+.image {
+  width: 70%;
+}
+
+.column {
+  margin: 0;
+  justify-content: center;
+}
+
+.row > .title {
+  padding: 1rem 4rem;
+}
+
+.table {
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-weight: 600;
+  font-size: x-large;
+  padding: 1rem 4rem;
+}
+
+.row {
+  text-align: left;
+  align-self: self-start;
+  border-bottom: 1px solid rgb(59, 59, 59);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
