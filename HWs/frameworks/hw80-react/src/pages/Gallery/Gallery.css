@@ -1,0 +1,14 @@
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 97%;
+}
+
+.image-gallery-slide img {
+  height: 600px;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center center;
+}
