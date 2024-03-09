@@ -1,0 +1,14 @@
+.error {
+  color: white;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-family: "Satisfy", cursive;
+  font-size: 70px;
+  padding: 1rem;
+}
