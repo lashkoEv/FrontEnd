@@ -1,6 +1,6 @@
 .error {
   color: white;
-  height: 80%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,4 +11,8 @@
   font-family: "Satisfy", cursive;
   font-size: 70px;
   padding: 1rem;
+}
+
+.error > h3 {
+  margin-bottom: 6rem;
 }
