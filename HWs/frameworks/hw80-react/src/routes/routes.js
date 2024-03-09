@@ -1,10 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { getRoutes } from "../utils";
 
-export const Router = () => {
+export const Router = (props) => {
   return (
     <Routes>
-      {getRoutes().map((route, i) => (
+      {props.routes.map((route, i) => (
         <Route key={i} path={route.path} element={route.element} />
       ))}
     </Routes>

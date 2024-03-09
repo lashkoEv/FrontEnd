@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { Header } from "./components";
 import { Router } from "./routes";
-import { getLinks } from "./utils";
+import { getLinks, getRoutes } from "./utils";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         </nav>
       </Header>
 
-      <Router />
+      <Router routes={getRoutes()} />
     </div>
   );
 }
