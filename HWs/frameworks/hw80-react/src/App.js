@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { React } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { Header } from "./components";
 import { Router } from "./routes";
@@ -13,9 +13,9 @@ function App() {
       <Header>
         <nav className="nav">
           {getLinks().map((link, i) => (
-            <Link className="link" key={i} to={link.to}>
+            <NavLink className="link" key={i} to={link.to}>
               {link.title}
-            </Link>
+            </NavLink>
           ))}
         </nav>
       </Header>

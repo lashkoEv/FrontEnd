@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 97%;
+  height: 87%;
 }
 
 .image-gallery-slide img {
@@ -11,4 +11,8 @@
   object-fit: cover;
   overflow: hidden;
   object-position: center center;
+}
+
+.fullscreen .image-gallery-slide img {
+  height: 87vh;
 }

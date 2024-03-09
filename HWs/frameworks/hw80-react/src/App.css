@@ -1,3 +1,9 @@
 .App {
   height: 100%;
 }
+
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

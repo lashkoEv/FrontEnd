@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.link {
+  font-family: "Satisfy", cursive;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.active {
+  transition: 0.3s ease-in-out;
+  background: rgba(182, 99, 32, 0.3);
+}
