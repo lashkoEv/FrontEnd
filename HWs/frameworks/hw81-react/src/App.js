@@ -1,22 +1,11 @@
 import "./App.css";
 
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/" element={<Root />}>
-//       <Route path="dashboard" element={<Dashboard />} />
-//     </Route>
-//   )
-// );
+import { getRouter } from "./routes";
 
 function App() {
-  return <div className="App">{/* <RouterProvider router={router} /> */}</div>;
+  return <RouterProvider router={getRouter()} />;
 }
 
 export default App;

@@ -1,0 +1,10 @@
+.link {
+  padding: 1rem;
+  background-color: rgb(31 41 55);
+  transition: 0.3s ease-in-out;
+  border-radius: 1rem;
+}
+
+.active {
+  background-color: rgb(22, 29, 39);
+}
