@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.active {
+  color: rgb(0, 119, 255);
+}
